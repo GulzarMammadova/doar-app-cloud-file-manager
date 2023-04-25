@@ -1,38 +1,401 @@
-.App {
-  text-align: center;
+* {
+  list-style-type: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-style: normal;
+  color: #001737;
+  font-size: 0.875rem;
+  overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
+  width: 100%;
+  height: 60px;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 1001;
+  border-bottom: 1px solid rgba(72, 94, 144, 0.1607843137);
+  background-color: #fff;
+}
+.header .logo {
+  width: 240px;
+  padding-left: 20px;
+}
+.header .logo .logo-img {
+  width: 90px;
+  height: 59.6px;
+}
+.header .nav-menu ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-left: 30px;
+}
+.header .nav-menu ul li a {
+  margin-right: 35px;
+  color: #031a61;
+  font-weight: 500;
+}
+.header .nav-menu ul li a:hover {
+  color: rgba(40, 44, 177, 0.8);
+  transition: all 0.4s ease 0s;
+}
+.header .notification-bar {
+  width: 40%;
+  display: flex;
+  justify-content: end;
+  position: relative;
+}
+.header .notification-bar .darkLight {
+  display: flex;
+  align-items: center;
+}
+.header .notification-bar .darkLight .dark-light {
+  height: 40px;
+  width: 40px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 0 5px;
+  cursor: pointer;
+}
+.header .notification-bar .darkLight .dark-light .fa {
+  position: absolute;
+  color: var(--text-color);
+  font-size: 22px;
+  transition: all 0.3s ease;
+}
+.header .notification-bar .darkLight .dark-light .fa-sun {
+  opacity: 0;
+  pointer-events: none;
+}
+.header .notification-bar .darkLight .dark-light .fa-sun.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.header .notification-bar .darkLight .dark-light .fa-moon {
+  opacity: 1;
+  pointer-events: none;
+}
+.header .notification-bar ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+.header .notification-bar ul .avatar {
+  border-radius: 50%;
+  background-color: rgba(27, 46, 75, 0.7019607843);
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+.header .notification-bar .fa-regular,
+.header .notification-bar .fa-solid {
+  color: #031a61;
+  cursor: pointer;
+}
+.header .notification-bar .fa-regular:hover,
+.header .notification-bar .fa-solid:hover {
+  color: rgba(40, 44, 177, 0.8);
+  transition: all 0.4s ease 0s;
 }
 
-.App-link {
-  color: #61dafb;
+.left-container {
+  width: 240px;
+  height: 500px;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #f2f7fe;
+  border-top: transparent;
+  top: 10.5%;
+}
+.left-container .left-bar-create-btns {
+  display: flex;
+  justify-content: space-evenly;
+  position: fixed;
+  background-color: #fff;
+  border-bottom: 1px solid #f2f7fe;
+  padding: 20px;
+  gap: 23px;
+}
+.left-container .left-bar-create-btns .new-btn-dropdown .new-btn {
+  width: 85px;
+  height: 26px;
+  background: none;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(27, 46, 75, 0.7019607843);
+  letter-spacing: 0.5px;
+  border: 1px solid #c0ccda;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+.left-container .left-bar-create-btns .new-btn-dropdown .new-btn:hover {
+  color: #3e4678;
+  border: 1px solid #3e4678;
+  transition: all 0.4s ease 0s;
+}
+.left-container .left-bar-create-btns .new-btn-dropdown .dropdown-menu {
+  display: hidden;
+}
+.left-container .left-bar-create-btns .upload-btn-dropdown .upload-btn {
+  width: 85px;
+  height: 26px;
+  background: none;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.5px;
+  background-color: rgba(40, 44, 177, 0.8);
+  border: 1px solid rgba(40, 44, 177, 0.8);
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+.left-container .left-bar-create-btns .upload-btn-dropdown .upload-btn:hover {
+  background-color: #3e4678;
+  border: 1px solid #212529;
+  transition: all 0.4s ease 0s;
+}
+.left-container .scroll-bar {
+  height: 94%;
+  margin-top: 30%;
+  overflow: scroll;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+.left-container .scroll-bar:hover {
+  overflow: scroll;
+  overflow-x: hidden;
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+.left-container .scroll-bar:hover::-webkit-scrollbar {
+  width: 4px;
+}
+.left-container .scroll-bar:hover::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #f2f7fe;
+  border-radius: 10px;
+}
+.left-container .scroll-bar:hover::-webkit-scrollbar-thumb {
+  background: #D4D4D4;
+  border-radius: 10px;
+}
+.left-container .scroll-bar:hover::-webkit-scrollbar-thumb:hover {
+  background: #a2abe1;
+}
+.left-container .scroll-bar .menu-title {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.left-container .scroll-bar .menu-title span {
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #D4D4D4;
+}
+.left-container .scroll-bar .my-drive,
+.left-container .scroll-bar .file-lib {
+  padding-left: 25px;
+}
+.left-container .scroll-bar .my-drive li,
+.left-container .scroll-bar .file-lib li {
+  width: 199px;
+  height: 31px;
+  padding: 6px 10px;
+}
+.left-container .scroll-bar .my-drive li:hover,
+.left-container .scroll-bar .file-lib li:hover {
+  width: 199px;
+  height: 31px;
+  color: rgba(40, 44, 177, 0.8);
+  background-color: #a2abe1;
+  align-items: center;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  transition: all 0.4s ease 0s;
+}
+.left-container .scroll-bar .my-drive a,
+.left-container .scroll-bar .file-lib a {
+  color: #031a61;
+  font-size: 13px;
+}
+.left-container .scroll-bar .my-drive .fa-regular,
+.left-container .scroll-bar .my-drive .fa-solid,
+.left-container .scroll-bar .file-lib .fa-regular,
+.left-container .scroll-bar .file-lib .fa-solid {
+  margin-right: 10px;
+}
+.left-container .scroll-bar .storage {
+  padding-left: 25px;
+}
+.left-container .scroll-bar .storage .menu-title {
+  margin-bottom: 25px;
+}
+.left-container .scroll-bar .storage .storage-status {
+  display: flex;
+  flex-direction: column;
+  width: 199px;
+  height: 45px;
+}
+.left-container .scroll-bar .storage .storage-status .used {
+  position: relative;
+  bottom: 35%;
+  left: 21%;
+  font-size: 14px;
+}
+.left-container .scroll-bar .storage .storage-status .progress {
+  position: relative;
+  bottom: 35%;
+  left: 21%;
+}
+.left-container .scroll-bar .storage .offer {
+  width: 199px;
+  position: relative;
+  bottom: 20px;
+}
+.left-container .scroll-bar .storage .offer .offer-text {
+  font-size: 12px;
+}
+.left-container .scroll-bar .storage .offer a {
+  color: #0168fa;
+  font-size: 12px;
+  margin-bottom: 6px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search {
+  width: 81%;
+  height: 48px;
+  position: absolute;
+  background-color: #fff;
+  border-bottom: 1px solid #f2f7fe;
+  border-top: transparent;
+  top: 10.5%;
+  left: 19%;
+  padding: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
+.search .search-bar {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+.search .search-bar .fa-solid {
+  color: grey;
+  cursor: pointer;
+}
+.search .search-bar input {
+  align-items: center;
+  padding: 8px 16px;
+  gap: 8px;
+  width: 89%;
+  height: 40px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: grey;
+  font-size: 14px;
+}
+.search .settings ul {
+  display: flex;
+  flex-direction: row;
+}
+.search .settings ul li {
+  margin-right: 20px;
+}
+.search .settings ul .fa-solid {
+  color: grey;
+}
+.search .settings ul .fa-solid:hover {
+  color: rgba(40, 44, 177, 0.8);
+  transition: all 0.4s ease 0s;
+}
+
+.main-container {
+  width: 81%;
+  height: auto;
+  position: absolute;
+  top: 19%;
+  left: 19%;
+  background-color: #f2f7fe;
+  padding: 20px 25px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+.main-container h1 {
+  font-weight: 500;
+  line-height: 1.25;
+  color: #031a61;
+}
+.main-container .menu-title {
+  margin-bottom: 15px;
+}
+.main-container .menu-title span {
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: rgba(27, 46, 75, 0.7019607843);
+}
+.main-container .folders {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.main-container .folders .folder-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+.main-container .folders .folder-items .folder {
+  width: 236px;
+  height: 53px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  background-color: #fff;
+  border: 1px solid #D4D4D4;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+.main-container .folders .folder-items .folder .fa-regular {
+  color: rgba(40, 44, 177, 0.8);
+}
+.main-container .folders .folder-items .folder .description .folder-title {
+  font-weight: 500;
+}
+.main-container .folders .folder-items .folder .description .folder-title:hover {
+  color: rgba(40, 44, 177, 0.8);
+  transition: all 0.4s ease 0s;
+}
+.main-container .folders .folder-items .folder .description .folder-capacity {
+  font-size: 10px;
+  letter-spacing: 0.2px;
+  color: rgba(27, 46, 75, 0.7019607843);
+}/*# sourceMappingURL=App.css.map */

@@ -1,0 +1,416 @@
+@import "variables";
+@import "mixins";
+
+* {
+  list-style-type: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-style: normal;
+  color: #001737;
+  font-size: 0.875rem;
+  overflow: hidden;
+}
+.header {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 1001;
+  border-bottom: 1px solid #485e9029;
+  background-color: #fff;
+
+  .logo {
+    width: 240px;
+    padding-left: 20px;
+    .logo-img {
+      width: 90px;
+      height: 59.6px;
+    }
+  }
+  .nav-menu ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-left: 30px;
+    li a {
+      margin-right: 35px;
+      color: $FontColorDark;
+      font-weight: 500;
+      &:hover {
+        color: $bgBtn;
+        transition: all 0.4s ease 0s;
+      }
+    }
+  }
+  .notification-bar {
+    width: 40%;
+    display: flex;
+    justify-content: end;
+    position: relative;
+
+ .darkLight{
+    display: flex;
+    align-items: center;
+    .dark-light{
+      height: 40px;
+      width: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 5px;
+      cursor: pointer;
+      .fa{
+        position: absolute;
+        color: var(--text-color);
+        font-size: 22px;
+        transition: all 0.3s ease;
+    }
+    
+    .fa-sun {
+        opacity: 0;
+        pointer-events: none;
+        
+        &.active{
+          opacity: 1;
+          pointer-events: auto;
+      }
+    }
+    .fa-moon{
+        opacity: 1;
+        pointer-events: none;
+    }
+  }
+}
+    
+    ul {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 30px;
+      .avatar {
+        border-radius: 50%;
+        background-color: $fontDarkTrans;
+        color: $fontLight;
+        font-weight: 700;
+        font-size: 15px;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+      }
+    }
+    .fa-regular,
+    .fa-solid {
+      color: $FontColorDark;
+      cursor: pointer;
+      &:hover {
+        color: $bgBtn;
+        transition: all 0.4s ease 0s;
+      }
+    }
+  }
+}
+.left-container {
+  width: 240px;
+  height: 500px;
+  position: absolute;
+  background-color: $fontLight;
+  border: 1px solid $bgLightPurple;
+  border-top: transparent;
+  top: 10.5%;
+  .left-bar-create-btns {
+    display: flex;
+    justify-content: space-evenly;
+    position: fixed;
+    background-color: $fontLight;
+    border-bottom: 1px solid $bgLightPurple;
+    padding: 20px;
+    gap: 23px;
+    .new-btn-dropdown {
+      .new-btn {
+        width: 85px;
+        height: 26px;
+        background: none;
+        text-transform: uppercase;
+        font-size: 10px;
+        font-weight: 600;
+        color: $fontDarkTrans;
+        letter-spacing: 0.5px;
+        border: 1px solid #c0ccda;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        &:hover {
+          color: $bgDarkPurple;
+          border: 1px solid $bgDarkPurple;
+          transition: all 0.4s ease 0s;
+        }
+      }
+      .dropdown-menu {
+        display: hidden;
+      }
+    }
+    .upload-btn-dropdown {
+      .upload-btn {
+        width: 85px;
+        height: 26px;
+        background: none;
+        text-transform: uppercase;
+        font-size: 10px;
+        font-weight: 600;
+        color: $fontLight;
+        letter-spacing: 0.5px;
+        background-color: $bgBtn;
+        border: 1px solid $bgBtn;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        &:hover {
+          background-color: $bgDarkPurple;
+          border: 1px solid $bgDark;
+          transition: all 0.4s ease 0s;
+        }
+      }
+    }
+  }
+
+  .scroll-bar {
+    height: 94%;
+    margin-top: 30%;
+    overflow: scroll ;
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+&:hover{
+  overflow: scroll ;
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  /* Track */
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px $bgLightPurple; 
+    border-radius: 10px;
+  }
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: $borderColor; 
+    border-radius: 10px;
+  }
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: $fontPurple; 
+  }
+}
+
+    .menu-title {
+      margin-bottom: 10px;
+      margin-top: 10px;
+      span {
+        font-size: 10px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        font-weight: 500;
+        color: $borderColor;
+      }
+    }
+    .my-drive,
+    .file-lib {
+      padding-left: 25px;
+      li {
+        width: 199px;
+        height: 31px;
+        padding: 6px 10px;
+        &:hover {
+          width: 199px;
+          height: 31px;
+          color: $bgBtn;
+          background-color: $fontPurple;
+          align-items: center;
+          border-radius: 0.25rem;
+          font-weight: 500;
+          transition: all 0.4s ease 0s;
+        }
+      }
+      a {
+        color: $FontColorDark;
+        font-size: 13px;
+      }
+      .fa-regular,
+      .fa-solid {
+        margin-right: 10px;
+      }
+    }
+    .storage {
+      padding-left: 25px;
+      .menu-title {
+        margin-bottom: 25px;
+      }
+      .storage-status {
+        display: flex;
+        flex-direction: column;
+        width: 199px;
+        height: 45px;
+
+        .used {
+          position: relative;
+          bottom: 35%;
+          left: 21%;
+          font-size: 14px;
+        }
+        .progress {
+          position: relative;
+          bottom: 35%;
+          left: 21%;
+        }
+      }
+      .offer {
+        width: 199px;
+        position: relative;
+        bottom: 20px;
+
+        .offer-text {
+          font-size: 12px;
+        }
+        a {
+          color: $FontColorLight;
+          font-size: 12px;
+          margin-bottom: 6px;
+        }
+      }
+    }
+  }
+}
+
+.search {
+  width: 81%;
+  height: 48px;
+  position: absolute;
+  background-color: $fontLight;
+  border-bottom: 1px solid $bgLightPurple;
+  border-top: transparent;
+  top: 10.5%;
+  left: 19%;
+  padding: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .search-bar {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    .fa-solid {
+      color: grey;
+      cursor: pointer;
+    }
+    input {
+      align-items: center;
+      padding: 8px 16px;
+      gap: 8px;
+      width: 89%;
+      height: 40px;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: grey;
+      font-size: 14px;
+    }
+  }
+  .settings ul {
+    display: flex;
+    flex-direction: row;
+    li {
+      margin-right: 20px;
+    }
+    .fa-solid {
+      color: grey;
+
+      &:hover {
+        color: $bgBtn;
+        transition: all 0.4s ease 0s;
+      }
+    }
+  }
+}
+.main-container {
+  width: 81%;
+  height: auto;
+  position: absolute;
+  top: 19%;
+  left: 19%;
+  background-color: $bgLightPurple;
+  padding: 20px 25px;
+overflow: scroll;
+overflow-x: hidden;
+  h1{
+    font-weight: 500;
+    line-height: 1.25;
+    color: $FontColorDark;
+  }
+  .menu-title{
+    margin-bottom: 15px;
+
+    span {
+      font-size: 11px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: $fontDarkTrans; 
+    }
+  }
+  .folders{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    .folder-items{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-gap: 10px;
+
+      .folder{
+        width: 236px;
+        height: 53px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+        background-color: #fff;
+        border: 1px solid $borderColor;
+        border-radius: 5px;
+        padding: 10px; 
+        cursor: pointer; 
+        .fa-regular{
+          color: $bgBtn;
+        }
+        .description{
+          .folder-title{
+          font-weight: 500;
+          &:hover {
+            color: $bgBtn;
+            transition: all 0.4s ease 0s;
+    }
+          }
+          .folder-capacity{
+            font-size: 10px;
+            letter-spacing: 0.2px;
+            color: $fontDarkTrans; 
+          }
+        }
+      }
+    }
+
+  }
+
+}
