@@ -1,0 +1,88 @@
+{
+  "documents": [
+    {
+      "id": 1,
+      "name": "Medical Certificate.pdf",
+      "size": 10.45,
+      "file-type": "PDF File",
+      "icon": "./src/pictures/icons/pdf.png"
+    },
+    {
+      "id": 2,
+      "name": "Job contract.docx",
+      "size": 22.67,
+      "file-type": "Word Document",
+      "icon": "./src/pictures/icons/word.png"
+    },
+    {
+      "id": 3,
+      "name": "Instructions.txt",
+      "size": 43.9,
+      "file-type": "Text Document",
+      "icon": "./src/pictures/icons/txt.png"
+    },
+    {
+      "id": 4,
+      "name": "Inventory.xls",
+      "size": 22.67,
+      "file-type": "Spreadsheet File",
+      "icon": "./src/pictures/icons/excel.png"
+    },
+    {
+      "id": 5,
+      "name": "package.json",
+      "size": 2.7,
+      "file-type": "JSON File",
+      "icon": "./src/pictures/icons/json.png"
+    },
+    {
+      "id": 6,
+      "name": "style.css",
+      "size": 42.67,
+      "file-type": "CSS File",
+      "icon": "./src/pictures/icons/css.png"
+    },
+    {
+      "id": 7,
+      "name": "home.html",
+      "size": 42.67,
+      "file-type": "HTML Document",
+      "icon": "./src/pictures/icons/html.png"
+    },
+    {
+      "id": 10,
+      "name": "ReadMe.txt",
+      "size": 42.67,
+      "file-type": "Text Document",
+      "icon": "./src/pictures/icons/txt.png"
+    },
+    {
+      "id": 11,
+      "name": "GettingStarted.pdf",
+      "size": 42,
+      "file-type": "PDF File",
+      "icon": "./src/pictures/icons/pdf.png"
+    }
+  ],
+
+  "video": [
+{
+  "id": 8,
+  "name": "DemoVideo.mp4",
+  "size": 24.40,
+  "file-type": "Mp4 File",
+  "icon": "./src/pictures/icons/video.png"
+}
+  ],
+  "icon": [
+    {
+      "id": 9,
+      "name": "IMG_063037.jpg",
+      "size": 4.40,
+      "file-type": "JPG File",
+      "icon": "./src/pictures/icons/img.png",
+      "image": "./src/pictures/images/image1.jpg"
+
+    }
+      ]
+}
