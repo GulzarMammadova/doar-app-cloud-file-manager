@@ -2,11 +2,11 @@
     "languages": [
       {
         "id": 1,
-        "code": "English"
+        "code": "en"
       },
       {
         "id": 2,
-        "code": "Azerbaijani"
+        "code": "az"
       }
     ]
   }

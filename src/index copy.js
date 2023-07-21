@@ -134,9 +134,9 @@ export const MenuModal = () => {
   const clickHandler = () => {
     setShow((prev) => {
       if (prev) {
-        document.body.classList.remove('doar-modal-open');
+        document.body.classNameList.remove('doar-modal-open');
       } else {
-        document.body.classList.add('doar-modal-open');
+        document.body.classNameList.add('doar-modal-open');
       }
       return !prev;
     });

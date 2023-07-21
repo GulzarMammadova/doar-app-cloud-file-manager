@@ -1,6 +1,6 @@
 import '../../../App.css';
 import './AllFilesList'
-import {MenuModal} from './DropdownButtonContent'
+import {MenuModal} from '../ModalButton/ModalButtonContent'
 
 export const AllFilesPost = ({
 

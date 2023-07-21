@@ -1,5 +1,6 @@
 import '../../App.css';
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const DropdownButtonUpload = ({ optionsUpload }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,12 +8,12 @@ const DropdownButtonUpload = ({ optionsUpload }) => {
   const handleOptionClick = (option) => {
     setIsOpen(false);
   };
-
+  const { t } = useTranslation();
   return (
     <>
     <div className="upload-btn-dropdown">
       <button className="upload-btn" onClick={() => setIsOpen(!isOpen)}>
-        Upload </button>
+      {t('leftBar.uploadBtn')}</button>
       {isOpen && (
         <ul className="dropdown-menu">
           {optionsUpload.map((optionUpload) => (

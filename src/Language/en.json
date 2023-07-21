@@ -1,7 +1,52 @@
 {
     "languageBar": {
-      "english": "English",
-      "azerbaijani": "Azerbaijani"
+      "en": "English",
+      "az": "Azerbaijani"
+    },
+    "header":{
+      "dashboard": "Dashboard",
+      "apps": "Apps",
+      "pages": "Pages",
+      "components": "Components",
+      "collections": "Collections"
+    },
+    "leftBar": {
+      "newBtn":"New",
+      "uploadBtn":"Upload",
+      "myDrive": "MY DRIVE",
+      "allFiles": "All Files",
+      "myDevices": "My Devices",
+      "resently": "Recents",
+      "important": "Important",
+      "deletedFiles": "Deleted",
+      "fileLib": "FILE LIBRARY",
+      "docs": "Documents",
+      "video": "Videos",
+      "images": "Images",
+      "audio": "Audio",
+      "zip": "Zip Files",
+      "storageStat": "STORAGE STATUS",
+      "storageTxt":"Get 2TB (2,000GB) of storage now and get 40% off. Offers ends soon.",
+      "learnMore": "Learn More",
+      "usedOf":"used of"
+    },
+    "main":{
+      "resentlyAcc": "RECENTLY ACCESSED FILES",
+      "folders":"Folders",
+      "files":"Files"
+    },
+    "placeholder": {
+      "searchFilesAndFolders": "Search for files and folders"
+    },
+    "modalDetailsDesc":{
+      "fileName": "File Name",
+      "fileType":"File Type",
+      "fileSize":"File Size",
+      "created":"Created",
+      "accessed":"Accessed",
+      "descriprion":"Descriprion"
     }
+    
   }
-  
+
+

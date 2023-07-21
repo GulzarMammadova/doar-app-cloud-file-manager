@@ -4,7 +4,6 @@ import { FolderItem } from './FolderItem' ;
 import folders from '../../../pictures/icons/folder.png'
 
 
-
 export function FoldersList () {
  
     const FoldersList = [

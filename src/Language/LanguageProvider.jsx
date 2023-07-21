@@ -1,27 +1,20 @@
-// import React, { useState } from 'react';
-// import { IntlProvider } from 'react-intl';
-// import enTranslation from './translations/en.json';
-// import ruTranslation from './translations/ru.json';
-// import azTranslation from './translations/az.json';
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
 
+import enTranslation from './en.json'; 
+import azTranslation from './az.json';
 
-// const LanguageProvider = ({ children }) => {
-//   const [locale, setLocale] = useState('en');
-//   const messages = {
-//     en: enTranslation,
-//     az: azTranslation,
-//     ru: ruTranslation,
-// };
+i18n
+  .use(initReactI18next)
+  .init({
+    resources: {
+      en: { translation: enTranslation },
+      az: { translation: azTranslation },
+    },
+    lng: 'en', 
+    fallbackLng: 'en', 
+    interpolation: {
+      escapeValue: false, 
+    },
+  });
 
-//   const switchLanguage = (newLocale) => {
-//     setLocale(newLocale);
-//   };
-
-//   return (
-//     <IntlProvider locale={locale} messages={messages[locale]}>
-//       {children}
-//     </IntlProvider>
-//   );
-// };
-
-// export default LanguageProvider;

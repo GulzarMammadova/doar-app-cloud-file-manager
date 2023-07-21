@@ -14,7 +14,7 @@ export function LeftBar() {
   ];
   const optionsUpload = [
     { value: 'File', label: 'File' },
-    { value: 'Folder', label: 'Folder'},
+    { value: `'Folder'`, label: 'Folder'},
   ];
   return (
     <div className="left-container">

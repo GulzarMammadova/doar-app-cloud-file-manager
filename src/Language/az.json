@@ -1,7 +1,49 @@
 {
-    "languageBar": {
-      "english": "Ingilis",
-      "azerbaijani": "Azerbaycan"
-    }
+  "languageBar": {
+    "en": "Ingilis",
+    "az": "Azerbaycan"
+  },
+  "header": {
+    "dashboard": "İdarə paneli",
+    "apps": "Proqramlar",
+    "pages": "Səhifələr",
+    "components": "Komponentlər",
+    "collections": "Kolleksiyalar"
+  },
+  "leftBar": {
+    "newBtn":"Yeni",
+    "uploadBtn":"Yükləmək",
+    "myDrive": "MƏNİM BULUDUM",
+    "allFiles": "Bütün Fayllar",
+    "myDevices": "Cihazlarım",
+    "resently": "Son zamanlar",
+    "important": "Əhəmiyyətli",
+    "deletedFiles": "Silinmiş Fayllar",
+    "fileLib": "FAYL KİTABXANASI",
+    "docs": "Sənədlər",
+    "video": "Videolar",
+    "images": "Şəkillər",
+    "audio": "Audio",
+    "zip": "Zip faylları",
+    "storageStat": "SAXLAMA STATUSU",
+    "storageTxt":"İndi 2TB (2000GB) yaddaş əldə edin və 40% endirim əldə edin. Təkliflər tezliklə başa çatır.",
+    "learnMore": "Daha ətraflı",
+    "usedOf":"/"
+  },
+  "main":{
+    "resentlyAcc": "SON DAXİL OLUNMUŞ FAYLLAR",
+    "folders":"Qovluqlar",
+    "files":"Faylar"
+  },
+  "placeholder": {
+    "searchFilesAndFolders": "Fayl və qovluqları axtar"
+  },
+  "modalDetailsDesc":{
+    "fileName": "Fayl adı",
+    "fileType":"Fayl Tipi",
+    "fileSize":"Fayl ölçüsü",
+    "created":"Yaradıldı",
+    "accessed":"Giriş",
+    "descriprion":"Təsvir"
   }
-  
+}

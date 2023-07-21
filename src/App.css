@@ -7,18 +7,106 @@
 }
 
 body {
+  --text-main:#5023B1;
+  --text-white: #fff;
+  --text-dark: #421D44;
+  --text-orange: #D533F3;
+  --bg-purple-light: #f5f5f5;
+  --bg-white: #fff;
+  --bg-pink: #D533F3;
+  --bg-dark: #421D44;
+  --bg-files: #fff;
+  --bg-border:#D533F3;
+  --bg-line:#f2f7fe;
   font-family: "IBM Plex Sans", sans-serif;
   font-style: normal;
-  color: #001737;
   font-size: 0.875rem;
   overflow: hidden;
 }
 
-.Container .Container-dark {
-  background-color: #212529;
+.dark-content {
+  --text-main:#652be0;
+  --text-white: #e6e6e6;
+  --text-dark: #fff;
+  --text-orange: #DA583C;
+  --bg-purple-light: #A740EC;
+  --bg-white: #110D75;
+  --bg-pink: #D533F3;
+  --bg-dark: #DA583C;
+  --bg-files: #0b094b;
+  --bg-border:#201ac9;
+  --bg-line:#413f76;
 }
-.Container .Container-light {
+
+.wrapper {
+  width: 50px;
+  height: 25px;
+  position: absolute;
+  right: 18%;
+  top: 3.5%;
+  z-index: 11111;
+}
+.wrapper .switch {
+  position: absolute;
+  left: 50%;
+  top: 43%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 21px;
+}
+.wrapper .switch input {
+  display: none;
+}
+.wrapper .switch .wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 15px; /* Half of the height to make a rounded effect */
+  width: 50px; /* Adjusted width for the wave */
+  height: 21px; /* Adjusted height for the wave */
+  display: none;
+}
+.wrapper .switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--text-main);
+  transition: all 1.4s;
+  border-radius: 10.5px; /* Half of the height to make a rounded effect */
+  z-index: 100;
+  overflow: hidden;
+}
+.wrapper .switch .slider:before, .wrapper .switch .slider:after {
+  position: absolute;
+  content: "";
+  height: 13px; /* Half of the height to make a rounded effect */
+  width: 13px; /* Half of the height to make a rounded effect */
+  left: 2px; /* Adjusted position for the slider before and after elements */
+  bottom: 4px; /* Adjusted position for the slider before and after elements */
+  border-radius: 10.5px; /* Half of the height to make a rounded effect */
   background-color: #fff;
+}
+.wrapper .switch .slider:before {
+  transition: 0.4s;
+}
+.wrapper .switch .slider:after {
+  transition: 0.5s;
+}
+.wrapper .switch input:checked + .slider {
+  background-color: transparent;
+}
+.wrapper .switch input:checked ~ .wave {
+  background-color: var(--text-orange);
+  display: block;
+}
+.wrapper .switch input:checked + .slider:before {
+  transform: translateX(32.5px); /* Half of the width to center the before element */
+}
+.wrapper .switch input:checked + .slider:after {
+  transform: translateX(32.5px); /* Half of the width to center the after element */
 }
 
 .header {
@@ -27,21 +115,21 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: flex-start;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  z-index: 1001;
-  border-bottom: 1px solid rgba(72, 94, 144, 0.1607843137);
-  background-color: #fff;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--bg-line);
+  background-color: var(--bg-white);
 }
 .header .logo {
-  width: 240px;
+  width: 19%;
+  height: 60px;
   padding-left: 20px;
 }
 .header .logo .logo-img {
   width: 90px;
   height: 59.6px;
+}
+.header .nav-menu {
+  width: 46.3%;
 }
 .header .nav-menu ul {
   display: flex;
@@ -51,49 +139,19 @@ body {
 }
 .header .nav-menu ul li a {
   margin-right: 35px;
-  color: #031a61;
+  color: var(--text-main);
   font-weight: 500;
 }
 .header .nav-menu ul li a:hover {
-  color: rgba(40, 44, 177, 0.8);
+  color: var(--text-orange);
   transition: all 0.4s ease 0s;
 }
 .header .notification-bar {
-  width: 40%;
+  width: 33.3%;
   display: flex;
   justify-content: flex-end;
   position: relative;
-}
-.header .notification-bar .darkLight {
-  display: flex;
-  align-items: center;
-}
-.header .notification-bar .darkLight .dark-light {
-  height: 40px;
-  width: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 5px;
-  cursor: pointer;
-}
-.header .notification-bar .darkLight .dark-light .fa {
-  position: absolute;
-  color: var(--text-color);
-  font-size: 22px;
-  transition: all 0.3s ease;
-}
-.header .notification-bar .darkLight .dark-light .fa-sun {
-  opacity: 0;
-  pointer-events: none;
-}
-.header .notification-bar .darkLight .dark-light .fa-sun.active {
-  opacity: 1;
-  pointer-events: auto;
-}
-.header .notification-bar .darkLight .dark-light .fa-moon {
-  opacity: 1;
-  pointer-events: none;
+  padding-right: 24px;
 }
 .header .notification-bar ul {
   display: flex;
@@ -103,7 +161,7 @@ body {
 }
 .header .notification-bar ul .avatar {
   border-radius: 50%;
-  background-color: rgba(27, 46, 75, 0.7019607843);
+  background-color: var(--bg-dark);
   color: #fff;
   font-weight: 700;
   font-size: 15px;
@@ -117,12 +175,12 @@ body {
 }
 .header .notification-bar .fa-regular,
 .header .notification-bar .fa-solid {
-  color: #031a61;
+  color: var(--text-main);
   cursor: pointer;
 }
 .header .notification-bar .fa-regular:hover,
 .header .notification-bar .fa-solid:hover {
-  color: rgba(40, 44, 177, 0.8);
+  color: var(--text-orange);
   transition: all 0.4s ease 0s;
 }
 
@@ -130,17 +188,18 @@ body {
   width: 240px;
   height: 500px;
   position: absolute;
-  background-color: #fff;
-  border-right: 1px solid #f2f7fe;
-  top: 10.5%;
+  background-color: var(--bg-white);
+  border-right: 1px solid var(--bg-line);
+  top: 9.8%;
 }
 .left-container .left-bar-create-btns {
+  width: 240px;
   display: flex;
   justify-content: space-evenly;
   position: fixed;
-  background-color: #fff;
-  border-bottom: 1px solid #f2f7fe;
-  padding: 20px;
+  background-color: transparent;
+  border-bottom: 1px solid var(--bg-line);
+  padding: 10.8px;
   gap: 23px;
 }
 .left-container .left-bar-create-btns .new-btn-dropdown .new-btn {
@@ -154,6 +213,7 @@ body {
   letter-spacing: 0.5px;
   border: 1px solid #c0ccda;
   border-radius: 0.25rem;
+  background-color: #fff;
   cursor: pointer;
 }
 .left-container .left-bar-create-btns .new-btn-dropdown .new-btn:hover {
@@ -168,8 +228,7 @@ body {
   will-change: transform;
   z-index: 1000;
   float: left;
-  color: #001737;
-  background-color: #fff;
+  background-color: var(--bg-white);
   text-align: left;
   border-radius: 0.25rem;
   border: 1px solid rgba(131, 146, 165, 0.2705882353);
@@ -179,6 +238,7 @@ body {
   height: 31px;
   padding: 6px 14px;
   cursor: pointer;
+  color: var(--text-dark);
 }
 .left-container .left-bar-create-btns .new-btn-dropdown .dropdown-menu li:hover {
   width: 100px;
@@ -216,8 +276,7 @@ body {
   will-change: transform;
   z-index: 1000;
   float: left;
-  color: #001737;
-  background-color: #fff;
+  background-color: var(--bg-white);
   text-align: left;
   border-radius: 0.25rem;
   border: 1px solid rgba(131, 146, 165, 0.2705882353);
@@ -227,6 +286,7 @@ body {
   height: 31px;
   padding: 6px 14px;
   cursor: pointer;
+  color: var(--text-dark);
 }
 .left-container .left-bar-create-btns .upload-btn-dropdown .dropdown-menu li:hover {
   width: 100px;
@@ -239,11 +299,12 @@ body {
   transition: all 0.4s ease 0s;
 }
 .left-container .scroll-bar {
-  height: 94%;
-  margin-top: 30%;
+  height: 100%;
+  margin-top: 24%;
   overflow: scroll;
   overflow-y: hidden;
   overflow-x: hidden;
+  background-color: var(--bg-white);
 }
 .left-container .scroll-bar:hover {
   overflow: scroll;
@@ -256,7 +317,7 @@ body {
   width: 4px;
 }
 .left-container .scroll-bar:hover::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px #f2f7fe;
+  box-shadow: inset 0 0 5px var(--bg-white);
   border-radius: 10px;
 }
 .left-container .scroll-bar:hover::-webkit-scrollbar-thumb {
@@ -304,7 +365,7 @@ body {
 }
 .left-container .scroll-bar .my-drive a,
 .left-container .scroll-bar .file-lib a {
-  color: #031a61;
+  color: var(--text-dark);
   font-size: 13px;
 }
 .left-container .scroll-bar .my-drive .fa-regular,
@@ -324,6 +385,7 @@ body {
   flex-direction: column;
   width: 199px;
   height: 45px;
+  color: var(--text-dark);
 }
 .left-container .scroll-bar .storage .storage-status .used {
   position: relative;
@@ -344,9 +406,10 @@ body {
 }
 .left-container .scroll-bar .storage .offer .offer-text {
   font-size: 12px;
+  color: var(--text-dark);
 }
 .left-container .scroll-bar .storage .offer a {
-  color: #0168fa;
+  color: var(--text-main);
   font-size: 12px;
   margin-bottom: 6px;
 }
@@ -355,15 +418,16 @@ body {
   width: 81%;
   height: 48px;
   position: absolute;
-  background-color: #fff;
-  border-bottom: 1px solid #f2f7fe;
+  border-bottom: 1px solid var(--bg-line);
+  border-left: 1px solid var(--bg-line);
   border-top: transparent;
-  top: 10.5%;
-  left: 19%;
+  top: 9.8%;
+  left: 18.7%;
   padding: 12px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  background-color: var(--bg-white);
 }
 .search .search-bar {
   display: flex;
@@ -371,8 +435,9 @@ body {
   padding-left: 20px;
 }
 .search .search-bar .fa-solid {
-  color: grey;
+  color: #5f5d5d;
   cursor: pointer;
+  opacity: 0.5;
 }
 .search .search-bar input {
   align-items: center;
@@ -383,8 +448,17 @@ body {
   background: transparent;
   border: none;
   outline: none;
-  color: grey;
   font-size: 14px;
+}
+.search .search-bar input::-moz-placeholder {
+  font-weight: 500;
+  opacity: 0.5;
+  color: #5f5d5d;
+}
+.search .search-bar input::placeholder {
+  font-weight: 500;
+  opacity: 0.5;
+  color: #5f5d5d;
 }
 .search .settings ul {
   display: flex;
@@ -394,19 +468,20 @@ body {
   margin-right: 20px;
 }
 .search .settings ul .fa-solid {
-  color: grey;
+  color: var(--text-main);
 }
 .search .settings ul .fa-solid:hover {
-  color: rgba(40, 44, 177, 0.8);
+  color: var(--text-orange);
   transition: all 0.4s ease 0s;
 }
 
 .main-container {
   width: 81%;
   position: absolute;
-  top: 19%;
-  left: 19%;
-  background-color: #f2f7fe;
+  top: 17.7%;
+  left: 18.7%;
+  background-color: var(--bg-white);
+  border-left: 1px solid var(--bg-line);
   padding: 20px 25px;
   height: 94%;
   overflow: scroll;
@@ -425,7 +500,7 @@ body {
   width: 4px;
 }
 .main-container:hover::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px #f2f7fe;
+  box-shadow: inset 0 0 5px var(--bg-white);
   border-radius: 10px;
 }
 .main-container:hover::-webkit-scrollbar-thumb {
@@ -438,7 +513,7 @@ body {
 .main-container h1 {
   font-weight: 500;
   line-height: 1.25;
-  color: #031a61;
+  color: var(--text-main);
 }
 .main-container .menu-title {
   margin-bottom: 15px;
@@ -448,7 +523,7 @@ body {
   letter-spacing: 0.5px;
   text-transform: uppercase;
   font-weight: 500;
-  color: rgba(27, 46, 75, 0.7019607843);
+  color: #D4D4D4;
 }
 .main-container .folders {
   display: flex;
@@ -471,12 +546,15 @@ body {
   flex-direction: row;
   align-items: center;
   gap: 15px;
-  background-color: #fff;
-  border: 1px solid #D4D4D4;
+  background-color: var(--bg-files);
+  border: 1px solid var(--text-main);
   border-radius: 5px;
   padding: 10px;
   cursor: pointer;
   position: relative;
+}
+.main-container .folders .folder-items .folder:hover {
+  border: 1px solid var(--text-orange);
 }
 .main-container .folders .folder-items .folder .fa-regular {
   opacity: 0.7;
@@ -484,15 +562,16 @@ body {
 }
 .main-container .folders .folder-items .folder .description .name {
   font-weight: 500;
+  color: var(--text-main);
 }
 .main-container .folders .folder-items .folder .description .name:hover {
-  color: rgba(40, 44, 177, 0.8);
+  color: var(--text-orange);
   transition: all 0.4s ease 0s;
 }
 .main-container .folders .folder-items .folder .description .count {
   font-size: 10px;
   letter-spacing: 0.2px;
-  color: rgba(27, 46, 75, 0.7019607843);
+  color: #475362;
 }
 .main-container .RecentlyAccessed-container {
   margin-bottom: 20px;
@@ -509,18 +588,21 @@ body {
   flex-direction: column;
   min-width: 0px;
   overflow-wrap: break-word;
-  background-color: rgb(255, 255, 255);
+  background-color: var(--bg-files);
   background-clip: border-box;
-  border: 1px solid rgba(72, 94, 144, 0.1607843137);
+  border: 1px solid var(--bg-line);
   border-radius: 4px;
   padding: 10px;
   position: relative;
   cursor: pointer;
 }
+.main-container .RecentlyAccessed-container .AllFilesList-container .AllFilesPost-container:hover {
+  border: 1px solid var(--text-orange);
+}
 .main-container .RecentlyAccessed-container .AllFilesList-container .AllFilesPost-container .icon-preview {
   width: 166px;
   height: 120px;
-  background-color: #f5f6fa;
+  background-color: var(--bg-files);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -533,9 +615,10 @@ body {
   font-weight: 500;
   transition: all 0.4s ease 0s;
   margin-top: 10px;
+  color: var(--text-main);
 }
 .main-container .RecentlyAccessed-container .AllFilesList-container .AllFilesPost-container .name:hover {
-  color: rgba(40, 44, 177, 0.8);
+  color: var(--text-orange);
   transition: all 0.4s ease 0s;
 }
 .main-container .RecentlyAccessed-container .AllFilesList-container .AllFilesPost-container .type {
@@ -568,18 +651,21 @@ body {
   flex-direction: column;
   min-width: 0px;
   overflow-wrap: break-word;
-  background-color: #fff;
+  background-color: var(--bg-files);
   background-clip: border-box;
-  border: 1px solid rgba(72, 94, 144, 0.1607843137);
+  border: 1px solid var(--bg-line);
   border-radius: 4px;
   padding: 10px;
   position: relative;
   cursor: pointer;
 }
+.main-container .Files-container .AllFilesList-container .AllFilesPost-container:hover {
+  border: 1px solid var(--text-orange);
+}
 .main-container .Files-container .AllFilesList-container .AllFilesPost-container .icon-preview {
   width: 166px;
   height: 120px;
-  background-color: #f5f6fa;
+  background-color: var(--bg-files);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -592,9 +678,10 @@ body {
   font-weight: 500;
   transition: all 0.4s ease 0s;
   margin-top: 10px;
+  color: var(--text-main);
 }
 .main-container .Files-container .AllFilesList-container .AllFilesPost-container .name:hover {
-  color: rgba(40, 44, 177, 0.8);
+  color: var(--text-orange);
   transition: all 0.4s ease 0s;
 }
 .main-container .Files-container .AllFilesList-container .AllFilesPost-container .type {
@@ -634,21 +721,212 @@ body {
   left: 89%;
   cursor: pointer;
 }
+.modal-container .menu-hidden {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+.modal-container .menu-hidden .ModalViewDetailsButton, .modal-container .menu-hidden .ModalShareButton,
+.modal-container .menu-hidden .MarkImportant, .modal-container .menu-hidden .Copy, .modal-container .menu-hidden .Delete, .modal-container .menu-hidden .Move,
+.modal-container .menu-hidden .Rename, .modal-container .menu-hidden .Download {
+  width: 100px;
+  height: 27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  position: fixed;
+}
+.modal-container .menu-hidden .ModalViewDetailsButton .show, .modal-container .menu-hidden .ModalShareButton .show,
+.modal-container .menu-hidden .MarkImportant .show, .modal-container .menu-hidden .Copy .show, .modal-container .menu-hidden .Delete .show, .modal-container .menu-hidden .Move .show,
+.modal-container .menu-hidden .Rename .show, .modal-container .menu-hidden .Download .show {
+  display: block;
+}
+.modal-container .menu-hidden .ModalViewDetailsButton .hide, .modal-container .menu-hidden .ModalShareButton .hide,
+.modal-container .menu-hidden .MarkImportant .hide, .modal-container .menu-hidden .Copy .hide, .modal-container .menu-hidden .Delete .hide, .modal-container .menu-hidden .Move .hide,
+.modal-container .menu-hidden .Rename .hide, .modal-container .menu-hidden .Download .hide {
+  display: none;
+}
+.modal-container .menu-hidden .ModalViewDetailsButton .overlay, .modal-container .menu-hidden .ModalShareButton .overlay,
+.modal-container .menu-hidden .MarkImportant .overlay, .modal-container .menu-hidden .Copy .overlay, .modal-container .menu-hidden .Delete .overlay, .modal-container .menu-hidden .Move .overlay,
+.modal-container .menu-hidden .Rename .overlay, .modal-container .menu-hidden .Download .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2274509804);
+  transition: opacity 0.2s ease;
+}
+.modal-container .menu-hidden .ModalViewDetailsButton .modal, .modal-container .menu-hidden .ModalShareButton .modal,
+.modal-container .menu-hidden .MarkImportant .modal, .modal-container .menu-hidden .Copy .modal, .modal-container .menu-hidden .Delete .modal, .modal-container .menu-hidden .Move .modal,
+.modal-container .menu-hidden .Rename .modal, .modal-container .menu-hidden .Download .modal {
+  width: 500px;
+  height: 487px;
+  position: fixed;
+  left: 35%;
+  bottom: 90%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 2px;
+  transform: translateY(100%);
+  transition: transform 0.2s ease;
+  box-shadow: 0 2px 8px 3px;
+}
+.modal-container .menu-hidden .ModalViewDetailsButton .modal h1, .modal-container .menu-hidden .ModalShareButton .modal h1,
+.modal-container .menu-hidden .MarkImportant .modal h1, .modal-container .menu-hidden .Copy .modal h1, .modal-container .menu-hidden .Delete .modal h1, .modal-container .menu-hidden .Move .modal h1,
+.modal-container .menu-hidden .Rename .modal h1, .modal-container .menu-hidden .Download .modal h1 {
+  font-size: 20px;
+  line-height: 1.25;
+  color: #001737;
+  font-weight: 500;
+  margin: 0px 0px 8px;
+}
+.modal-container .menu-hidden .ModalViewDetailsButton .modal .desc-form, .modal-container .menu-hidden .ModalShareButton .modal .desc-form,
+.modal-container .menu-hidden .MarkImportant .modal .desc-form, .modal-container .menu-hidden .Copy .modal .desc-form, .modal-container .menu-hidden .Delete .modal .desc-form, .modal-container .menu-hidden .Move .modal .desc-form,
+.modal-container .menu-hidden .Rename .modal .desc-form, .modal-container .menu-hidden .Download .modal .desc-form {
+  width: 282px;
+  height: 100px;
+}
+.modal-container .menu-hidden .ModalViewDetailsButton .modal .desc-form textarea, .modal-container .menu-hidden .ModalShareButton .modal .desc-form textarea,
+.modal-container .menu-hidden .MarkImportant .modal .desc-form textarea, .modal-container .menu-hidden .Copy .modal .desc-form textarea, .modal-container .menu-hidden .Delete .modal .desc-form textarea, .modal-container .menu-hidden .Move .modal .desc-form textarea,
+.modal-container .menu-hidden .Rename .modal .desc-form textarea, .modal-container .menu-hidden .Download .modal .desc-form textarea {
+  width: 282px;
+  height: 100px;
+  padding: 0.46875rem 0.625rem;
+  font-size: 0.875rem;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #1b2e4b;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #c0ccda;
+  border-radius: 4px;
+  transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+  margin-top: 5px;
+  white-space: nowrap;
+}
+.modal-container .menu-hidden .ModalViewDetailsButton .modal .desc-form textarea:focus, .modal-container .menu-hidden .ModalShareButton .modal .desc-form textarea:focus,
+.modal-container .menu-hidden .MarkImportant .modal .desc-form textarea:focus, .modal-container .menu-hidden .Copy .modal .desc-form textarea:focus, .modal-container .menu-hidden .Delete .modal .desc-form textarea:focus, .modal-container .menu-hidden .Move .modal .desc-form textarea:focus,
+.modal-container .menu-hidden .Rename .modal .desc-form textarea:focus, .modal-container .menu-hidden .Download .modal .desc-form textarea:focus {
+  color: #596882;
+  background-color: #fff;
+  border-color: #7cb2fe;
+  outline: 0px;
+  box-shadow: rgba(1, 104, 250, 0.2509803922) 0px 0px 0px 0.2rem;
+}
+.modal-container .menu-hidden .ModalViewDetailsButton .modal .desc-form textarea::-moz-placeholder, .modal-container .menu-hidden .ModalShareButton .modal .desc-form textarea::-moz-placeholder, .modal-container .menu-hidden .MarkImportant .modal .desc-form textarea::-moz-placeholder, .modal-container .menu-hidden .Copy .modal .desc-form textarea::-moz-placeholder, .modal-container .menu-hidden .Delete .modal .desc-form textarea::-moz-placeholder, .modal-container .menu-hidden .Move .modal .desc-form textarea::-moz-placeholder, .modal-container .menu-hidden .Rename .modal .desc-form textarea::-moz-placeholder, .modal-container .menu-hidden .Download .modal .desc-form textarea::-moz-placeholder {
+  color: #c0ccda;
+}
+.modal-container .menu-hidden .ModalViewDetailsButton .modal .desc-form textarea::placeholder, .modal-container .menu-hidden .ModalShareButton .modal .desc-form textarea::placeholder,
+.modal-container .menu-hidden .MarkImportant .modal .desc-form textarea::placeholder, .modal-container .menu-hidden .Copy .modal .desc-form textarea::placeholder, .modal-container .menu-hidden .Delete .modal .desc-form textarea::placeholder, .modal-container .menu-hidden .Move .modal .desc-form textarea::placeholder,
+.modal-container .menu-hidden .Rename .modal .desc-form textarea::placeholder, .modal-container .menu-hidden .Download .modal .desc-form textarea::placeholder {
+  color: #c0ccda;
+}
+.modal-container .menu-hidden .ModalViewDetailsButton .modal .details-description, .modal-container .menu-hidden .ModalShareButton .modal .details-description,
+.modal-container .menu-hidden .MarkImportant .modal .details-description, .modal-container .menu-hidden .Copy .modal .details-description, .modal-container .menu-hidden .Delete .modal .details-description, .modal-container .menu-hidden .Move .modal .details-description,
+.modal-container .menu-hidden .Rename .modal .details-description, .modal-container .menu-hidden .Download .modal .details-description {
+  display: flex;
+  flex-direction: column;
+}
+.modal-container .menu-hidden .ModalViewDetailsButton .modal .details-description .description-line, .modal-container .menu-hidden .ModalShareButton .modal .details-description .description-line,
+.modal-container .menu-hidden .MarkImportant .modal .details-description .description-line, .modal-container .menu-hidden .Copy .modal .details-description .description-line, .modal-container .menu-hidden .Delete .modal .details-description .description-line, .modal-container .menu-hidden .Move .modal .details-description .description-line,
+.modal-container .menu-hidden .Rename .modal .details-description .description-line, .modal-container .menu-hidden .Download .modal .details-description .description-line {
+  display: flex;
+  flex-direction: row;
+}
+.modal-container .menu-hidden .ModalViewDetailsButton .modal .details-description .description-line .left, .modal-container .menu-hidden .ModalShareButton .modal .details-description .description-line .left,
+.modal-container .menu-hidden .MarkImportant .modal .details-description .description-line .left, .modal-container .menu-hidden .Copy .modal .details-description .description-line .left, .modal-container .menu-hidden .Delete .modal .details-description .description-line .left, .modal-container .menu-hidden .Move .modal .details-description .description-line .left,
+.modal-container .menu-hidden .Rename .modal .details-description .description-line .left, .modal-container .menu-hidden .Download .modal .details-description .description-line .left {
+  width: 116px;
+  margin-top: 10px;
+}
+.modal-container .menu-hidden .ModalViewDetailsButton .modal .details-description .description-line .right, .modal-container .menu-hidden .ModalShareButton .modal .details-description .description-line .right,
+.modal-container .menu-hidden .MarkImportant .modal .details-description .description-line .right, .modal-container .menu-hidden .Copy .modal .details-description .description-line .right, .modal-container .menu-hidden .Delete .modal .details-description .description-line .right, .modal-container .menu-hidden .Move .modal .details-description .description-line .right,
+.modal-container .menu-hidden .Rename .modal .details-description .description-line .right, .modal-container .menu-hidden .Download .modal .details-description .description-line .right {
+  margin: 10px 16px;
+}
+.modal-container .menu-hidden .ModalViewDetailsButton .modal .details-description .description-line .right-text, .modal-container .menu-hidden .ModalShareButton .modal .details-description .description-line .right-text,
+.modal-container .menu-hidden .MarkImportant .modal .details-description .description-line .right-text, .modal-container .menu-hidden .Copy .modal .details-description .description-line .right-text, .modal-container .menu-hidden .Delete .modal .details-description .description-line .right-text, .modal-container .menu-hidden .Move .modal .details-description .description-line .right-text,
+.modal-container .menu-hidden .Rename .modal .details-description .description-line .right-text, .modal-container .menu-hidden .Download .modal .details-description .description-line .right-text {
+  width: 282px;
+  height: 105px;
+  margin: 10px 60px;
+}
+.modal-container .menu-hidden .ModalViewDetailsButton .submit-btn, .modal-container .menu-hidden .ModalShareButton .submit-btn,
+.modal-container .menu-hidden .MarkImportant .submit-btn, .modal-container .menu-hidden .Copy .submit-btn, .modal-container .menu-hidden .Delete .submit-btn, .modal-container .menu-hidden .Move .submit-btn,
+.modal-container .menu-hidden .Rename .submit-btn, .modal-container .menu-hidden .Download .submit-btn {
+  width: 69px;
+  height: 37px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.5;
+  border: 1px solid #5f6d88;
+  transition: color 0.15s ease-in-out 0s, background-color 0.15s ease-in-out 0s, border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+  color: #fff;
+  background-color: #5f6d88;
+  padding: 0.46875rem 0.9375rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+  margin-top: 38px;
+  margin-left: 77%;
+}
+.modal-container .menu-hidden .ModalViewDetailsButton .close-btn, .modal-container .menu-hidden .ModalShareButton .close-btn,
+.modal-container .menu-hidden .MarkImportant .close-btn, .modal-container .menu-hidden .Copy .close-btn, .modal-container .menu-hidden .Delete .close-btn, .modal-container .menu-hidden .Move .close-btn,
+.modal-container .menu-hidden .Rename .close-btn, .modal-container .menu-hidden .Download .close-btn {
+  position: absolute;
+  right: -1rem;
+  top: -1rem;
+  width: 2rem;
+  height: 2rem;
+  padding: 0.5rem;
+  margin: 0 auto;
+  border-radius: 50%;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2274509804);
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.5607843137);
+}
+.modal-container .menu-hidden .ModalViewDetailsButton .details-btn, .modal-container .menu-hidden .ModalShareButton .details-btn,
+.modal-container .menu-hidden .MarkImportant .details-btn, .modal-container .menu-hidden .Copy .details-btn, .modal-container .menu-hidden .Delete .details-btn, .modal-container .menu-hidden .Move .details-btn,
+.modal-container .menu-hidden .Rename .details-btn, .modal-container .menu-hidden .Download .details-btn {
+  height: 27px;
+  width: 100px;
+  font-size: 12px;
+  display: flex;
+  padding: 6px 0px;
+  font-weight: 400;
+  color: #1c273c;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.modal-container .menu-hidden .ModalViewDetailsButton .details-btn .menu-hidden-icon, .modal-container .menu-hidden .ModalShareButton .details-btn .menu-hidden-icon,
+.modal-container .menu-hidden .MarkImportant .details-btn .menu-hidden-icon, .modal-container .menu-hidden .Copy .details-btn .menu-hidden-icon, .modal-container .menu-hidden .Delete .details-btn .menu-hidden-icon, .modal-container .menu-hidden .Move .details-btn .menu-hidden-icon,
+.modal-container .menu-hidden .Rename .details-btn .menu-hidden-icon, .modal-container .menu-hidden .Download .details-btn .menu-hidden-icon {
+  width: 14px;
+  height: 14px;
+  stroke-width: 2.5px;
+  margin-right: 10px;
+  color: #8392a5;
+}
 .modal-container .menu-hidden .menu-list {
-  text-decoration: none;
-  list-style-type: none;
+  height: 27px;
+  width: 100%;
   font-size: 12px;
   display: flex;
   align-items: center;
-  padding: 6px 10px;
   border-radius: 0.25rem;
   transition: all 0.2s ease-in-out 0s;
-  clear: both;
   font-weight: 400;
   color: #1c273c;
   text-align: inherit;
   white-space: nowrap;
-  width: 100%;
   background: transparent;
   border: none;
 }
@@ -657,12 +935,135 @@ body {
   border-radius: 0.25rem;
   transition: all 0.4s ease 0s;
 }
-.modal-container .menu-hidden .menu-hidden-icon {
-  width: 14px;
-  height: 14px;
-  stroke-width: 2.5px;
+.modal-container .menu-hidden .ModalShareButton .modal {
+  width: 500px;
+  height: 377px;
+}
+.modal-container .menu-hidden .ModalShareButton .modal h1 {
+  margin-bottom: 25px;
+}
+.modal-container .menu-hidden .ModalShareButton .modal .share-email {
+  display: flex;
+  flex-direction: column;
+}
+.modal-container .menu-hidden .ModalShareButton .modal .share-email form p {
+  margin-bottom: 15px;
+}
+.modal-container .menu-hidden .ModalShareButton .modal .share-email form input {
+  width: 438px;
+  height: 38px;
+  padding: 0.46875rem 0.625rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgb(27, 46, 75);
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #c0ccda;
+  border-radius: 4px;
+  transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+  margin-bottom: 15px;
+}
+.modal-container .menu-hidden .ModalShareButton .modal .share-email form input:focus {
+  color: #596882;
+  background-color: #fff;
+  border-color: #7cb2fe;
+  outline: 0px;
+  box-shadow: rgba(1, 104, 250, 0.2509803922) 0px 0px 0px 0.2rem;
+}
+.modal-container .menu-hidden .ModalShareButton .modal .share-email form input::-moz-placeholder {
+  color: #c0ccda;
+}
+.modal-container .menu-hidden .ModalShareButton .modal .share-email form input::placeholder {
+  color: #c0ccda;
+}
+.modal-container .menu-hidden .ModalShareButton .modal .rights {
+  display: flex;
+  flex-direction: row;
+  margin: 0px 0px 35px;
+}
+.modal-container .menu-hidden .ModalShareButton .modal .rights p {
+  font-size: 13px;
+}
+.modal-container .menu-hidden .ModalShareButton .modal .rights select {
+  font-size: 13px;
+  border: none;
+  transition: all 0.4s ease 0s;
+  color: #0168fa;
+  text-decoration: none;
+}
+.modal-container .menu-hidden .ModalShareButton .modal .rights select option {
+  transition: all 0.4s ease 0s;
+  color: #0168fa;
+  text-decoration: none;
+  padding: 5px;
+}
+.modal-container .menu-hidden .ModalShareButton .modal .share-social {
+  border-top: 1px solid rgba(72, 94, 144, 0.16);
+  border-bottom: 1px solid rgba(72, 94, 144, 0.16);
+  border-bottom-right-radius: calc(0.3rem - 1px);
+  border-bottom-left-radius: calc(0.3rem - 1px);
+  padding: 20px 0px;
+}
+.modal-container .menu-hidden .ModalShareButton .modal .share-social p {
+  margin-bottom: 10px;
+}
+.modal-container .menu-hidden .ModalShareButton .modal .share-social .fa-brands {
   margin-right: 10px;
-  color: #8392a5;
+}
+.modal-container .menu-hidden .ModalShareButton .modal .share-social .fa-brands:hover {
+  color: #7cb2fe;
+}
+.modal-container .menu-hidden .ModalShareButton .modal .submit {
+  position: relative;
+  bottom: 12px;
+}
+.modal-container .menu-hidden .Move .modal {
+  width: 500px;
+  height: 377px;
+}
+.modal-container .menu-hidden .Move .modal h1 {
+  margin-bottom: 25px;
+}
+.modal-container .menu-hidden .Move .modal .MoveFolder-list .folder-items {
+  display: flex;
+  flex-direction: column;
+}
+.modal-container .menu-hidden .Move .modal .MoveFolder-list .folder-items .folder {
+  width: 236px;
+  height: 53px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  position: relative;
+}
+.modal-container .menu-hidden .Move .modal .MoveFolder-list .folder-items .folder .icon-preview {
+  background: none;
+}
+.modal-container .menu-hidden .Move .modal .MoveFolder-list .folder-items .folder .icon-preview .fa-regular {
+  display: none;
+  opacity: 0.7;
+  color: rgba(40, 44, 177, 0.8);
+}
+.modal-container .menu-hidden .Move .modal .MoveFolder-list .folder-items .folder .description .name {
+  font-weight: 500;
+}
+.modal-container .menu-hidden .Move .modal .MoveFolder-list .folder-items .folder .description .name:hover {
+  color: rgba(40, 44, 177, 0.8);
+  transition: all 0.4s ease 0s;
+}
+.modal-container .menu-hidden .Move .modal .MoveFolder-list .folder-items .folder .description .count {
+  display: none;
+  font-size: 10px;
+  letter-spacing: 0.2px;
+  color: rgba(27, 46, 75, 0.7019607843);
+}
+.modal-container .menu-hidden .Move .modal .submit {
+  position: relative;
+  bottom: 12px;
 }
 
 .modal-button {
@@ -676,8 +1077,8 @@ body {
 }
 
 .modal-button-icon {
-  width: 18px;
-  height: 18px;
+  width: 13px;
+  height: 13px;
 }
 
 .authorization {
@@ -821,4 +1222,82 @@ body {
 }
 .LanguageBar select:focus {
   border: none;
+}
+
+.details-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1490196078);
+  max-width: 90%;
+  max-height: 90%;
+  width: 500px;
+  height: 500px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.details-container .doar-module-open {
+  overflow: hidden;
+}
+.details-container .details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.details-container .details-title {
+  font-size: 20px;
+  line-height: 1.25;
+  color: #001737;
+  font-weight: 500;
+  margin: 0px 0px 8px;
+}
+.details-container .details-close {
+  border: none;
+  background: transparent;
+  font-weight: 300;
+  font-size: 28px;
+  line-height: 0.87;
+  padding: 1rem;
+  margin: -1rem -1rem -1rem auto;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  color: rgb(27, 46, 75);
+  text-shadow: #fff 0px 1px 0px;
+  opacity: 0.5;
+  cursor: pointer;
+}
+.details-container .details-body {
+  flex: 1;
+  overflow: auto;
+}
+.details-container .details-body .details-content {
+  margin-top: 20px;
+}
+.details-container .details-body .details-button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 400;
+  text-align: center;
+  cursor: pointer;
+  line-height: 1.5;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  border: 1px solid #5f6d88;
+  transition: color 0.15s ease-in-out 0s, background-color 0.15s ease-in-out 0s, border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+  color: #fff;
+  background-color: #5f6d88;
+  padding: 0.46875rem 0.9375rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
 }/*# sourceMappingURL=App.css.map */

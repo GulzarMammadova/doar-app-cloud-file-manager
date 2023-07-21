@@ -1,6 +1,6 @@
 import '../../../App.css';
 import './FoldersList'
-import {MenuModal} from '../AllFiles/DropdownButtonContent'
+import {MenuModal} from '../ModalButton/ModalButtonContent'
 
 
 export const FolderItem = ({
@@ -11,7 +11,7 @@ export const FolderItem = ({
                 <MenuModal/>
                     <div className="icon-preview">
                         {/* <img className="icon" src={icon} alt="post" /> */}
-                        <i class="fa-regular fa-folder fa-2xl"></i>
+                        <i className="fa-regular fa-folder fa-2xl"></i>
 
                     </div>
                     <div className="description">

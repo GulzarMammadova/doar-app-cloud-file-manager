@@ -1,6 +1,6 @@
 import '../../../App.css';
 import './RecentlyAccessedList'
-import {MenuModal} from '../AllFiles/DropdownButtonContent'
+import {MenuModal} from '../ModalButton/ModalButtonContent'
 
 
 export const RecentlyAccessedPost = ({  
