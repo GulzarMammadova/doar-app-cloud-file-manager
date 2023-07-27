@@ -1,15 +1,15 @@
 import React from 'react';
 import '../../../App.css';
-import { FoldersList } from './FoldersList';
+import { CreatedFoldersList } from './CreatedFoldersList';
 import { useTranslation } from 'react-i18next';
 
-export function Folders () {
+export function CreatedFolders () {
   const { t } = useTranslation();
 
   return (
     <div className="folders">
     <div className="menu-title"><span>{t('main.folders')}</span></div>
-      <FoldersList/>
+      <CreatedFoldersList/>
     </div>
   )
 }

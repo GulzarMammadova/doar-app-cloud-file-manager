@@ -1,6 +1,6 @@
 import React from "react";
 import '../../../App.css';
-import {FoldersList} from '../Folders/FoldersList'
+// import {FoldersList} from '../Folders/FoldersList'
 
 export default function MoveContent(props) {
   const { show, closeModal } = props;
@@ -9,13 +9,23 @@ export default function MoveContent(props) {
     <>
       <div className={show ? "overlay" : "hide"} onClick={closeModal} />
       <div className={show ? "modal" : "hide"}>
-        <button className="close-btn" onClick={closeModal}>X</button>
-        <h1>Move to</h1>
-<div className="MoveFolder-list">
-<FoldersList/>
-</div>
+      <div className="title">
+          <h1>Move Item to</h1>
+          <span>Please select a folder</span>
+        </div>
+        <div className="folder-list">
+        {/* <FoldersList/> */}
+        </div>
+
         <div className="submit">
-        <input className="submit-btn" type="submit" value="Submit" />
+          <div>
+            <input className="submit-btn" type="submit" value="Submit" />
+          </div>
+          <div>
+            <button className="submit-btn" type="submit" onClick={closeModal}>
+              Close
+            </button>
+          </div>
         </div>
       </div>
     </>

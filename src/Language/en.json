@@ -42,9 +42,21 @@
       "fileName": "File Name",
       "fileType":"File Type",
       "fileSize":"File Size",
+      "Download":"Created",
       "created":"Created",
       "accessed":"Accessed",
-      "descriprion":"Descriprion"
+      "description":"Descriprion"
+    },
+    "modalMenuList":{
+      "view": "View Details",
+      "markImport":"Mark as Important",
+      "share":"Share",
+      "download":"Download",
+      "copyTo":"Copy to",
+      "moveTo":"Move to",
+      "rename":"Rename",
+      "delete":"Delete",
+      "addDesc":"Add description"
     }
     
   }

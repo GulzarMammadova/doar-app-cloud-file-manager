@@ -1,10 +1,10 @@
 
 import '../../../App.css';
-import { FolderItem } from './FolderItem' ;
+import { CreatedFolderItem } from './CreatedFolderItem' ;
 import folders from '../../../pictures/icons/folder.png'
 
 
-export function FoldersList () {
+export function CreatedFoldersList () {
  
     const FoldersList = [
         {
@@ -41,7 +41,7 @@ export function FoldersList () {
     return (
         <div className="folder-items">
             {FoldersList.map((post, index) => (
-                <FolderItem key={index} index={index} post={post} />
+                <CreatedFolderItem key={index} index={index} post={post} />
             ))}
         </div>
     )

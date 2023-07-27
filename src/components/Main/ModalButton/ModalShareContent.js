@@ -8,12 +8,11 @@ export default function ModalShareContent(props) {
     <>
       <div className={show ? "overlay" : "hide"} onClick={closeModal} />
       <div className={show ? "modal" : "hide"}>
-        <button className="close-btn" onClick={closeModal}>X</button>
         <h1>Share With Others</h1>
         <div className="share-email">
           <form>
-          <p>Other users:</p>
-              <input type="text" name="name" placeholder="Enter names ar email addresses"/>
+            <p>Other users:</p>
+            <input type="text" name="name" placeholder="Enter names ar email addresses" />
           </form>
           <div className="rights">
             <p>Rights:</p>
@@ -30,8 +29,12 @@ export default function ModalShareContent(props) {
           <i className="fa-brands fa-facebook-f fa-lg"></i>
         </div>
         <div className="submit">
-        <input className="submit-btn" type="submit" value="Submit" />
+          <div><input className="submit-btn" type="submit" value="Submit" />
+          </div>
+          <div><button className='submit-btn' type="submit" onClick={closeModal}>Close</button>
+          </div>
         </div>
+
       </div>
     </>
   );

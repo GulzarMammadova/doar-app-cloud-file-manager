@@ -1,17 +1,17 @@
 import '../../../App.css';
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import star from '../../../pictures/icons/icons8-star-26.png';
-// import MarkImportantContent from './MarkImportantContent'
+import { useTranslation } from 'react-i18next';
 
 export function MarkImportant() {
-  const [show, setShow] = useState(false);
-  const openModal = () => setShow(true);
-  // const closeModal = () => setShow(false);
+
+  const { t } = useTranslation();
 
   return (
     <div className="MarkImportant">
-      {!show && <button className='details-btn' onClick={openModal}><img className="menu-hidden-icon" src={star} alt="post" />Mark as Important</button>}
-      {/* <MarkImportantContent closeModal={closeModal} show={show} /> */}
+       <button className='details-btn'>
+      <img className="menu-hidden-icon" src={star} alt="post" />
+      {t('modalMenuList.markImport')}</button>
     </div>
   );
 }

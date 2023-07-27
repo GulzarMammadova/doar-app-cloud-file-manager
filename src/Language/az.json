@@ -42,8 +42,21 @@
     "fileName": "Fayl adı",
     "fileType":"Fayl Tipi",
     "fileSize":"Fayl ölçüsü",
+    "Download":"Yüklənib",
     "created":"Yaradıldı",
     "accessed":"Giriş",
-    "descriprion":"Təsvir"
+    "description":"Təsvir",
+    "addDesc":"Təsvir əlavə et"
+
+  },
+  "modalMenuList":{
+    "view": "Detallara bax",
+    "markImport":"Vacib olaraq qeyd et",
+    "share":"Paylaş",
+    "download":"Yüklə",
+    "copyTo":"Kopyala",
+    "moveTo":"Köçür",
+    "rename":"Adını dəyişdir",
+    "delete":"Sil"
   }
 }

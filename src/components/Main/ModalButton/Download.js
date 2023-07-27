@@ -1,17 +1,18 @@
 import '../../../App.css';
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import dwnld from '../../../pictures/icons/icons8-download-48.png';
-import DownloadContent from './DownloadContent'
+// import DownloadContent from './DownloadContent'
+import { useTranslation } from 'react-i18next';
+
 
 export function Download() {
-  const [show, setShow] = useState(false);
-  const openModal = () => setShow(true);
-  const closeModal = () => setShow(false);
+  const { t } = useTranslation();
 
   return (
     <div className="Download">
-      {!show && <button className='details-btn' onClick={openModal}><img className="menu-hidden-icon" src={dwnld} alt="post" />Download</button>}
-      <DownloadContent closeModal={closeModal} show={show} />
+      <button className='details-btn' >
+      <img className="menu-hidden-icon" src={dwnld} alt="post" />
+      {t('modalMenuList.download')}</button>
     </div>
   );
 }

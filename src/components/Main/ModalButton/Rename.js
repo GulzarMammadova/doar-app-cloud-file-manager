@@ -1,17 +1,16 @@
 import '../../../App.css';
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import rename from '../../../pictures/icons/icons8-edit-64.png';
-import RenameContent from './RenameContent'
+import { useTranslation } from 'react-i18next';
 
 export function Rename() {
-  const [show, setShow] = useState(false);
-  const openModal = () => setShow(true);
-  const closeModal = () => setShow(false);
+  const { t } = useTranslation();
 
   return (
     <div className="Rename">
-      {!show && <button className='details-btn' onClick={openModal}><img className="menu-hidden-icon" src={rename} alt="post" />Rename</button>}
-      <RenameContent closeModal={closeModal} show={show} />
+     <button className='details-btn'>
+        <img className="menu-hidden-icon" src={rename} alt="post" />
+        {t('modalMenuList.rename')}</button>
     </div>
   );
 }

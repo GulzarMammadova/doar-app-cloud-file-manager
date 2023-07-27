@@ -1,9 +1,9 @@
 import '../../../App.css';
-import './FoldersList'
+import './CreatedFoldersList'
 import {MenuModal} from '../ModalButton/ModalButtonContent'
 
 
-export const FolderItem = ({
+export const CreatedFolderItem = ({
     post: { icon, name, count }, index }) => {
     return (
             <div className="folder-items">

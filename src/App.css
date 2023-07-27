@@ -7,17 +7,19 @@
 }
 
 body {
-  --text-main:#5023B1;
+  --text-main: #1b2e4b;
   --text-white: #fff;
-  --text-dark: #421D44;
+  --text-dark: #8392a5;
   --text-orange: #D533F3;
-  --bg-purple-light: #f5f5f5;
   --bg-white: #fff;
-  --bg-pink: #D533F3;
   --bg-dark: #421D44;
-  --bg-files: #fff;
-  --bg-border:#D533F3;
-  --bg-line:#f2f7fe;
+  --bg-files: #f5f6fa;
+  --bg-file-inside: #fff;
+  --bg-border: #D533F3;
+  --bg-line: #f2f7fe;
+  --bg-avatar: #8392a5;
+  --bg-hover:#f5f6fa;
+  --bg-btn-menu: #fff;
   font-family: "IBM Plex Sans", sans-serif;
   font-style: normal;
   font-size: 0.875rem;
@@ -25,24 +27,26 @@ body {
 }
 
 .dark-content {
-  --text-main:#652be0;
-  --text-white: #e6e6e6;
+  --text-main: #cdd4e0;
+  --text-white: #97a3b9;
   --text-dark: #fff;
   --text-orange: #DA583C;
-  --bg-purple-light: #A740EC;
-  --bg-white: #110D75;
-  --bg-pink: #D533F3;
+  --bg-white: #141c2b;
   --bg-dark: #DA583C;
-  --bg-files: #0b094b;
-  --bg-border:#201ac9;
-  --bg-line:#413f76;
+  --bg-files: #1c273c;
+  --bg-file-inside: #192235;
+  --bg-border: #1c273c;
+  --bg-line: #485e9029;
+  --bg-avatar: #8392a5;
+  --bg-hover:#a2abe162;
+  --bg-btn-menu: #1c2639;
 }
 
 .wrapper {
   width: 50px;
   height: 25px;
   position: absolute;
-  right: 18%;
+  right: 14.5%;
   top: 3.5%;
   z-index: 11111;
 }
@@ -61,9 +65,12 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  border-radius: 15px; /* Half of the height to make a rounded effect */
-  width: 50px; /* Adjusted width for the wave */
-  height: 21px; /* Adjusted height for the wave */
+  border-radius: 15px;
+  /* Half of the height to make a rounded effect */
+  width: 50px;
+  /* Adjusted width for the wave */
+  height: 21px;
+  /* Adjusted height for the wave */
   display: none;
 }
 .wrapper .switch .slider {
@@ -75,18 +82,24 @@ body {
   bottom: 0;
   background-color: var(--text-main);
   transition: all 1.4s;
-  border-radius: 10.5px; /* Half of the height to make a rounded effect */
+  border-radius: 10.5px;
+  /* Half of the height to make a rounded effect */
   z-index: 100;
   overflow: hidden;
 }
 .wrapper .switch .slider:before, .wrapper .switch .slider:after {
   position: absolute;
   content: "";
-  height: 13px; /* Half of the height to make a rounded effect */
-  width: 13px; /* Half of the height to make a rounded effect */
-  left: 2px; /* Adjusted position for the slider before and after elements */
-  bottom: 4px; /* Adjusted position for the slider before and after elements */
-  border-radius: 10.5px; /* Half of the height to make a rounded effect */
+  height: 13px;
+  /* Half of the height to make a rounded effect */
+  width: 13px;
+  /* Half of the height to make a rounded effect */
+  left: 2px;
+  /* Adjusted position for the slider before and after elements */
+  bottom: 4px;
+  /* Adjusted position for the slider before and after elements */
+  border-radius: 10.5px;
+  /* Half of the height to make a rounded effect */
   background-color: #fff;
 }
 .wrapper .switch .slider:before {
@@ -103,10 +116,12 @@ body {
   display: block;
 }
 .wrapper .switch input:checked + .slider:before {
-  transform: translateX(32.5px); /* Half of the width to center the before element */
+  transform: translateX(32.5px);
+  /* Half of the width to center the before element */
 }
 .wrapper .switch input:checked + .slider:after {
-  transform: translateX(32.5px); /* Half of the width to center the after element */
+  transform: translateX(32.5px);
+  /* Half of the width to center the after element */
 }
 
 .header {
@@ -122,29 +137,66 @@ body {
 .header .logo {
   width: 19%;
   height: 60px;
+  font-size: 1.09375rem;
+  line-height: inherit;
+  white-space: nowrap;
+  display: flex;
   padding-left: 20px;
-}
-.header .logo .logo-img {
-  width: 90px;
-  height: 59.6px;
+  align-items: center;
 }
 .header .nav-menu {
   width: 46.3%;
+  height: 60px;
 }
-.header .nav-menu ul {
+.header .nav-menu .search {
+  width: 46.3%;
+  height: 60px;
+  position: absolute;
+  border-bottom: 1px solid var(--bg-line);
+  border-left: 1px solid var(--bg-line);
+  border-top: transparent;
+  left: 18.7%;
+  padding: 12px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  padding-left: 30px;
+  justify-content: space-between;
+  background-color: var(--bg-white);
 }
-.header .nav-menu ul li a {
-  margin-right: 35px;
-  color: var(--text-main);
+.header .nav-menu .search .search-bar {
+  width: 70.3%;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  border-radius: 50px;
+  border-color: #969494;
+  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 0 rgba(0, 15, 48, 0.07);
+}
+.header .nav-menu .search .search-bar .fa-solid {
+  color: var(--text-dark);
+  cursor: pointer;
+  opacity: 0.5;
+}
+.header .nav-menu .search .search-bar input {
+  align-items: center;
+  padding: 8px 16px;
+  gap: 8px;
+  width: 89%;
+  height: 40px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: var(--text-dark);
+}
+.header .nav-menu .search .search-bar input::-moz-placeholder {
   font-weight: 500;
+  opacity: 0.5;
+  color: var(--text-dark);
 }
-.header .nav-menu ul li a:hover {
-  color: var(--text-orange);
-  transition: all 0.4s ease 0s;
+.header .nav-menu .search .search-bar input::placeholder {
+  font-weight: 500;
+  opacity: 0.5;
+  color: var(--text-dark);
 }
 .header .notification-bar {
   width: 33.3%;
@@ -161,7 +213,7 @@ body {
 }
 .header .notification-bar ul .avatar {
   border-radius: 50%;
-  background-color: var(--bg-dark);
+  background-color: var(--bg-avatar);
   color: #fff;
   font-weight: 700;
   font-size: 15px;
@@ -180,7 +232,33 @@ body {
 }
 .header .notification-bar .fa-regular:hover,
 .header .notification-bar .fa-solid:hover {
-  color: var(--text-orange);
+  color: var(--text-dark);
+  transition: all 0.4s ease 0s;
+}
+.header .settings {
+  width: 100%;
+  height: 54.5px;
+  position: fixed;
+  align-items: center;
+  background-color: var(--bg-white);
+  border-bottom: 1px solid var(--bg-line);
+  z-index: 111;
+}
+.header .settings ul {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  left: 68.6%;
+}
+.header .settings ul li {
+  padding: 20px 15px;
+}
+.header .settings ul .fa-solid {
+  color: #969494;
+}
+.header .settings ul .fa-solid:hover {
+  color: var(--text-dark);
   transition: all 0.4s ease 0s;
 }
 
@@ -194,10 +272,12 @@ body {
 }
 .left-container .left-bar-create-btns {
   width: 240px;
+  height: 55px;
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
   position: fixed;
-  background-color: transparent;
+  background-color: var(--bg-btn-menu);
   border-bottom: 1px solid var(--bg-line);
   padding: 10.8px;
   gap: 23px;
@@ -209,17 +289,20 @@ body {
   text-transform: uppercase;
   font-size: 10px;
   font-weight: 600;
-  color: rgba(27, 46, 75, 0.7019607843);
   letter-spacing: 0.5px;
-  border: 1px solid #c0ccda;
   border-radius: 0.25rem;
-  background-color: #fff;
   cursor: pointer;
+  border: 1px solid #3b4863;
+  transition: color 0.15s ease-in-out 0s, background-color 0.15s ease-in-out 0s, border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+  color: #ffffff;
+  background-color: #3b4863;
 }
 .left-container .left-bar-create-btns .new-btn-dropdown .new-btn:hover {
   color: #3e4678;
-  border: 1px solid #3e4678;
-  transition: all 0.4s ease 0s;
+  border: 1px solid #3b4863;
+  transition: color 0.15s ease-in-out 0s, background-color 0.15s ease-in-out 0s, border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+  color: rgb(255, 255, 255);
+  background-color: #1d293f;
 }
 .left-container .left-bar-create-btns .new-btn-dropdown .dropdown-menu {
   width: 100px;
@@ -243,8 +326,8 @@ body {
 .left-container .left-bar-create-btns .new-btn-dropdown .dropdown-menu li:hover {
   width: 100px;
   height: 31px;
-  color: rgba(40, 44, 177, 0.8);
-  background-color: #a2abe1;
+  color: var(--text-dark);
+  background-color: var(--bg-hover);
   align-items: center;
   border-radius: 0.25rem;
   font-weight: 500;
@@ -259,15 +342,17 @@ body {
   font-weight: 600;
   color: #fff;
   letter-spacing: 0.5px;
-  background-color: rgba(40, 44, 177, 0.8);
-  border: 1px solid rgba(40, 44, 177, 0.8);
   border-radius: 0.25rem;
   cursor: pointer;
+  border: 1px solid rgb(1, 104, 250);
+  transition: color 0.15s ease-in-out 0s, background-color 0.15s ease-in-out 0s, border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+  color: rgb(255, 255, 255);
+  background-color: #0168fa;
 }
 .left-container .left-bar-create-btns .upload-btn-dropdown .upload-btn:hover {
-  background-color: #3e4678;
-  border: 1px solid #212529;
-  transition: all 0.4s ease 0s;
+  background-color: #0254c6;
+  border: 1px solid #034cb4;
+  transition: color 0.15s ease-in-out 0s, background-color 0.15s ease-in-out 0s, border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
 }
 .left-container .left-bar-create-btns .upload-btn-dropdown .dropdown-menu {
   width: 100px;
@@ -291,8 +376,8 @@ body {
 .left-container .left-bar-create-btns .upload-btn-dropdown .dropdown-menu li:hover {
   width: 100px;
   height: 31px;
-  color: rgba(40, 44, 177, 0.8);
-  background-color: #a2abe1;
+  color: var(--text-dark);
+  background-color: var(--bg-hover);
   align-items: center;
   border-radius: 0.25rem;
   font-weight: 500;
@@ -356,8 +441,8 @@ body {
 .left-container .scroll-bar .file-lib li:hover {
   width: 199px;
   height: 31px;
-  color: rgba(40, 44, 177, 0.8);
-  background-color: #a2abe1;
+  color: var(--text-dark);
+  background-color: var(--bg-hover);
   align-items: center;
   border-radius: 0.25rem;
   font-weight: 500;
@@ -365,7 +450,7 @@ body {
 }
 .left-container .scroll-bar .my-drive a,
 .left-container .scroll-bar .file-lib a {
-  color: var(--text-dark);
+  color: var(--text-main);
   font-size: 13px;
 }
 .left-container .scroll-bar .my-drive .fa-regular,
@@ -385,7 +470,7 @@ body {
   flex-direction: column;
   width: 199px;
   height: 45px;
-  color: var(--text-dark);
+  color: var(--text-main);
 }
 .left-container .scroll-bar .storage .storage-status .used {
   position: relative;
@@ -406,83 +491,21 @@ body {
 }
 .left-container .scroll-bar .storage .offer .offer-text {
   font-size: 12px;
-  color: var(--text-dark);
+  color: var(--text-main);
 }
 .left-container .scroll-bar .storage .offer a {
-  color: var(--text-main);
+  color: var(--text-dark);
   font-size: 12px;
   margin-bottom: 6px;
-}
-
-.search {
-  width: 81%;
-  height: 48px;
-  position: absolute;
-  border-bottom: 1px solid var(--bg-line);
-  border-left: 1px solid var(--bg-line);
-  border-top: transparent;
-  top: 9.8%;
-  left: 18.7%;
-  padding: 12px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  background-color: var(--bg-white);
-}
-.search .search-bar {
-  display: flex;
-  align-items: center;
-  padding-left: 20px;
-}
-.search .search-bar .fa-solid {
-  color: #5f5d5d;
-  cursor: pointer;
-  opacity: 0.5;
-}
-.search .search-bar input {
-  align-items: center;
-  padding: 8px 16px;
-  gap: 8px;
-  width: 89%;
-  height: 40px;
-  background: transparent;
-  border: none;
-  outline: none;
-  font-size: 14px;
-}
-.search .search-bar input::-moz-placeholder {
-  font-weight: 500;
-  opacity: 0.5;
-  color: #5f5d5d;
-}
-.search .search-bar input::placeholder {
-  font-weight: 500;
-  opacity: 0.5;
-  color: #5f5d5d;
-}
-.search .settings ul {
-  display: flex;
-  flex-direction: row;
-}
-.search .settings ul li {
-  margin-right: 20px;
-}
-.search .settings ul .fa-solid {
-  color: var(--text-main);
-}
-.search .settings ul .fa-solid:hover {
-  color: var(--text-orange);
-  transition: all 0.4s ease 0s;
 }
 
 .main-container {
   width: 81%;
   position: absolute;
-  top: 17.7%;
+  top: 9.9%;
   left: 18.7%;
   background-color: var(--bg-white);
   border-left: 1px solid var(--bg-line);
-  padding: 20px 25px;
   height: 94%;
   overflow: scroll;
   overflow-y: hidden;
@@ -510,22 +533,30 @@ body {
 .main-container:hover::-webkit-scrollbar-thumb:hover {
   background: #a2abe1;
 }
-.main-container h1 {
+.main-container .main-content {
+  position: absolute;
+  top: 10%;
+  padding: 20px 25px;
+  width: 100%;
+  height: 500px;
+}
+.main-container .main-content h1 {
+  width: 90%;
   font-weight: 500;
   line-height: 1.25;
   color: var(--text-main);
 }
-.main-container .menu-title {
+.main-container .main-content .menu-title {
   margin-bottom: 15px;
 }
-.main-container .menu-title span {
+.main-container .main-content .menu-title span {
   font-size: 11px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   font-weight: 500;
   color: #D4D4D4;
 }
-.main-container .folders {
+.main-container .main-content .folders {
   display: flex;
   flex-direction: column;
   margin-top: 20px;
@@ -533,13 +564,13 @@ body {
   height: 45%;
   justify-content: center;
 }
-.main-container .folders .folder-items {
+.main-container .main-content .folders .folder-items {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 2px;
   row-gap: 15px;
 }
-.main-container .folders .folder-items .folder {
+.main-container .main-content .folders .folder-items .folder {
   width: 236px;
   height: 53px;
   display: flex;
@@ -547,41 +578,37 @@ body {
   align-items: center;
   gap: 15px;
   background-color: var(--bg-files);
-  border: 1px solid var(--text-main);
   border-radius: 5px;
   padding: 10px;
   cursor: pointer;
   position: relative;
 }
-.main-container .folders .folder-items .folder:hover {
-  border: 1px solid var(--text-orange);
-}
-.main-container .folders .folder-items .folder .fa-regular {
+.main-container .main-content .folders .folder-items .folder .fa-regular {
   opacity: 0.7;
-  color: rgba(40, 44, 177, 0.8);
+  color: #0168fa;
 }
-.main-container .folders .folder-items .folder .description .name {
+.main-container .main-content .folders .folder-items .folder .description .name {
   font-weight: 500;
   color: var(--text-main);
 }
-.main-container .folders .folder-items .folder .description .name:hover {
-  color: var(--text-orange);
+.main-container .main-content .folders .folder-items .folder .description .name:hover {
+  color: var(--text-dark);
   transition: all 0.4s ease 0s;
 }
-.main-container .folders .folder-items .folder .description .count {
+.main-container .main-content .folders .folder-items .folder .description .count {
   font-size: 10px;
   letter-spacing: 0.2px;
   color: #475362;
 }
-.main-container .RecentlyAccessed-container {
+.main-container .main-content .RecentlyAccessed-container {
   margin-bottom: 20px;
 }
-.main-container .RecentlyAccessed-container .AllFilesList-container {
+.main-container .main-content .RecentlyAccessed-container .AllFilesList-container {
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(5, 188px);
 }
-.main-container .RecentlyAccessed-container .AllFilesList-container .AllFilesPost-container {
+.main-container .main-content .RecentlyAccessed-container .AllFilesList-container .AllFilesPost-container {
   width: 188px;
   height: 222px;
   display: flex;
@@ -590,61 +617,57 @@ body {
   overflow-wrap: break-word;
   background-color: var(--bg-files);
   background-clip: border-box;
-  border: 1px solid var(--bg-line);
   border-radius: 4px;
   padding: 10px;
   position: relative;
   cursor: pointer;
 }
-.main-container .RecentlyAccessed-container .AllFilesList-container .AllFilesPost-container:hover {
-  border: 1px solid var(--text-orange);
-}
-.main-container .RecentlyAccessed-container .AllFilesList-container .AllFilesPost-container .icon-preview {
+.main-container .main-content .RecentlyAccessed-container .AllFilesList-container .AllFilesPost-container .icon-preview {
   width: 166px;
   height: 120px;
-  background-color: var(--bg-files);
+  background-color: var(--bg-file-inside);
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.main-container .RecentlyAccessed-container .AllFilesList-container .AllFilesPost-container .icon-preview .icon {
+.main-container .main-content .RecentlyAccessed-container .AllFilesList-container .AllFilesPost-container .icon-preview .icon {
   width: 48px;
   height: 48px;
 }
-.main-container .RecentlyAccessed-container .AllFilesList-container .AllFilesPost-container .name {
+.main-container .main-content .RecentlyAccessed-container .AllFilesList-container .AllFilesPost-container .name {
   font-weight: 500;
   transition: all 0.4s ease 0s;
   margin-top: 10px;
   color: var(--text-main);
 }
-.main-container .RecentlyAccessed-container .AllFilesList-container .AllFilesPost-container .name:hover {
-  color: var(--text-orange);
+.main-container .main-content .RecentlyAccessed-container .AllFilesList-container .AllFilesPost-container .name:hover {
+  color: var(--text-dark);
   transition: all 0.4s ease 0s;
 }
-.main-container .RecentlyAccessed-container .AllFilesList-container .AllFilesPost-container .type {
+.main-container .main-content .RecentlyAccessed-container .AllFilesList-container .AllFilesPost-container .type {
   color: #475362;
   margin-top: 5px;
   font-size: 12px;
 }
-.main-container .RecentlyAccessed-container .AllFilesList-container .AllFilesPost-container .size {
+.main-container .main-content .RecentlyAccessed-container .AllFilesList-container .AllFilesPost-container .size {
   font-size: 12px;
   color: #8392a5;
   margin-top: 9px;
 }
-.main-container .RecentlyAccessed-container .AllFilesList-container .AllFilesPost-container .seen {
+.main-container .main-content .RecentlyAccessed-container .AllFilesList-container .AllFilesPost-container .seen {
   font-size: 12px;
   color: #8392a5;
   margin-top: 9px;
 }
-.main-container .Files-container {
+.main-container .main-content .Files-container {
   margin-bottom: 7%;
 }
-.main-container .Files-container .AllFilesList-container {
+.main-container .main-content .Files-container .AllFilesList-container {
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(5, 188px);
 }
-.main-container .Files-container .AllFilesList-container .AllFilesPost-container {
+.main-container .main-content .Files-container .AllFilesList-container .AllFilesPost-container {
   width: 188px;
   height: 222px;
   display: flex;
@@ -653,46 +676,54 @@ body {
   overflow-wrap: break-word;
   background-color: var(--bg-files);
   background-clip: border-box;
-  border: 1px solid var(--bg-line);
   border-radius: 4px;
   padding: 10px;
   position: relative;
   cursor: pointer;
 }
-.main-container .Files-container .AllFilesList-container .AllFilesPost-container:hover {
-  border: 1px solid var(--text-orange);
-}
-.main-container .Files-container .AllFilesList-container .AllFilesPost-container .icon-preview {
+.main-container .main-content .Files-container .AllFilesList-container .AllFilesPost-container .icon-preview {
   width: 166px;
   height: 120px;
-  background-color: var(--bg-files);
+  background-color: var(--bg-file-inside);
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.main-container .Files-container .AllFilesList-container .AllFilesPost-container .icon-preview .icon {
+.main-container .main-content .Files-container .AllFilesList-container .AllFilesPost-container .icon-preview .icon {
   width: 48px;
   height: 48px;
 }
-.main-container .Files-container .AllFilesList-container .AllFilesPost-container .name {
+.main-container .main-content .Files-container .AllFilesList-container .AllFilesPost-container .name {
   font-weight: 500;
   transition: all 0.4s ease 0s;
   margin-top: 10px;
   color: var(--text-main);
 }
-.main-container .Files-container .AllFilesList-container .AllFilesPost-container .name:hover {
-  color: var(--text-orange);
+.main-container .main-content .Files-container .AllFilesList-container .AllFilesPost-container .name:hover {
+  color: var(--text-dark);
   transition: all 0.4s ease 0s;
 }
-.main-container .Files-container .AllFilesList-container .AllFilesPost-container .type {
+.main-container .main-content .Files-container .AllFilesList-container .AllFilesPost-container .type {
   color: #475362;
   margin-top: 5px;
   font-size: 12px;
 }
-.main-container .Files-container .AllFilesList-container .AllFilesPost-container .size {
+.main-container .main-content .Files-container .AllFilesList-container .AllFilesPost-container .size {
   font-size: 12px;
   color: #8392a5;
   margin-top: 9px;
+}
+.main-container .folders-container {
+  position: absolute;
+  top: 20%;
+  padding: 20px 25px;
+  width: 100%;
+  height: 500px;
+}
+.main-container .folders-container .folders-content {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(5, 188px);
 }
 
 .modal-container {
@@ -726,30 +757,50 @@ body {
   flex-direction: column;
   padding: 5px;
 }
-.modal-container .menu-hidden .ModalViewDetailsButton, .modal-container .menu-hidden .ModalShareButton,
-.modal-container .menu-hidden .MarkImportant, .modal-container .menu-hidden .Copy, .modal-container .menu-hidden .Delete, .modal-container .menu-hidden .Move,
-.modal-container .menu-hidden .Rename, .modal-container .menu-hidden .Download {
+.modal-container .menu-hidden .ModalViewDetailsButton,
+.modal-container .menu-hidden .ModalShareButton,
+.modal-container .menu-hidden .MarkImportant,
+.modal-container .menu-hidden .Copy,
+.modal-container .menu-hidden .Delete,
+.modal-container .menu-hidden .Move,
+.modal-container .menu-hidden .Rename,
+.modal-container .menu-hidden .Download {
   width: 100px;
   height: 27px;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10000;
+  z-index: 10110;
   position: fixed;
 }
-.modal-container .menu-hidden .ModalViewDetailsButton .show, .modal-container .menu-hidden .ModalShareButton .show,
-.modal-container .menu-hidden .MarkImportant .show, .modal-container .menu-hidden .Copy .show, .modal-container .menu-hidden .Delete .show, .modal-container .menu-hidden .Move .show,
-.modal-container .menu-hidden .Rename .show, .modal-container .menu-hidden .Download .show {
+.modal-container .menu-hidden .ModalViewDetailsButton .show,
+.modal-container .menu-hidden .ModalShareButton .show,
+.modal-container .menu-hidden .MarkImportant .show,
+.modal-container .menu-hidden .Copy .show,
+.modal-container .menu-hidden .Delete .show,
+.modal-container .menu-hidden .Move .show,
+.modal-container .menu-hidden .Rename .show,
+.modal-container .menu-hidden .Download .show {
   display: block;
 }
-.modal-container .menu-hidden .ModalViewDetailsButton .hide, .modal-container .menu-hidden .ModalShareButton .hide,
-.modal-container .menu-hidden .MarkImportant .hide, .modal-container .menu-hidden .Copy .hide, .modal-container .menu-hidden .Delete .hide, .modal-container .menu-hidden .Move .hide,
-.modal-container .menu-hidden .Rename .hide, .modal-container .menu-hidden .Download .hide {
+.modal-container .menu-hidden .ModalViewDetailsButton .hide,
+.modal-container .menu-hidden .ModalShareButton .hide,
+.modal-container .menu-hidden .MarkImportant .hide,
+.modal-container .menu-hidden .Copy .hide,
+.modal-container .menu-hidden .Delete .hide,
+.modal-container .menu-hidden .Move .hide,
+.modal-container .menu-hidden .Rename .hide,
+.modal-container .menu-hidden .Download .hide {
   display: none;
 }
-.modal-container .menu-hidden .ModalViewDetailsButton .overlay, .modal-container .menu-hidden .ModalShareButton .overlay,
-.modal-container .menu-hidden .MarkImportant .overlay, .modal-container .menu-hidden .Copy .overlay, .modal-container .menu-hidden .Delete .overlay, .modal-container .menu-hidden .Move .overlay,
-.modal-container .menu-hidden .Rename .overlay, .modal-container .menu-hidden .Download .overlay {
+.modal-container .menu-hidden .ModalViewDetailsButton .overlay,
+.modal-container .menu-hidden .ModalShareButton .overlay,
+.modal-container .menu-hidden .MarkImportant .overlay,
+.modal-container .menu-hidden .Copy .overlay,
+.modal-container .menu-hidden .Delete .overlay,
+.modal-container .menu-hidden .Move .overlay,
+.modal-container .menu-hidden .Rename .overlay,
+.modal-container .menu-hidden .Download .overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -758,9 +809,14 @@ body {
   background: rgba(0, 0, 0, 0.2274509804);
   transition: opacity 0.2s ease;
 }
-.modal-container .menu-hidden .ModalViewDetailsButton .modal, .modal-container .menu-hidden .ModalShareButton .modal,
-.modal-container .menu-hidden .MarkImportant .modal, .modal-container .menu-hidden .Copy .modal, .modal-container .menu-hidden .Delete .modal, .modal-container .menu-hidden .Move .modal,
-.modal-container .menu-hidden .Rename .modal, .modal-container .menu-hidden .Download .modal {
+.modal-container .menu-hidden .ModalViewDetailsButton .modal,
+.modal-container .menu-hidden .ModalShareButton .modal,
+.modal-container .menu-hidden .MarkImportant .modal,
+.modal-container .menu-hidden .Copy .modal,
+.modal-container .menu-hidden .Delete .modal,
+.modal-container .menu-hidden .Move .modal,
+.modal-container .menu-hidden .Rename .modal,
+.modal-container .menu-hidden .Download .modal {
   width: 500px;
   height: 487px;
   position: fixed;
@@ -775,24 +831,39 @@ body {
   transition: transform 0.2s ease;
   box-shadow: 0 2px 8px 3px;
 }
-.modal-container .menu-hidden .ModalViewDetailsButton .modal h1, .modal-container .menu-hidden .ModalShareButton .modal h1,
-.modal-container .menu-hidden .MarkImportant .modal h1, .modal-container .menu-hidden .Copy .modal h1, .modal-container .menu-hidden .Delete .modal h1, .modal-container .menu-hidden .Move .modal h1,
-.modal-container .menu-hidden .Rename .modal h1, .modal-container .menu-hidden .Download .modal h1 {
+.modal-container .menu-hidden .ModalViewDetailsButton .modal h1,
+.modal-container .menu-hidden .ModalShareButton .modal h1,
+.modal-container .menu-hidden .MarkImportant .modal h1,
+.modal-container .menu-hidden .Copy .modal h1,
+.modal-container .menu-hidden .Delete .modal h1,
+.modal-container .menu-hidden .Move .modal h1,
+.modal-container .menu-hidden .Rename .modal h1,
+.modal-container .menu-hidden .Download .modal h1 {
   font-size: 20px;
   line-height: 1.25;
   color: #001737;
   font-weight: 500;
   margin: 0px 0px 8px;
 }
-.modal-container .menu-hidden .ModalViewDetailsButton .modal .desc-form, .modal-container .menu-hidden .ModalShareButton .modal .desc-form,
-.modal-container .menu-hidden .MarkImportant .modal .desc-form, .modal-container .menu-hidden .Copy .modal .desc-form, .modal-container .menu-hidden .Delete .modal .desc-form, .modal-container .menu-hidden .Move .modal .desc-form,
-.modal-container .menu-hidden .Rename .modal .desc-form, .modal-container .menu-hidden .Download .modal .desc-form {
+.modal-container .menu-hidden .ModalViewDetailsButton .modal .desc-form,
+.modal-container .menu-hidden .ModalShareButton .modal .desc-form,
+.modal-container .menu-hidden .MarkImportant .modal .desc-form,
+.modal-container .menu-hidden .Copy .modal .desc-form,
+.modal-container .menu-hidden .Delete .modal .desc-form,
+.modal-container .menu-hidden .Move .modal .desc-form,
+.modal-container .menu-hidden .Rename .modal .desc-form,
+.modal-container .menu-hidden .Download .modal .desc-form {
   width: 282px;
   height: 100px;
 }
-.modal-container .menu-hidden .ModalViewDetailsButton .modal .desc-form textarea, .modal-container .menu-hidden .ModalShareButton .modal .desc-form textarea,
-.modal-container .menu-hidden .MarkImportant .modal .desc-form textarea, .modal-container .menu-hidden .Copy .modal .desc-form textarea, .modal-container .menu-hidden .Delete .modal .desc-form textarea, .modal-container .menu-hidden .Move .modal .desc-form textarea,
-.modal-container .menu-hidden .Rename .modal .desc-form textarea, .modal-container .menu-hidden .Download .modal .desc-form textarea {
+.modal-container .menu-hidden .ModalViewDetailsButton .modal .desc-form textarea,
+.modal-container .menu-hidden .ModalShareButton .modal .desc-form textarea,
+.modal-container .menu-hidden .MarkImportant .modal .desc-form textarea,
+.modal-container .menu-hidden .Copy .modal .desc-form textarea,
+.modal-container .menu-hidden .Delete .modal .desc-form textarea,
+.modal-container .menu-hidden .Move .modal .desc-form textarea,
+.modal-container .menu-hidden .Rename .modal .desc-form textarea,
+.modal-container .menu-hidden .Download .modal .desc-form textarea {
   width: 282px;
   height: 100px;
   padding: 0.46875rem 0.625rem;
@@ -809,9 +880,14 @@ body {
   margin-top: 5px;
   white-space: nowrap;
 }
-.modal-container .menu-hidden .ModalViewDetailsButton .modal .desc-form textarea:focus, .modal-container .menu-hidden .ModalShareButton .modal .desc-form textarea:focus,
-.modal-container .menu-hidden .MarkImportant .modal .desc-form textarea:focus, .modal-container .menu-hidden .Copy .modal .desc-form textarea:focus, .modal-container .menu-hidden .Delete .modal .desc-form textarea:focus, .modal-container .menu-hidden .Move .modal .desc-form textarea:focus,
-.modal-container .menu-hidden .Rename .modal .desc-form textarea:focus, .modal-container .menu-hidden .Download .modal .desc-form textarea:focus {
+.modal-container .menu-hidden .ModalViewDetailsButton .modal .desc-form textarea:focus,
+.modal-container .menu-hidden .ModalShareButton .modal .desc-form textarea:focus,
+.modal-container .menu-hidden .MarkImportant .modal .desc-form textarea:focus,
+.modal-container .menu-hidden .Copy .modal .desc-form textarea:focus,
+.modal-container .menu-hidden .Delete .modal .desc-form textarea:focus,
+.modal-container .menu-hidden .Move .modal .desc-form textarea:focus,
+.modal-container .menu-hidden .Rename .modal .desc-form textarea:focus,
+.modal-container .menu-hidden .Download .modal .desc-form textarea:focus {
   color: #596882;
   background-color: #fff;
   border-color: #7cb2fe;
@@ -821,44 +897,79 @@ body {
 .modal-container .menu-hidden .ModalViewDetailsButton .modal .desc-form textarea::-moz-placeholder, .modal-container .menu-hidden .ModalShareButton .modal .desc-form textarea::-moz-placeholder, .modal-container .menu-hidden .MarkImportant .modal .desc-form textarea::-moz-placeholder, .modal-container .menu-hidden .Copy .modal .desc-form textarea::-moz-placeholder, .modal-container .menu-hidden .Delete .modal .desc-form textarea::-moz-placeholder, .modal-container .menu-hidden .Move .modal .desc-form textarea::-moz-placeholder, .modal-container .menu-hidden .Rename .modal .desc-form textarea::-moz-placeholder, .modal-container .menu-hidden .Download .modal .desc-form textarea::-moz-placeholder {
   color: #c0ccda;
 }
-.modal-container .menu-hidden .ModalViewDetailsButton .modal .desc-form textarea::placeholder, .modal-container .menu-hidden .ModalShareButton .modal .desc-form textarea::placeholder,
-.modal-container .menu-hidden .MarkImportant .modal .desc-form textarea::placeholder, .modal-container .menu-hidden .Copy .modal .desc-form textarea::placeholder, .modal-container .menu-hidden .Delete .modal .desc-form textarea::placeholder, .modal-container .menu-hidden .Move .modal .desc-form textarea::placeholder,
-.modal-container .menu-hidden .Rename .modal .desc-form textarea::placeholder, .modal-container .menu-hidden .Download .modal .desc-form textarea::placeholder {
+.modal-container .menu-hidden .ModalViewDetailsButton .modal .desc-form textarea::placeholder,
+.modal-container .menu-hidden .ModalShareButton .modal .desc-form textarea::placeholder,
+.modal-container .menu-hidden .MarkImportant .modal .desc-form textarea::placeholder,
+.modal-container .menu-hidden .Copy .modal .desc-form textarea::placeholder,
+.modal-container .menu-hidden .Delete .modal .desc-form textarea::placeholder,
+.modal-container .menu-hidden .Move .modal .desc-form textarea::placeholder,
+.modal-container .menu-hidden .Rename .modal .desc-form textarea::placeholder,
+.modal-container .menu-hidden .Download .modal .desc-form textarea::placeholder {
   color: #c0ccda;
 }
-.modal-container .menu-hidden .ModalViewDetailsButton .modal .details-description, .modal-container .menu-hidden .ModalShareButton .modal .details-description,
-.modal-container .menu-hidden .MarkImportant .modal .details-description, .modal-container .menu-hidden .Copy .modal .details-description, .modal-container .menu-hidden .Delete .modal .details-description, .modal-container .menu-hidden .Move .modal .details-description,
-.modal-container .menu-hidden .Rename .modal .details-description, .modal-container .menu-hidden .Download .modal .details-description {
+.modal-container .menu-hidden .ModalViewDetailsButton .modal .details-description,
+.modal-container .menu-hidden .ModalShareButton .modal .details-description,
+.modal-container .menu-hidden .MarkImportant .modal .details-description,
+.modal-container .menu-hidden .Copy .modal .details-description,
+.modal-container .menu-hidden .Delete .modal .details-description,
+.modal-container .menu-hidden .Move .modal .details-description,
+.modal-container .menu-hidden .Rename .modal .details-description,
+.modal-container .menu-hidden .Download .modal .details-description {
   display: flex;
   flex-direction: column;
 }
-.modal-container .menu-hidden .ModalViewDetailsButton .modal .details-description .description-line, .modal-container .menu-hidden .ModalShareButton .modal .details-description .description-line,
-.modal-container .menu-hidden .MarkImportant .modal .details-description .description-line, .modal-container .menu-hidden .Copy .modal .details-description .description-line, .modal-container .menu-hidden .Delete .modal .details-description .description-line, .modal-container .menu-hidden .Move .modal .details-description .description-line,
-.modal-container .menu-hidden .Rename .modal .details-description .description-line, .modal-container .menu-hidden .Download .modal .details-description .description-line {
+.modal-container .menu-hidden .ModalViewDetailsButton .modal .details-description .description-line,
+.modal-container .menu-hidden .ModalShareButton .modal .details-description .description-line,
+.modal-container .menu-hidden .MarkImportant .modal .details-description .description-line,
+.modal-container .menu-hidden .Copy .modal .details-description .description-line,
+.modal-container .menu-hidden .Delete .modal .details-description .description-line,
+.modal-container .menu-hidden .Move .modal .details-description .description-line,
+.modal-container .menu-hidden .Rename .modal .details-description .description-line,
+.modal-container .menu-hidden .Download .modal .details-description .description-line {
   display: flex;
   flex-direction: row;
 }
-.modal-container .menu-hidden .ModalViewDetailsButton .modal .details-description .description-line .left, .modal-container .menu-hidden .ModalShareButton .modal .details-description .description-line .left,
-.modal-container .menu-hidden .MarkImportant .modal .details-description .description-line .left, .modal-container .menu-hidden .Copy .modal .details-description .description-line .left, .modal-container .menu-hidden .Delete .modal .details-description .description-line .left, .modal-container .menu-hidden .Move .modal .details-description .description-line .left,
-.modal-container .menu-hidden .Rename .modal .details-description .description-line .left, .modal-container .menu-hidden .Download .modal .details-description .description-line .left {
+.modal-container .menu-hidden .ModalViewDetailsButton .modal .details-description .description-line .left,
+.modal-container .menu-hidden .ModalShareButton .modal .details-description .description-line .left,
+.modal-container .menu-hidden .MarkImportant .modal .details-description .description-line .left,
+.modal-container .menu-hidden .Copy .modal .details-description .description-line .left,
+.modal-container .menu-hidden .Delete .modal .details-description .description-line .left,
+.modal-container .menu-hidden .Move .modal .details-description .description-line .left,
+.modal-container .menu-hidden .Rename .modal .details-description .description-line .left,
+.modal-container .menu-hidden .Download .modal .details-description .description-line .left {
   width: 116px;
   margin-top: 10px;
 }
-.modal-container .menu-hidden .ModalViewDetailsButton .modal .details-description .description-line .right, .modal-container .menu-hidden .ModalShareButton .modal .details-description .description-line .right,
-.modal-container .menu-hidden .MarkImportant .modal .details-description .description-line .right, .modal-container .menu-hidden .Copy .modal .details-description .description-line .right, .modal-container .menu-hidden .Delete .modal .details-description .description-line .right, .modal-container .menu-hidden .Move .modal .details-description .description-line .right,
-.modal-container .menu-hidden .Rename .modal .details-description .description-line .right, .modal-container .menu-hidden .Download .modal .details-description .description-line .right {
+.modal-container .menu-hidden .ModalViewDetailsButton .modal .details-description .description-line .right,
+.modal-container .menu-hidden .ModalShareButton .modal .details-description .description-line .right,
+.modal-container .menu-hidden .MarkImportant .modal .details-description .description-line .right,
+.modal-container .menu-hidden .Copy .modal .details-description .description-line .right,
+.modal-container .menu-hidden .Delete .modal .details-description .description-line .right,
+.modal-container .menu-hidden .Move .modal .details-description .description-line .right,
+.modal-container .menu-hidden .Rename .modal .details-description .description-line .right,
+.modal-container .menu-hidden .Download .modal .details-description .description-line .right {
   margin: 10px 16px;
 }
-.modal-container .menu-hidden .ModalViewDetailsButton .modal .details-description .description-line .right-text, .modal-container .menu-hidden .ModalShareButton .modal .details-description .description-line .right-text,
-.modal-container .menu-hidden .MarkImportant .modal .details-description .description-line .right-text, .modal-container .menu-hidden .Copy .modal .details-description .description-line .right-text, .modal-container .menu-hidden .Delete .modal .details-description .description-line .right-text, .modal-container .menu-hidden .Move .modal .details-description .description-line .right-text,
-.modal-container .menu-hidden .Rename .modal .details-description .description-line .right-text, .modal-container .menu-hidden .Download .modal .details-description .description-line .right-text {
+.modal-container .menu-hidden .ModalViewDetailsButton .modal .details-description .description-line .right-text,
+.modal-container .menu-hidden .ModalShareButton .modal .details-description .description-line .right-text,
+.modal-container .menu-hidden .MarkImportant .modal .details-description .description-line .right-text,
+.modal-container .menu-hidden .Copy .modal .details-description .description-line .right-text,
+.modal-container .menu-hidden .Delete .modal .details-description .description-line .right-text,
+.modal-container .menu-hidden .Move .modal .details-description .description-line .right-text,
+.modal-container .menu-hidden .Rename .modal .details-description .description-line .right-text,
+.modal-container .menu-hidden .Download .modal .details-description .description-line .right-text {
   width: 282px;
   height: 105px;
   margin: 10px 60px;
 }
-.modal-container .menu-hidden .ModalViewDetailsButton .submit-btn, .modal-container .menu-hidden .ModalShareButton .submit-btn,
-.modal-container .menu-hidden .MarkImportant .submit-btn, .modal-container .menu-hidden .Copy .submit-btn, .modal-container .menu-hidden .Delete .submit-btn, .modal-container .menu-hidden .Move .submit-btn,
-.modal-container .menu-hidden .Rename .submit-btn, .modal-container .menu-hidden .Download .submit-btn {
+.modal-container .menu-hidden .ModalViewDetailsButton .submit .submit-btn,
+.modal-container .menu-hidden .ModalShareButton .submit .submit-btn,
+.modal-container .menu-hidden .MarkImportant .submit .submit-btn,
+.modal-container .menu-hidden .Copy .submit .submit-btn,
+.modal-container .menu-hidden .Delete .submit .submit-btn,
+.modal-container .menu-hidden .Move .submit .submit-btn,
+.modal-container .menu-hidden .Rename .submit .submit-btn,
+.modal-container .menu-hidden .Download .submit .submit-btn {
   width: 69px;
   height: 37px;
   border: none;
@@ -877,24 +988,40 @@ body {
   margin-top: 38px;
   margin-left: 77%;
 }
-.modal-container .menu-hidden .ModalViewDetailsButton .close-btn, .modal-container .menu-hidden .ModalShareButton .close-btn,
-.modal-container .menu-hidden .MarkImportant .close-btn, .modal-container .menu-hidden .Copy .close-btn, .modal-container .menu-hidden .Delete .close-btn, .modal-container .menu-hidden .Move .close-btn,
-.modal-container .menu-hidden .Rename .close-btn, .modal-container .menu-hidden .Download .close-btn {
-  position: absolute;
-  right: -1rem;
-  top: -1rem;
-  width: 2rem;
-  height: 2rem;
-  padding: 0.5rem;
-  margin: 0 auto;
-  border-radius: 50%;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2274509804);
+.modal-container .menu-hidden .ModalViewDetailsButton .submit .close-btn,
+.modal-container .menu-hidden .ModalShareButton .submit .close-btn,
+.modal-container .menu-hidden .MarkImportant .submit .close-btn,
+.modal-container .menu-hidden .Copy .submit .close-btn,
+.modal-container .menu-hidden .Delete .submit .close-btn,
+.modal-container .menu-hidden .Move .submit .close-btn,
+.modal-container .menu-hidden .Rename .submit .close-btn,
+.modal-container .menu-hidden .Download .submit .close-btn {
+  width: 69px;
+  height: 37px;
+  border: none;
+  background: transparent;
   cursor: pointer;
-  border: 1px solid rgba(0, 0, 0, 0.5607843137);
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.5;
+  border: 1px solid #5f6d88;
+  transition: color 0.15s ease-in-out 0s, background-color 0.15s ease-in-out 0s, border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+  color: #fff;
+  background-color: #5f6d88;
+  padding: 0.46875rem 0.9375rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+  margin-top: 38px;
+  margin-left: 77%;
 }
-.modal-container .menu-hidden .ModalViewDetailsButton .details-btn, .modal-container .menu-hidden .ModalShareButton .details-btn,
-.modal-container .menu-hidden .MarkImportant .details-btn, .modal-container .menu-hidden .Copy .details-btn, .modal-container .menu-hidden .Delete .details-btn, .modal-container .menu-hidden .Move .details-btn,
-.modal-container .menu-hidden .Rename .details-btn, .modal-container .menu-hidden .Download .details-btn {
+.modal-container .menu-hidden .ModalViewDetailsButton .details-btn,
+.modal-container .menu-hidden .ModalShareButton .details-btn,
+.modal-container .menu-hidden .MarkImportant .details-btn,
+.modal-container .menu-hidden .Copy .details-btn,
+.modal-container .menu-hidden .Delete .details-btn,
+.modal-container .menu-hidden .Move .details-btn,
+.modal-container .menu-hidden .Rename .details-btn,
+.modal-container .menu-hidden .Download .details-btn {
   height: 27px;
   width: 100px;
   font-size: 12px;
@@ -906,9 +1033,14 @@ body {
   border: none;
   cursor: pointer;
 }
-.modal-container .menu-hidden .ModalViewDetailsButton .details-btn .menu-hidden-icon, .modal-container .menu-hidden .ModalShareButton .details-btn .menu-hidden-icon,
-.modal-container .menu-hidden .MarkImportant .details-btn .menu-hidden-icon, .modal-container .menu-hidden .Copy .details-btn .menu-hidden-icon, .modal-container .menu-hidden .Delete .details-btn .menu-hidden-icon, .modal-container .menu-hidden .Move .details-btn .menu-hidden-icon,
-.modal-container .menu-hidden .Rename .details-btn .menu-hidden-icon, .modal-container .menu-hidden .Download .details-btn .menu-hidden-icon {
+.modal-container .menu-hidden .ModalViewDetailsButton .details-btn .menu-hidden-icon,
+.modal-container .menu-hidden .ModalShareButton .details-btn .menu-hidden-icon,
+.modal-container .menu-hidden .MarkImportant .details-btn .menu-hidden-icon,
+.modal-container .menu-hidden .Copy .details-btn .menu-hidden-icon,
+.modal-container .menu-hidden .Delete .details-btn .menu-hidden-icon,
+.modal-container .menu-hidden .Move .details-btn .menu-hidden-icon,
+.modal-container .menu-hidden .Rename .details-btn .menu-hidden-icon,
+.modal-container .menu-hidden .Download .details-btn .menu-hidden-icon {
   width: 14px;
   height: 14px;
   stroke-width: 2.5px;
@@ -1017,53 +1149,46 @@ body {
 .modal-container .menu-hidden .ModalShareButton .modal .submit {
   position: relative;
   bottom: 12px;
-}
-.modal-container .menu-hidden .Move .modal {
-  width: 500px;
-  height: 377px;
-}
-.modal-container .menu-hidden .Move .modal h1 {
-  margin-bottom: 25px;
-}
-.modal-container .menu-hidden .Move .modal .MoveFolder-list .folder-items {
-  display: flex;
-  flex-direction: column;
-}
-.modal-container .menu-hidden .Move .modal .MoveFolder-list .folder-items .folder {
-  width: 236px;
-  height: 53px;
+  width: 100%;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  border-radius: 5px;
-  padding: 10px;
-  cursor: pointer;
-  position: relative;
+  left: 45%;
 }
-.modal-container .menu-hidden .Move .modal .MoveFolder-list .folder-items .folder .icon-preview {
-  background: none;
+.modal-container .menu-hidden .ModalShareButton .modal .submit .submit-btn {
+  margin-right: 20px;
 }
-.modal-container .menu-hidden .Move .modal .MoveFolder-list .folder-items .folder .icon-preview .fa-regular {
-  display: none;
-  opacity: 0.7;
-  color: rgba(40, 44, 177, 0.8);
-}
-.modal-container .menu-hidden .Move .modal .MoveFolder-list .folder-items .folder .description .name {
+.modal-container .menu-hidden .Copy .title h1,
+.modal-container .menu-hidden .Move .title h1 {
+  line-height: 1.25;
+  color: #001737;
   font-weight: 500;
+  margin: 0px 0px 8px;
 }
-.modal-container .menu-hidden .Move .modal .MoveFolder-list .folder-items .folder .description .name:hover {
-  color: rgba(40, 44, 177, 0.8);
-  transition: all 0.4s ease 0s;
+.modal-container .menu-hidden .Copy .title span,
+.modal-container .menu-hidden .Move .title span {
+  color: #8392a5;
 }
-.modal-container .menu-hidden .Move .modal .MoveFolder-list .folder-items .folder .description .count {
-  display: none;
-  font-size: 10px;
-  letter-spacing: 0.2px;
-  color: rgba(27, 46, 75, 0.7019607843);
+.modal-container .menu-hidden .Copy .folder-list,
+.modal-container .menu-hidden .Move .folder-list {
+  width: 460px;
+  height: 289px;
+  padding: 10px;
+  border: 1px solid rgba(72, 94, 144, 0.1607843137);
+  background-color: #f5f6fa;
+  margin-top: 25px;
 }
-.modal-container .menu-hidden .Move .modal .submit {
+.modal-container .menu-hidden .Copy .submit,
+.modal-container .menu-hidden .Move .submit {
   position: relative;
   bottom: 12px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  left: 45%;
+}
+.modal-container .menu-hidden .Copy .submit .submit-btn,
+.modal-container .menu-hidden .Move .submit .submit-btn {
+  margin-right: 20px;
 }
 
 .modal-button {
@@ -1120,7 +1245,8 @@ body {
   align-items: center;
   margin-top: 10px;
 }
-.authorization .authorization-content .login .login-content .login-form input[type=text], .authorization .authorization-content .login .login-content .login-form [type=password] {
+.authorization .authorization-content .login .login-content .login-form input[type=text],
+.authorization .authorization-content .login .login-content .login-form [type=password] {
   line-height: 21px;
   height: 20px;
   border: 1px solid #c6c6c6;
@@ -1166,7 +1292,8 @@ body {
   align-items: center;
   margin-top: 10px;
 }
-.authorization .authorization-content .register .register-content .register-form input[type=text], .authorization .authorization-content .register .register-content .register-form [type=password] {
+.authorization .authorization-content .register .register-content .register-form input[type=text],
+.authorization .authorization-content .register .register-content .register-form [type=password] {
   line-height: 21px;
   height: 20px;
   border: 1px solid #c6c6c6;

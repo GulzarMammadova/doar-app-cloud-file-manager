@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import '../../../App.css';
+import { useTranslation } from "react-i18next";
 
 
 export const DescriptionForm = () => {
+  const { t } = useTranslation();
+
   const [formData, setFormData] = useState({
     description: '',
   });
@@ -21,9 +24,10 @@ export const DescriptionForm = () => {
   return (
     <>
     <form className='desc-form' onSubmit={handleSubmit}>
-      <textarea type="text" name="message" placeholder='Add description' value={formData.message} onChange={handleChange} />
+      <textarea type="text" name="message"
+       placeholder={t("modalDetailsDesc.addDesc")} 
+       value={formData.message} onChange={handleChange} />
     </form>
-    <button className='submit-btn' type="submit">Close</button>
 </>
   );
 };

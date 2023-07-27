@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {createRoot} from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { store } from './store/index';
 import App from './App';
@@ -33,7 +34,8 @@ i18n.on('languageChanged', (lng) => {
   localStorage.setItem('language', lng);
 });
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const rootElement = document.getElementById('root');
+const root = createRoot(rootElement);
 root.render(
   <ThemeContextWrapper>
     <React.StrictMode>

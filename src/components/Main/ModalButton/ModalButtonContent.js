@@ -24,9 +24,6 @@ const Modal = ({ show, children }) => {
       <div className="modal-body">
         {children[1]}
       </div>
-      {/* <div className="modal-footer">
-        {children[2]}
-      </div> */}
     </div>
   );
 };
@@ -81,7 +78,7 @@ export const MenuModal = () => {
         </ModalHeader>
         <ModalBody>
         <div className="menu-hidden">
-        <div className="menu-list"><ModalViewDetailsButton /></div>
+        <div className="menu-list" ><ModalViewDetailsButton /></div>
         <div className="menu-list"><MarkImportant /></div>
         <div className="menu-list"><ModalShareButton /></div>
         <div className="menu-list"><Download /></div>
@@ -92,7 +89,9 @@ export const MenuModal = () => {
       </div>
         </ModalBody>
       </Modal>
-      <Button onClick={clickHandler}><img className="modal-button-icon" src={menu} alt="post" /></Button>
+      <Button onClick={clickHandler}>
+      <img className="modal-button-icon" src={menu} alt="post" />
+      </Button>
     </>
   );
 };
