@@ -10,7 +10,7 @@ body {
   --text-main: #1b2e4b;
   --text-white: #fff;
   --text-dark: #8392a5;
-  --text-orange: #D533F3;
+  --text-orange: #3b4863;
   --bg-white: #fff;
   --bg-dark: #421D44;
   --bg-files: #f5f6fa;
@@ -52,7 +52,7 @@ body {
 }
 .wrapper .switch {
   position: absolute;
-  left: 50%;
+  left: 25%;
   top: 43%;
   transform: translate(-50%, -50%);
   width: 50px;
@@ -66,11 +66,8 @@ body {
   top: 0;
   left: 0;
   border-radius: 15px;
-  /* Half of the height to make a rounded effect */
   width: 50px;
-  /* Adjusted width for the wave */
   height: 21px;
-  /* Adjusted height for the wave */
   display: none;
 }
 .wrapper .switch .slider {
@@ -143,6 +140,20 @@ body {
   display: flex;
   padding-left: 20px;
   align-items: center;
+}
+.header .logo a {
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: -1px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: #031a61;
+  margin-top: -4px;
+}
+.header .logo a span {
+  font-weight: 400;
+  color: #0168fa;
 }
 .header .nav-menu {
   width: 46.3%;
@@ -263,7 +274,7 @@ body {
 }
 
 .left-container {
-  width: 240px;
+  width: 220px;
   height: 500px;
   position: absolute;
   background-color: var(--bg-white);
@@ -274,7 +285,6 @@ body {
   width: 240px;
   height: 55px;
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
   position: fixed;
   background-color: var(--bg-btn-menu);
@@ -294,7 +304,7 @@ body {
   cursor: pointer;
   border: 1px solid #3b4863;
   transition: color 0.15s ease-in-out 0s, background-color 0.15s ease-in-out 0s, border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
-  color: #ffffff;
+  color: #fff;
   background-color: #3b4863;
 }
 .left-container .left-bar-create-btns .new-btn-dropdown .new-btn:hover {
@@ -344,9 +354,9 @@ body {
   letter-spacing: 0.5px;
   border-radius: 0.25rem;
   cursor: pointer;
-  border: 1px solid rgb(1, 104, 250);
+  border: 1px solid #0168fa;
   transition: color 0.15s ease-in-out 0s, background-color 0.15s ease-in-out 0s, border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
-  color: rgb(255, 255, 255);
+  color: #fff;
   background-color: #0168fa;
 }
 .left-container .left-bar-create-btns .upload-btn-dropdown .upload-btn:hover {
@@ -384,7 +394,7 @@ body {
   transition: all 0.4s ease 0s;
 }
 .left-container .scroll-bar {
-  height: 100%;
+  height: 89%;
   margin-top: 24%;
   overflow: scroll;
   overflow-y: hidden;
@@ -439,7 +449,7 @@ body {
 }
 .left-container .scroll-bar .my-drive li:hover,
 .left-container .scroll-bar .file-lib li:hover {
-  width: 199px;
+  width: 185px;
   height: 31px;
   color: var(--text-dark);
   background-color: var(--bg-hover);
@@ -560,7 +570,7 @@ body {
   display: flex;
   flex-direction: column;
   margin-top: 20px;
-  width: 81%;
+  width: 100%;
   height: 45%;
   justify-content: center;
 }
@@ -571,7 +581,7 @@ body {
   row-gap: 15px;
 }
 .main-container .main-content .folders .folder-items .folder {
-  width: 236px;
+  width: 216px;
   height: 53px;
   display: flex;
   flex-direction: row;
@@ -606,10 +616,10 @@ body {
 .main-container .main-content .RecentlyAccessed-container .AllFilesList-container {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(5, 188px);
+  grid-template-columns: repeat(5, 170px);
 }
 .main-container .main-content .RecentlyAccessed-container .AllFilesList-container .AllFilesPost-container {
-  width: 188px;
+  width: 170px;
   height: 222px;
   display: flex;
   flex-direction: column;
@@ -617,13 +627,17 @@ body {
   overflow-wrap: break-word;
   background-color: var(--bg-files);
   background-clip: border-box;
+  border: 1px solid none;
   border-radius: 4px;
   padding: 10px;
   position: relative;
   cursor: pointer;
 }
+.main-container .main-content .RecentlyAccessed-container .AllFilesList-container .AllFilesPost-container:hover {
+  border: 1px solid rgba(103, 102, 102, 0.2);
+}
 .main-container .main-content .RecentlyAccessed-container .AllFilesList-container .AllFilesPost-container .icon-preview {
-  width: 166px;
+  width: 146px;
   height: 120px;
   background-color: var(--bg-file-inside);
   display: flex;
@@ -636,6 +650,7 @@ body {
 }
 .main-container .main-content .RecentlyAccessed-container .AllFilesList-container .AllFilesPost-container .name {
   font-weight: 500;
+  font-size: 12px;
   transition: all 0.4s ease 0s;
   margin-top: 10px;
   color: var(--text-main);
@@ -650,12 +665,12 @@ body {
   font-size: 12px;
 }
 .main-container .main-content .RecentlyAccessed-container .AllFilesList-container .AllFilesPost-container .size {
-  font-size: 12px;
+  font-size: 10px;
   color: #8392a5;
   margin-top: 9px;
 }
 .main-container .main-content .RecentlyAccessed-container .AllFilesList-container .AllFilesPost-container .seen {
-  font-size: 12px;
+  font-size: 10px;
   color: #8392a5;
   margin-top: 9px;
 }
@@ -665,10 +680,10 @@ body {
 .main-container .main-content .Files-container .AllFilesList-container {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(5, 188px);
+  grid-template-columns: repeat(5, 170px);
 }
 .main-container .main-content .Files-container .AllFilesList-container .AllFilesPost-container {
-  width: 188px;
+  width: 170px;
   height: 222px;
   display: flex;
   flex-direction: column;
@@ -676,13 +691,17 @@ body {
   overflow-wrap: break-word;
   background-color: var(--bg-files);
   background-clip: border-box;
+  border: 1px solid none;
   border-radius: 4px;
   padding: 10px;
   position: relative;
   cursor: pointer;
 }
+.main-container .main-content .Files-container .AllFilesList-container .AllFilesPost-container:hover {
+  border: 1px solid rgba(103, 102, 102, 0.2);
+}
 .main-container .main-content .Files-container .AllFilesList-container .AllFilesPost-container .icon-preview {
-  width: 166px;
+  width: 146px;
   height: 120px;
   background-color: var(--bg-file-inside);
   display: flex;
@@ -695,6 +714,7 @@ body {
 }
 .main-container .main-content .Files-container .AllFilesList-container .AllFilesPost-container .name {
   font-weight: 500;
+  font-size: 12px;
   transition: all 0.4s ease 0s;
   margin-top: 10px;
   color: var(--text-main);
@@ -706,10 +726,10 @@ body {
 .main-container .main-content .Files-container .AllFilesList-container .AllFilesPost-container .type {
   color: #475362;
   margin-top: 5px;
-  font-size: 12px;
+  font-size: 10px;
 }
 .main-container .main-content .Files-container .AllFilesList-container .AllFilesPost-container .size {
-  font-size: 12px;
+  font-size: 10px;
   color: #8392a5;
   margin-top: 9px;
 }
@@ -723,7 +743,7 @@ body {
 .main-container .folders-container .folders-content {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(5, 188px);
+  grid-template-columns: repeat(5, 170px);
 }
 
 .modal-container {

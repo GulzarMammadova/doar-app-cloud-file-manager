@@ -12,10 +12,10 @@ export function LeftBarScroll() {
         <div className="my-drive">
           <div className="menu-title "><span>{t('leftBar.myDrive')}</span></div>
           <ul>
-            <li><Link to="/all-files"><i className="fa-regular fa-file"></i>{t('leftBar.allFiles')}</Link></li>
-            <li><Link to="/my-devices"><i className="fa-solid fa-desktop"></i> {t('leftBar.myDevices')}</Link></li>
-            <li><Link to="/resents"><i className="fa-regular fa-clock"></i> {t('leftBar.resently')}</Link></li>
-            <li><Link to="/important"><i className="fa-regular fa-star"></i> {t('leftBar.important')}</Link></li>
+            <li><Link to="/all-files"><i className="fa-regular fa-file"></i> {t('leftBar.allFiles')}</Link></li>
+            <li><Link to="/my-devices"><i className="fa-solid fa-desktop"></i>{t('leftBar.myDevices')}</Link></li>
+            <li><Link to="/resents"><i className="fa-regular fa-clock"></i>{t('leftBar.resently')}</Link></li>
+            <li><Link to="/important"><i className="fa-regular fa-star"></i>{t('leftBar.important')}</Link></li>
             <li><Link to="/deleted"><i className="fa-regular fa-trash-can"></i>{t('leftBar.deletedFiles')}</Link></li>
           </ul>
         </div>
@@ -23,9 +23,9 @@ export function LeftBarScroll() {
           <div className="menu-title"><span>{t('leftBar.fileLib')}</span></div>
           <ul>
             <li><Link to="/documents"><i className="fa-regular fa-file"></i>{t('leftBar.docs')}</Link></li>
-            <li><Link to="/images"><i className="fa-regular fa-file-image"></i> {t('leftBar.images')}</Link></li>
+            <li><Link to="/images"><i className="fa-regular fa-file-image"></i>{t('leftBar.images')}</Link></li>
             <li><Link to="/videos"><i className="fa-regular fa-file-video"></i>{t('leftBar.video')}</Link></li>
-            <li><Link to="/audios"><i className="fa-regular fa-file-audio"></i> {t('leftBar.audio')}</Link></li>
+            <li><Link to="/audios"><i className="fa-regular fa-file-audio"></i>{t('leftBar.audio')}</Link></li>
             <li><Link to="/zip"><i className="fa-regular fa-file-zipper"></i>{t('leftBar.zip')}</Link></li>
           </ul>
         </div>

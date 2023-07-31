@@ -13,7 +13,7 @@ body {
   --text-main: #1b2e4b;
   --text-white: #fff;
   --text-dark: #8392a5;
-  --text-orange: #D533F3;
+  --text-orange: #3b4863;
 
   --bg-white: #fff;
   --bg-dark: #421D44;
@@ -59,7 +59,7 @@ body {
 
   .switch {
     position: absolute;
-    left: 50%;
+    left: 25%;
     top: 43%;
     transform: translate(-50%, -50%);
     width: 50px;
@@ -74,11 +74,8 @@ body {
       top: 0;
       left: 0;
       border-radius: 15px;
-      /* Half of the height to make a rounded effect */
       width: 50px;
-      /* Adjusted width for the wave */
       height: 21px;
-      /* Adjusted height for the wave */
       display: none;
     }
 
@@ -165,16 +162,28 @@ body {
     line-height: inherit;
     white-space: nowrap;
     display: flex;
-    // justify-content: center;
     padding-left: 20px;
     align-items: center;
-
+a{
+  font-weight: 700;
+    font-size: 22px;
+    letter-spacing: -1px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    color: #031a61;
+    margin-top: -4px;
+    span{
+      font-weight: 400;
+      color: #0168fa;
+    }
+}
   }
 
   .nav-menu {
     width: 46.3%;
     height: 60px;
-
     .search {
       // width: 81%;
       // height: 48px;
@@ -309,7 +318,7 @@ body {
 }
 
 .left-container {
-  width: 240px;
+  width: 220px;
   height: 500px;
   position: absolute;
   background-color: var(--bg-white);
@@ -320,7 +329,7 @@ body {
     width: 240px;
     height: 55px;
     display: flex;
-    justify-content: space-evenly;
+    // justify-content: space-evenly;
     align-items: center;
     position: fixed;
     background-color: var(--bg-btn-menu);
@@ -340,8 +349,11 @@ body {
         border-radius: 0.25rem;
         cursor: pointer;
         border: 1px solid #3b4863;
-        transition: color 0.15s ease-in-out 0s, background-color 0.15s ease-in-out 0s, border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
-        color: #ffffff;
+        transition: color 0.15s ease-in-out 0s,
+         background-color 0.15s ease-in-out 0s, 
+         border-color 0.15s ease-in-out 0s, 
+         box-shadow 0.15s ease-in-out 0s;
+        color: #fff;
         background-color: #3b4863;
 
         &:hover {
@@ -398,9 +410,12 @@ body {
         letter-spacing: 0.5px;
         border-radius: 0.25rem;
         cursor: pointer;
-        border: 1px solid rgb(1, 104, 250);
-        transition: color 0.15s ease-in-out 0s, background-color 0.15s ease-in-out 0s, border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
-        color: rgb(255, 255, 255);
+        border: 1px solid #0168fa;
+        transition: color 0.15s ease-in-out 0s, 
+        background-color 0.15s ease-in-out 0s, 
+        border-color 0.15s ease-in-out 0s, 
+        box-shadow 0.15s ease-in-out 0s;
+        color: #fff;
         background-color: #0168fa;
 
         &:hover {
@@ -449,7 +464,7 @@ body {
   }
 
   .scroll-bar {
-    height: 100%;
+    height: 89%;
     margin-top: 24%;
     overflow: scroll;
     overflow-y: hidden;
@@ -509,9 +524,8 @@ body {
         width: 199px;
         height: 31px;
         padding: 6px 10px;
-
         &:hover {
-          width: 199px;
+          width: 185px;
           height: 31px;
           color: var(--text-dark);
           background-color: var(--bg-hover);
@@ -652,7 +666,7 @@ body {
   display: flex;
   flex-direction: column;
   margin-top: 20px;
-  width: 81%;
+  width: 100%;
   height: 45%;
   justify-content: center;
 
@@ -663,7 +677,7 @@ body {
     row-gap: 15px;
 
     .folder {
-      width: 236px;
+      width: 216px;
       height: 53px;
       display: flex;
       flex-direction: row;
@@ -704,15 +718,15 @@ body {
 }
 
 .RecentlyAccessed-container {
-  margin-bottom: 20px;
+   margin-bottom: 20px;
 
   .AllFilesList-container {
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: repeat(5, 188px);
+    grid-template-columns: repeat(5, 170px);
 
     .AllFilesPost-container {
-      width: 188px;
+      width: 170px;
       height: 222px;
       display: flex;
       flex-direction: column;
@@ -720,14 +734,16 @@ body {
       overflow-wrap: break-word;
       background-color: var(--bg-files);
       background-clip: border-box;
-      // border: 1px solid var(--bg-line);
+      border: 1px solid none;
       border-radius: 4px;
       padding: 10px;
       position: relative;
       cursor: pointer;
-
+      &:hover{
+        border: 1px solid #67666633;
+}
       .icon-preview {
-        width: 166px;
+        width: 146px;
         height: 120px;
         background-color: var(--bg-file-inside);
         display: flex;
@@ -743,6 +759,7 @@ body {
 
       .name {
         font-weight: 500;
+        font-size: 12px;
         transition: all 0.4s ease 0s;
         margin-top: 10px;
         color: var(--text-main);
@@ -760,13 +777,13 @@ body {
       }
 
       .size {
-        font-size: 12px;
+        font-size: 10px;
         color: #8392a5;
         margin-top: 9px;
       }
 
       .seen {
-        font-size: 12px;
+        font-size: 10px;
         color: #8392a5;
         margin-top: 9px;
       }
@@ -780,10 +797,10 @@ body {
   .AllFilesList-container {
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: repeat(5, 188px);
+    grid-template-columns: repeat(5, 170px);
 
     .AllFilesPost-container {
-      width: 188px;
+      width: 170px;
       height: 222px;
       display: flex;
       flex-direction: column;
@@ -791,14 +808,16 @@ body {
       overflow-wrap: break-word;
       background-color: var(--bg-files);
       background-clip: border-box;
-      // border: 1px solid var(--bg-line);
+      border: 1px solid none;
       border-radius: 4px;
       padding: 10px;
       position: relative;
       cursor: pointer;
-
+      &:hover{
+        border: 1px solid #67666633;
+}
       .icon-preview {
-        width: 166px;
+        width: 146px;
         height: 120px;
         background-color: var(--bg-file-inside);
         display: flex;
@@ -813,6 +832,7 @@ body {
 
       .name {
         font-weight: 500;
+        font-size: 12px;
         transition: all 0.4s ease 0s;
         margin-top: 10px;
         color: var(--text-main);
@@ -826,11 +846,11 @@ body {
       .type {
         color: #475362;
         margin-top: 5px;
-        font-size: 12px;
+        font-size: 10px;
       }
 
       .size {
-        font-size: 12px;
+        font-size: 10px;
         color: #8392a5;
         margin-top: 9px;
       }
@@ -847,7 +867,7 @@ body {
   .folders-content{
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: repeat(5, 188px);
+    grid-template-columns: repeat(5, 170px);
   }
   }
 }
