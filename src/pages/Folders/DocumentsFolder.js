@@ -8,10 +8,13 @@ export function DocumentsFolder() {
 
   return (
     <div className="main-container">
+      <div className='main-content'>
+        <h1>{t('leftBar.docs')}</h1>
         <div className="recently">
-          <div className="menu-title"><span>{t('leftBar.docs')}</span></div>
+          <div className="menu-title"><span></span></div>
           <RecentlyAccessed />
         </div>
+      </div>
     </div>
   );
 }

@@ -6,7 +6,6 @@ import ToggleDark from './contexts/ToggleDark';
 import { Header } from './components/Header/Header';
 import { LeftBar } from './components/LeftBar/LeftBar';
 import { Main } from './components/Main/Main';
-// import { AllFilesFolder } from "./pages/Folders/AllFilesFolder"
 import { MyDevicesFolder } from "./pages/Folders/MyDevicesFolder"
 import { RecentsFolder } from "./pages/Folders/RecentsFolder"
 import { ImportantFolder } from "./pages/Folders/ImportantFolder"
@@ -35,7 +34,7 @@ export default function App() {
               <LeftBar />
               <Routes>
                 <Route path="//src/components/Main/Main.js" element={<Main />} />
-                {/* <Route path="/all-files" element={<AllFilesFolder />} /> */}
+                <Route path="/allfiles" element={<Main />} />
                 <Route path="/my-devices" element={<MyDevicesFolder />} />
                 <Route path="/recents" element={<RecentsFolder />} />
                 <Route path="/important" element={<ImportantFolder />} />

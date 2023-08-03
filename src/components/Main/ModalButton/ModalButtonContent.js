@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import menu from '../../../pictures/icons/icons8-menu-32.png';
 import {ModalViewDetailsButton} from './ModalViewDetailsButton'
 import {ModalShareButton} from './ModalShareButton'
-import {MarkImportant} from './MarkImportant'
+// import {MarkImportant} from './MarkImportant'
 import {Move} from './Move'
 import {Rename} from './Rename'
 import {Delete} from './Delete'
@@ -79,7 +79,7 @@ export const MenuModal = () => {
         <ModalBody>
         <div className="menu-hidden">
         <div className="menu-list" ><ModalViewDetailsButton /></div>
-        <div className="menu-list"><MarkImportant /></div>
+        {/* <div className="menu-list"><MarkImportant /></div> */}
         <div className="menu-list"><ModalShareButton /></div>
         <div className="menu-list"><Download /></div>
         <div className="menu-list"><Copy /></div>

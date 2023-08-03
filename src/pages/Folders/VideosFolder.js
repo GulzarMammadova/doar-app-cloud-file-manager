@@ -8,10 +8,10 @@ export function VideosFolder() {
   return (
     <div className="main-container">
       <div className='main-content'>
-        <h1>{t('leftBar.video')}</h1></div>
-      <div className="folders-container">
-        <div className="folders-content">
-        <RecentlyAccessed />
+        <h1>{t('leftBar.video')}</h1>
+        <div className="recently">
+          <div className="menu-title"><span></span></div>
+          <RecentlyAccessed />
         </div>
       </div>
     </div>

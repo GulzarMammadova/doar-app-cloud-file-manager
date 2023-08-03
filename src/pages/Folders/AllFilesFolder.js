@@ -1,17 +1,14 @@
-import '../../App.css';
 import React from 'react';
-import { RecentlyAccessed } from '../../components/Main/RecentlyAccessed/RecentlyAccessed';
-import { useTranslation } from 'react-i18next';
+import { Main} from '../../components/Main/Main';
 
-export default function AllFilesFolder() {
-  const { t } = useTranslation();
+
+export function AllFilesFolder() {
 
   return (
     <div className="main-container">
-        <div className="recently">
-          <div className="menu-title"><span>{t('leftBar.allFiles')}</span></div>
-          <RecentlyAccessed />
+      <div className='main-content'>
+          <Main />
         </div>
-    </div>
+      </div>
   );
 }

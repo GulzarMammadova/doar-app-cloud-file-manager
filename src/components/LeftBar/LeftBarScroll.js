@@ -12,9 +12,9 @@ export function LeftBarScroll() {
         <div className="my-drive">
           <div className="menu-title "><span>{t('leftBar.myDrive')}</span></div>
           <ul>
-            <li><Link to="/all-files"><i className="fa-regular fa-file"></i> {t('leftBar.allFiles')}</Link></li>
+            <li><Link to="/allfiles"><i className="fa-regular fa-file"></i> {t('leftBar.allFiles')}</Link></li>
             <li><Link to="/my-devices"><i className="fa-solid fa-desktop"></i>{t('leftBar.myDevices')}</Link></li>
-            <li><Link to="/resents"><i className="fa-regular fa-clock"></i>{t('leftBar.resently')}</Link></li>
+            <li><Link to="/recents"><i className="fa-regular fa-clock"></i>{t('leftBar.recently')}</Link></li>
             <li><Link to="/important"><i className="fa-regular fa-star"></i>{t('leftBar.important')}</Link></li>
             <li><Link to="/deleted"><i className="fa-regular fa-trash-can"></i>{t('leftBar.deletedFiles')}</Link></li>
           </ul>

@@ -566,6 +566,9 @@ body {
   font-weight: 500;
   color: #D4D4D4;
 }
+.main-container .main-content .menu-notification-text {
+  font-size: 16px;
+}
 .main-container .main-content .folders {
   display: flex;
   flex-direction: column;
@@ -779,7 +782,6 @@ body {
 }
 .modal-container .menu-hidden .ModalViewDetailsButton,
 .modal-container .menu-hidden .ModalShareButton,
-.modal-container .menu-hidden .MarkImportant,
 .modal-container .menu-hidden .Copy,
 .modal-container .menu-hidden .Delete,
 .modal-container .menu-hidden .Move,
@@ -795,7 +797,6 @@ body {
 }
 .modal-container .menu-hidden .ModalViewDetailsButton .show,
 .modal-container .menu-hidden .ModalShareButton .show,
-.modal-container .menu-hidden .MarkImportant .show,
 .modal-container .menu-hidden .Copy .show,
 .modal-container .menu-hidden .Delete .show,
 .modal-container .menu-hidden .Move .show,
@@ -805,7 +806,6 @@ body {
 }
 .modal-container .menu-hidden .ModalViewDetailsButton .hide,
 .modal-container .menu-hidden .ModalShareButton .hide,
-.modal-container .menu-hidden .MarkImportant .hide,
 .modal-container .menu-hidden .Copy .hide,
 .modal-container .menu-hidden .Delete .hide,
 .modal-container .menu-hidden .Move .hide,
@@ -815,7 +815,6 @@ body {
 }
 .modal-container .menu-hidden .ModalViewDetailsButton .overlay,
 .modal-container .menu-hidden .ModalShareButton .overlay,
-.modal-container .menu-hidden .MarkImportant .overlay,
 .modal-container .menu-hidden .Copy .overlay,
 .modal-container .menu-hidden .Delete .overlay,
 .modal-container .menu-hidden .Move .overlay,
@@ -831,7 +830,6 @@ body {
 }
 .modal-container .menu-hidden .ModalViewDetailsButton .modal,
 .modal-container .menu-hidden .ModalShareButton .modal,
-.modal-container .menu-hidden .MarkImportant .modal,
 .modal-container .menu-hidden .Copy .modal,
 .modal-container .menu-hidden .Delete .modal,
 .modal-container .menu-hidden .Move .modal,
@@ -853,7 +851,6 @@ body {
 }
 .modal-container .menu-hidden .ModalViewDetailsButton .modal h1,
 .modal-container .menu-hidden .ModalShareButton .modal h1,
-.modal-container .menu-hidden .MarkImportant .modal h1,
 .modal-container .menu-hidden .Copy .modal h1,
 .modal-container .menu-hidden .Delete .modal h1,
 .modal-container .menu-hidden .Move .modal h1,
@@ -867,7 +864,6 @@ body {
 }
 .modal-container .menu-hidden .ModalViewDetailsButton .modal .desc-form,
 .modal-container .menu-hidden .ModalShareButton .modal .desc-form,
-.modal-container .menu-hidden .MarkImportant .modal .desc-form,
 .modal-container .menu-hidden .Copy .modal .desc-form,
 .modal-container .menu-hidden .Delete .modal .desc-form,
 .modal-container .menu-hidden .Move .modal .desc-form,
@@ -878,7 +874,6 @@ body {
 }
 .modal-container .menu-hidden .ModalViewDetailsButton .modal .desc-form textarea,
 .modal-container .menu-hidden .ModalShareButton .modal .desc-form textarea,
-.modal-container .menu-hidden .MarkImportant .modal .desc-form textarea,
 .modal-container .menu-hidden .Copy .modal .desc-form textarea,
 .modal-container .menu-hidden .Delete .modal .desc-form textarea,
 .modal-container .menu-hidden .Move .modal .desc-form textarea,
@@ -902,7 +897,6 @@ body {
 }
 .modal-container .menu-hidden .ModalViewDetailsButton .modal .desc-form textarea:focus,
 .modal-container .menu-hidden .ModalShareButton .modal .desc-form textarea:focus,
-.modal-container .menu-hidden .MarkImportant .modal .desc-form textarea:focus,
 .modal-container .menu-hidden .Copy .modal .desc-form textarea:focus,
 .modal-container .menu-hidden .Delete .modal .desc-form textarea:focus,
 .modal-container .menu-hidden .Move .modal .desc-form textarea:focus,
@@ -914,12 +908,11 @@ body {
   outline: 0px;
   box-shadow: rgba(1, 104, 250, 0.2509803922) 0px 0px 0px 0.2rem;
 }
-.modal-container .menu-hidden .ModalViewDetailsButton .modal .desc-form textarea::-moz-placeholder, .modal-container .menu-hidden .ModalShareButton .modal .desc-form textarea::-moz-placeholder, .modal-container .menu-hidden .MarkImportant .modal .desc-form textarea::-moz-placeholder, .modal-container .menu-hidden .Copy .modal .desc-form textarea::-moz-placeholder, .modal-container .menu-hidden .Delete .modal .desc-form textarea::-moz-placeholder, .modal-container .menu-hidden .Move .modal .desc-form textarea::-moz-placeholder, .modal-container .menu-hidden .Rename .modal .desc-form textarea::-moz-placeholder, .modal-container .menu-hidden .Download .modal .desc-form textarea::-moz-placeholder {
+.modal-container .menu-hidden .ModalViewDetailsButton .modal .desc-form textarea::-moz-placeholder, .modal-container .menu-hidden .ModalShareButton .modal .desc-form textarea::-moz-placeholder, .modal-container .menu-hidden .Copy .modal .desc-form textarea::-moz-placeholder, .modal-container .menu-hidden .Delete .modal .desc-form textarea::-moz-placeholder, .modal-container .menu-hidden .Move .modal .desc-form textarea::-moz-placeholder, .modal-container .menu-hidden .Rename .modal .desc-form textarea::-moz-placeholder, .modal-container .menu-hidden .Download .modal .desc-form textarea::-moz-placeholder {
   color: #c0ccda;
 }
 .modal-container .menu-hidden .ModalViewDetailsButton .modal .desc-form textarea::placeholder,
 .modal-container .menu-hidden .ModalShareButton .modal .desc-form textarea::placeholder,
-.modal-container .menu-hidden .MarkImportant .modal .desc-form textarea::placeholder,
 .modal-container .menu-hidden .Copy .modal .desc-form textarea::placeholder,
 .modal-container .menu-hidden .Delete .modal .desc-form textarea::placeholder,
 .modal-container .menu-hidden .Move .modal .desc-form textarea::placeholder,
@@ -929,7 +922,6 @@ body {
 }
 .modal-container .menu-hidden .ModalViewDetailsButton .modal .details-description,
 .modal-container .menu-hidden .ModalShareButton .modal .details-description,
-.modal-container .menu-hidden .MarkImportant .modal .details-description,
 .modal-container .menu-hidden .Copy .modal .details-description,
 .modal-container .menu-hidden .Delete .modal .details-description,
 .modal-container .menu-hidden .Move .modal .details-description,
@@ -940,7 +932,6 @@ body {
 }
 .modal-container .menu-hidden .ModalViewDetailsButton .modal .details-description .description-line,
 .modal-container .menu-hidden .ModalShareButton .modal .details-description .description-line,
-.modal-container .menu-hidden .MarkImportant .modal .details-description .description-line,
 .modal-container .menu-hidden .Copy .modal .details-description .description-line,
 .modal-container .menu-hidden .Delete .modal .details-description .description-line,
 .modal-container .menu-hidden .Move .modal .details-description .description-line,
@@ -951,7 +942,6 @@ body {
 }
 .modal-container .menu-hidden .ModalViewDetailsButton .modal .details-description .description-line .left,
 .modal-container .menu-hidden .ModalShareButton .modal .details-description .description-line .left,
-.modal-container .menu-hidden .MarkImportant .modal .details-description .description-line .left,
 .modal-container .menu-hidden .Copy .modal .details-description .description-line .left,
 .modal-container .menu-hidden .Delete .modal .details-description .description-line .left,
 .modal-container .menu-hidden .Move .modal .details-description .description-line .left,
@@ -962,7 +952,6 @@ body {
 }
 .modal-container .menu-hidden .ModalViewDetailsButton .modal .details-description .description-line .right,
 .modal-container .menu-hidden .ModalShareButton .modal .details-description .description-line .right,
-.modal-container .menu-hidden .MarkImportant .modal .details-description .description-line .right,
 .modal-container .menu-hidden .Copy .modal .details-description .description-line .right,
 .modal-container .menu-hidden .Delete .modal .details-description .description-line .right,
 .modal-container .menu-hidden .Move .modal .details-description .description-line .right,
@@ -972,7 +961,6 @@ body {
 }
 .modal-container .menu-hidden .ModalViewDetailsButton .modal .details-description .description-line .right-text,
 .modal-container .menu-hidden .ModalShareButton .modal .details-description .description-line .right-text,
-.modal-container .menu-hidden .MarkImportant .modal .details-description .description-line .right-text,
 .modal-container .menu-hidden .Copy .modal .details-description .description-line .right-text,
 .modal-container .menu-hidden .Delete .modal .details-description .description-line .right-text,
 .modal-container .menu-hidden .Move .modal .details-description .description-line .right-text,
@@ -984,7 +972,6 @@ body {
 }
 .modal-container .menu-hidden .ModalViewDetailsButton .submit .submit-btn,
 .modal-container .menu-hidden .ModalShareButton .submit .submit-btn,
-.modal-container .menu-hidden .MarkImportant .submit .submit-btn,
 .modal-container .menu-hidden .Copy .submit .submit-btn,
 .modal-container .menu-hidden .Delete .submit .submit-btn,
 .modal-container .menu-hidden .Move .submit .submit-btn,
@@ -1010,7 +997,6 @@ body {
 }
 .modal-container .menu-hidden .ModalViewDetailsButton .submit .close-btn,
 .modal-container .menu-hidden .ModalShareButton .submit .close-btn,
-.modal-container .menu-hidden .MarkImportant .submit .close-btn,
 .modal-container .menu-hidden .Copy .submit .close-btn,
 .modal-container .menu-hidden .Delete .submit .close-btn,
 .modal-container .menu-hidden .Move .submit .close-btn,
@@ -1036,7 +1022,6 @@ body {
 }
 .modal-container .menu-hidden .ModalViewDetailsButton .details-btn,
 .modal-container .menu-hidden .ModalShareButton .details-btn,
-.modal-container .menu-hidden .MarkImportant .details-btn,
 .modal-container .menu-hidden .Copy .details-btn,
 .modal-container .menu-hidden .Delete .details-btn,
 .modal-container .menu-hidden .Move .details-btn,
@@ -1055,7 +1040,6 @@ body {
 }
 .modal-container .menu-hidden .ModalViewDetailsButton .details-btn .menu-hidden-icon,
 .modal-container .menu-hidden .ModalShareButton .details-btn .menu-hidden-icon,
-.modal-container .menu-hidden .MarkImportant .details-btn .menu-hidden-icon,
 .modal-container .menu-hidden .Copy .details-btn .menu-hidden-icon,
 .modal-container .menu-hidden .Delete .details-btn .menu-hidden-icon,
 .modal-container .menu-hidden .Move .details-btn .menu-hidden-icon,
@@ -1219,6 +1203,24 @@ body {
   width: 18px;
   height: 18px;
   cursor: pointer;
+}
+
+.star-button {
+  width: 13px;
+  height: 13px;
+  position: absolute;
+  left: 7%;
+  top: 1%;
+  border: none;
+  background: none;
+  color: #6e6e6f;
+  font-size: 20px;
+  cursor: pointer;
+  outline: none;
+}
+
+.starred {
+  color: gold;
 }
 
 .modal-button-icon {
