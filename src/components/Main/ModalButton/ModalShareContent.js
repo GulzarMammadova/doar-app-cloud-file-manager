@@ -12,7 +12,8 @@ export default function ModalShareContent(props) {
         <div className="share-email">
           <form>
             <p>Other users:</p>
-            <input type="text" name="name" placeholder="Enter names ar email addresses" />
+            <input type="text" name="name" 
+            placeholder="Enter names ar email addresses" />
           </form>
           <div className="rights">
             <p>Rights:</p>
@@ -25,18 +26,16 @@ export default function ModalShareContent(props) {
         </div>
         <div className="share-social">
           <p>More:</p>
-          <i className="fa-brands fa-twitter fa-lg"></i>
-          <i className="fa-brands fa-facebook-f fa-lg"></i>
+          <a className="link" href="https://twitter.com/"><i className="fa-brands fa-twitter fa-lg"></i></a>
+          <a className="link" href="https://www.facebook.com/"><i className="fa-brands fa-facebook-f fa-lg"></i></a>
         </div>
         <div className="submit">
-          <div><input className="submit-btn" type="submit" value="Submit" />
+          <div><input className="submit-btn" type="submit" value="Share" />
           </div>
-          <div><button className='submit-btn' type="submit" onClick={closeModal}>Close</button>
-          </div>
+          <div><button className='submit-btn' type="submit" onClick={closeModal}>Close</button></div>
         </div>
 
       </div>
     </>
   );
 }
-

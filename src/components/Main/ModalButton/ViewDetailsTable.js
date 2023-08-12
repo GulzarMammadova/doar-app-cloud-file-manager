@@ -13,7 +13,7 @@ export const DescriptionForm = () => {
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.description]: e.target.value
+      [e.target.name]: e.target.value 
     });
   };
 
@@ -24,11 +24,15 @@ export const DescriptionForm = () => {
   return (
     <>
     <form className='desc-form' onSubmit={handleSubmit}>
-      <textarea type="text" name="message"
-       placeholder={t("modalDetailsDesc.addDesc")} 
-       value={formData.message} onChange={handleChange} />
+    <textarea
+          type="text"
+          name="description" 
+          placeholder={t("modalDetailsDesc.addDesc")}
+          value={formData.description}
+          onChange={handleChange}
+        />
     </form>
 </>
   );
-};
+}; 
 

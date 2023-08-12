@@ -10,7 +10,7 @@ export function ZipFolder() {
         <h1>{t('leftBar.zip')}</h1>
         <div className="recently">
           <div className="menu-title"><span></span></div>
-          <p className="menu-notification-text">This folder is empty</p>
+          <p className="menu-notification-text">{t('messages.folderMsg')}</p>
         </div>
       </div>
     </div>

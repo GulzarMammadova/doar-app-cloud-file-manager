@@ -2,7 +2,8 @@
 import '../../../App.css';
 import { CreatedFolderItem } from './CreatedFolderItem' ;
 import folders from '../../../pictures/icons/folder.png'
-
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export function CreatedFoldersList () {
  
@@ -11,40 +12,41 @@ export function CreatedFoldersList () {
             "id": 1,
             "icon": folders,
             "name": "Downloads",
-            "count": "2 files, 14.05mb"
+            "count": "0 files"
         },
         {
             "id": 2,
             "icon": folders,
             "name": "Personal Stuff",
-            "count": "5 files, 126.5mb"
+            "count": "0 files"
         },
         {
             "id": 3,
             "icon": folders,
             "name": "Work",
-            "count": "6 files, 156.5mb"
+            "count": "0 files"
         },
         {
             "id": 4,
             "icon": folders,
             "name": "Recordings",
-            "count": "0 files,"
+            "count": "0 files"
         },
         {
             "id": 5,
             "icon": folders,
             "name": "New Project",
-            "count": "0 files,"
+            "count": "0 files"
         },
     ]
     return (
         <div className="folder-items">
             {FoldersList.map((post, index) => (
-                <CreatedFolderItem key={index} index={index} post={post} />
+                <Link key={index} to={`/folder/${post.id}`}>
+                    <CreatedFolderItem index={index} post={post} />
+                </Link>
             ))}
         </div>
-    )
+    );
 }
-
 

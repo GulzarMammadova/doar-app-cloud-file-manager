@@ -4,8 +4,6 @@ import React from 'react';
 import DropdownButtonNew from './DropdownButtonNew';
 import DropdownButtonUpload from './DropdownButtonUpload'
 
-// import CreateNewFolder from './CreateNewFolder';
-// import Popup from './Popup/Popup';
 
 export function LeftBar() {
   const optionsNew = [
@@ -23,7 +21,6 @@ export function LeftBar() {
       <DropdownButtonUpload optionsUpload={optionsUpload} />
       </div>
     <LeftBarScroll />
-    {/* <CreateNewFolder/> */}
     </div>
   );
 }

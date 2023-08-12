@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../../App.css";
 import { DescriptionForm } from "./ViewDetailsTable";
 import { useTranslation } from "react-i18next";
 
 export default function ModalViewDetailsContent(props) {
   const { show, closeModal } = props;
+  const [description, setDescription] = useState("");
   const { t } = useTranslation();
 
+  
+  const handleSubmit = () => {
+    console.log("Description:", description);
+    closeModal();
+  };
   return (
     <>
       <div className={show ? "overlay" : "hide"} onClick={closeModal} />
@@ -58,17 +64,17 @@ export default function ModalViewDetailsContent(props) {
               <span>{t("modalDetailsDesc.description")}:</span>
             </div>
             <div className="right-text">
-              <DescriptionForm />
+              <DescriptionForm value={description} onChange={setDescription} />
             </div>
           </div>
         </div>
         <div className="submit">
           <div>
-            <input className="submit-btn" type="submit" value="Submit" />
+            <input className="submit-btn" type="submit" value="Submit" onClick={handleSubmit}/>
           </div>
           <div></div>
         </div>{" "}
       </div>
     </>
-  );
+  ); 
 }

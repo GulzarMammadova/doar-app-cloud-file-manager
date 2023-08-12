@@ -45,7 +45,8 @@
       "Download":"Created",
       "created":"Created",
       "accessed":"Accessed",
-      "description":"Descriprion"
+      "description":"Descriprion",
+      "addDesc":"Add description"
     },
     "modalMenuList":{
       "view": "View Details",
@@ -57,6 +58,9 @@
       "rename":"Rename",
       "delete":"Delete",
       "addDesc":"Add description"
+    },
+    "messages":{
+      "folderMsg":"This folder is empty"
     }
     
   }

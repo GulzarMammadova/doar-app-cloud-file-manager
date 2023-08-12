@@ -58,5 +58,8 @@
     "moveTo":"Köçür",
     "rename":"Adını dəyişdir",
     "delete":"Sil"
+  },
+  "messages":{
+    "folderMsg":"Bu qovluq boşdur"
   }
 }

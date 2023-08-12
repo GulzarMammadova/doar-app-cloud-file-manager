@@ -10,9 +10,7 @@ export const CreatedFolderItem = ({
                 <div className="folder">
                 <MenuModal/>
                     <div className="icon-preview">
-                        {/* <img className="icon" src={icon} alt="post" /> */}
                         <i className="fa-regular fa-folder fa-2xl"></i>
-
                     </div>
                     <div className="description">
                         <h4 className="name">{name}</h4>

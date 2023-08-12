@@ -10,7 +10,7 @@ export function DeletedFolder() {
         <h1>{t('leftBar.deletedFiles')}</h1>
         <div className="recently">
           <div className="menu-title"><span></span></div>
-          <p className="menu-notification-text">This folder is empty</p>
+          <p className="menu-notification-text">{t('messages.folderMsg')}</p>
         </div>
       </div>
     </div>

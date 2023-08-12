@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import { LanguageBar } from "../Header/LanguageBar"
 import { useTranslation } from 'react-i18next';
 
+
 export function LeftBarScroll() {
   const { t } = useTranslation();
+
 
   return (
     <>
@@ -45,6 +47,6 @@ export function LeftBarScroll() {
           <LanguageBar />
         </div>
       </div>
-    </>
+    </> 
   );
 }

@@ -1,5 +1,4 @@
 import '../../App.css';
-import { Link } from "react-router-dom"
 import { SearchBar } from './SearchBar';
 import {Settings} from "./Settings"
 
@@ -15,9 +14,9 @@ export function Header() {
       </div>
       <div className="notification-bar">
         <ul>
-          <li><Link to="/"></Link><i className="fa-regular fa-message fa-lg"></i></li>
-          <li><Link to="/"></Link><i className="fa-regular fa-bell fa-lg"></i></li>
-          <li className='avatar'><Link to="/"></Link>gm</li>
+          <li className='message'><i className="fa-regular fa-message fa-lg"></i></li>
+          <li className='bell'><i className="fa-regular fa-bell fa-lg"></i></li>
+          <li className='avatar'>gm</li>
         </ul>
       </div>
       <div className="div">

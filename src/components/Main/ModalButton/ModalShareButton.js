@@ -12,7 +12,8 @@ export function ModalShareButton() {
 
   return (
     <div className="ModalShareButton">
-      {!show && <button className='details-btn' onClick={openModal}><img className="menu-hidden-icon" src={share} alt="post" />{t('modalMenuList.share')}</button>}
+      {!show && <button className='details-btn' onClick={openModal}>
+      <img className="menu-hidden-icon" src={share} alt="post" />{t('modalMenuList.share')}</button>}
       <ModalShareContent closeModal={closeModal} show={show} />
     </div>
   );

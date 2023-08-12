@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import menu from '../../../pictures/icons/icons8-menu-32.png';
 import {ModalViewDetailsButton} from './ModalViewDetailsButton'
 import {ModalShareButton} from './ModalShareButton'
-// import {MarkImportant} from './MarkImportant'
 import {Move} from './Move'
 import {Rename} from './Rename'
 import {Delete} from './Delete'
@@ -59,38 +58,47 @@ const Button = ({ onClick, children }) => {
 export const MenuModal = () => {
   const [show, setShow] = useState(false);
 
-  const clickHandler = () => {
-    setShow((prev) => {
-      if (prev) {
-        document.body.classList.remove('doar-modal-open');
-      } else {
-        document.body.classList.add('doar-modal-open');
-      }
-      return !prev;
-    });
+  const openModal = () => {
+    setShow(true);
+    document.body.classList.add('doar-modal-open');
   };
 
+  const closeModal = () => {
+    setShow(false);
+    document.body.classList.remove('doar-modal-open');
+  };
+
+  const handleMenuItemClick = () => {
+    openModal(); 
+  };
+
+  const handleMenuClick = () => {
+    if (show) {
+      closeModal(); 
+    } else {
+      openModal(); 
+    }
+  };
   return (
     <>
       <Modal show={show}>
         <ModalHeader>
-          <ModalClose onClose={clickHandler}>x</ModalClose>
+          <ModalClose onClose={closeModal}>x</ModalClose>
         </ModalHeader>
         <ModalBody>
-        <div className="menu-hidden">
-        <div className="menu-list" ><ModalViewDetailsButton /></div>
-        {/* <div className="menu-list"><MarkImportant /></div> */}
-        <div className="menu-list"><ModalShareButton /></div>
-        <div className="menu-list"><Download /></div>
-        <div className="menu-list"><Copy /></div>
-        <div className="menu-list"><Move /></div>
-        <div className="menu-list"><Rename/></div>
-        <div className="menu-list"><Delete/></div>
-      </div>
+          <div className={`menu-hidden ${show ? 'menu-list-open' : ''}`}>
+            <div className="menu-list" onClick={handleMenuItemClick}><ModalViewDetailsButton /></div>
+            <div className="menu-list" onClick={handleMenuItemClick}><ModalShareButton /></div>
+            <div className="menu-list" onClick={handleMenuItemClick}><Download /></div>
+            <div className="menu-list" onClick={handleMenuItemClick}><Copy /></div>
+            <div className="menu-list" onClick={handleMenuItemClick}><Move /></div>
+            <div className="menu-list" onClick={handleMenuItemClick}><Rename/></div>
+            <div className="menu-list" onClick={handleMenuItemClick}><Delete/></div>
+          </div>
         </ModalBody>
       </Modal>
-      <Button onClick={clickHandler}>
-      <img className="modal-button-icon" src={menu} alt="post" />
+      <Button onClick={handleMenuClick}>
+        <img className="modal-button-icon" src={menu} alt="post" />
       </Button>
     </>
   );

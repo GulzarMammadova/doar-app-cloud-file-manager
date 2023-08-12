@@ -32,8 +32,9 @@ export default function App() {
             <BrowserRouter>
               <Header />
               <LeftBar />
-              <Routes>
-                <Route path="//src/components/Main/Main.js" element={<Main />} />
+              <Main/>
+              <Routes >
+                <Route path="/src/components/Main/Main.js" element={<Main />} />
                 <Route path="/allfiles" element={<Main />} />
                 <Route path="/my-devices" element={<MyDevicesFolder />} />
                 <Route path="/recents" element={<RecentsFolder />} />

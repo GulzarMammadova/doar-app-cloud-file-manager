@@ -1,6 +1,6 @@
 import '../../App.css';
 import React, { useState } from 'react';
-import './DropdownButtonNew'
+import './DropdownButtonNew' 
 
 const CreateNewFolder = ({ optionsNew, onFolderCreate }) => {
   const [newFolderName, setNewFolderName] = useState('');

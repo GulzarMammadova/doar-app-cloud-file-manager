@@ -40,7 +40,6 @@ export const AllFilesPost = ({
       <h4 className="name">{name}</h4>
       <p className="type">{type}</p>
       <p className="size">{size}</p>
-      
       <StarButton isStarred={isStarred} onClick={handleStarClick} />
     </div>
   );
