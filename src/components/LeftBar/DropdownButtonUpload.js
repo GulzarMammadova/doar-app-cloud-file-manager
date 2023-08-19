@@ -1,29 +1,36 @@
-import '../../App.css';
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const DropdownButtonUpload = ({ optionsUpload }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const DropdownButtonUpload = () => {
+  const fileInputRef = useRef(null);
 
-  const handleOptionClick = (option) => {
-    setIsOpen(false);
+  const handleFileUpload = (event) => {
+    const files = event.target.files;
+    console.log('Uploaded files:', files);
   };
+
+  const handleButtonClick = () => {
+    if (fileInputRef.current) {
+      fileInputRef.current.click();
+    }
+  };
+
   const { t } = useTranslation();
+
   return (
     <>
-    <div className="upload-btn-dropdown">
-      <button className="upload-btn" onClick={() => setIsOpen(!isOpen)}>
-      {t('leftBar.uploadBtn')}</button>
-      {isOpen && (
-        <ul className="dropdown-menu">
-          {optionsUpload.map((optionUpload) => (
-            <li key={optionUpload.value} onClick={() => handleOptionClick(optionUpload)}>
-              {optionUpload.label} 
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
+      <div className="upload-btn-dropdown">
+        <label className="upload-btn" onClick={handleButtonClick}>
+          {t('leftBar.uploadBtn')}
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept=".jpg,.jpeg,.png,.pdf"
+            onChange={handleFileUpload}
+            style={{ display: 'none' }} 
+          />
+        </label>
+      </div>
     </>
   );
 };

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import '../../../App.css';
-import './RecentlyAccessedList'
-import {MenuModal} from '../ModalButton/ModalButtonContent'
+import { MenuModal } from '../ModalButton/ModalButtonContent';
 import StarButton from '../AllFiles/StarButton';
 
- export const RecentlyAccessedPost = ({
-  post: { icon, name, type, size },
-  index
+export const RecentlyAccessedPost = ({
+  post: { icon, name, type, size, url },
+  index,
+  onStarClick
 }) => {
   const [isStarred, setIsStarred] = useState(false);
 
@@ -17,7 +17,7 @@ import StarButton from '../AllFiles/StarButton';
 
   const handleStarClick = () => {
     const starredFiles = JSON.parse(localStorage.getItem('starredFiles')) || [];
-    
+
     if (starredFiles.includes(index)) {
       const updatedStarredFiles = starredFiles.filter(fileIndex => fileIndex !== index);
       localStorage.setItem('starredFiles', JSON.stringify(updatedStarredFiles));
@@ -27,12 +27,21 @@ import StarButton from '../AllFiles/StarButton';
     }
 
     setIsStarred(!isStarred);
+
+    // Call the parent component's onStarClick function if provided
+    if (onStarClick) {
+      onStarClick(index);
+    }
+  };
+
+  const openUrl = () => {
+    window.open(url, '_blank');
   };
 
   return (
     <div className="AllFilesPost-container">
       <MenuModal />
-      <div className="icon-preview">
+      <div className="icon-preview" onClick={openUrl}>
         <div>
           <img className="icon" src={icon} alt="post" />
         </div>

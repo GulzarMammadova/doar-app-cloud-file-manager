@@ -5,9 +5,12 @@ import '../../../App.css';
 import './AllFilesList';
 
 export const AllFilesPost = ({
-  post: { icon, name, type, size },
-  index
+  post: { url, icon, name, type, size, id},
+  index,
+  setLastOpenedUrl,
+  handleRenameFile
 }) => {
+
   const [isStarred, setIsStarred] = useState(false);
 
   useEffect(() => {
@@ -28,19 +31,23 @@ export const AllFilesPost = ({
 
     setIsStarred(!isStarred);
   };
+  const openUrl = () => {
+    window.open(url, '_blank');
+    setLastOpenedUrl(url);
+    };
 
   return (
     <div className="AllFilesPost-container">
       <MenuModal />
-      <div className="icon-preview">
+      <div className="icon-preview" onClick={openUrl}>
         <div>
-          <img className="icon" src={icon} alt="post" />
+          <img className="icon" src={icon} alt="post"/>
         </div>
       </div>
       <h4 className="name">{name}</h4>
       <p className="type">{type}</p>
       <p className="size">{size}</p>
-      <StarButton isStarred={isStarred} onClick={handleStarClick} />
+      <StarButton isStarred={isStarred} onClick={handleStarClick}/>
     </div>
   );
 };

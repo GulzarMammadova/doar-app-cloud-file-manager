@@ -1,7 +1,5 @@
 import '../../../App.css';
-// import React, { useState } from 'react';
 import trash from '../../../pictures/icons/icons8-trash-can-24.png';
-// import DeleteContent from './DeleteContent'
 import { useTranslation } from 'react-i18next';
 
 

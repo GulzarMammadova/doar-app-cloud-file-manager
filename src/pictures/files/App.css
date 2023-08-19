@@ -346,6 +346,7 @@ body {
   box-sizing: border-box;
 }
 .header .notification-bar .nav__notification_bar {
+  contain: layout;
   position: absolute;
   top: 2em;
   right: 0;
@@ -389,6 +390,7 @@ body {
   margin: 0;
 }
 .header .notification-bar .nav__notifications__list__item {
+  contain: strict;
   background: none;
   height: 5rem;
   width: 100%;
@@ -576,7 +578,7 @@ body {
   cursor: pointer;
   color: var(--text-dark);
 }
-.left-container .left-bar-create-btns .new-btn-dropdown .dropdown-menu:hover {
+.left-container .left-bar-create-btns .new-btn-dropdown .dropdown-menu li:hover {
   width: 100px;
   height: 31px;
   color: var(--text-dark);
@@ -587,9 +589,6 @@ body {
   transition: all 0.4s ease 0s;
 }
 .left-container .left-bar-create-btns .upload-btn-dropdown .upload-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 85px;
   height: 26px;
   background: none;
@@ -756,7 +755,92 @@ body {
 }
 @media (max-width: 768px) {
   .left-container {
-    width: 60%;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 5%;
+  }
+  .left-container .left-bar-create-btns {
+    width: 19%;
+    position: relative;
+    background-color: var(--bg-white);
+    padding: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .left-container .left-bar-create-btns .new-btn-dropdown,
+  .left-container .left-bar-create-btns .upload-btn-dropdown {
+    width: 100%;
+  }
+  .left-container .left-bar-create-btns .new-btn-dropdown .new-btn,
+  .left-container .left-bar-create-btns .new-btn-dropdown .upload-btn,
+  .left-container .left-bar-create-btns .upload-btn-dropdown .new-btn,
+  .left-container .left-bar-create-btns .upload-btn-dropdown .upload-btn {
+    width: 90%;
+    height: auto;
+    text-align: center;
+  }
+  .left-container .left-bar-create-btns .new-btn-dropdown .new-btn:hover,
+  .left-container .left-bar-create-btns .new-btn-dropdown .upload-btn:hover,
+  .left-container .left-bar-create-btns .upload-btn-dropdown .new-btn:hover,
+  .left-container .left-bar-create-btns .upload-btn-dropdown .upload-btn:hover {
+    background-color: transparent;
+  }
+  .left-container .left-bar-create-btns .new-btn-dropdown .dropdown-menu,
+  .left-container .left-bar-create-btns .upload-btn-dropdown .dropdown-menu {
+    width: 100%;
+  }
+  .left-container .scroll-bar {
+    height: auto;
+    margin-top: 0;
+    overflow: hidden;
+  }
+  .left-container .scroll-bar .menu-title {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+  .left-container .scroll-bar .my-drive,
+  .left-container .scroll-bar .file-lib {
+    padding-left: 10px;
+  }
+  .left-container .scroll-bar .my-drive li,
+  .left-container .scroll-bar .file-lib li {
+    width: auto;
+    height: auto;
+    padding: 5px 10px;
+  }
+  .left-container .scroll-bar .my-drive li:hover,
+  .left-container .scroll-bar .file-lib li:hover {
+    width: auto;
+    height: auto;
+  }
+  .left-container .scroll-bar .storage {
+    padding-left: 10px;
+  }
+  .left-container .scroll-bar .storage .menu-title {
+    margin-bottom: 10px;
+  }
+  .left-container .scroll-bar .storage .storage-status {
+    width: auto;
+    height: auto;
+  }
+  .left-container .scroll-bar .storage .storage-status .used,
+  .left-container .scroll-bar .storage .storage-status .progress {
+    width: auto;
+    height: auto;
+    font-size: 12px;
+  }
+  .left-container .scroll-bar .storage .offer {
+    width: auto;
+    bottom: 10px;
+    position: static;
+  }
+  .left-container .scroll-bar .storage .offer .offer-text {
+    font-size: 12px;
+  }
+  .left-container .scroll-bar .storage .offer a {
+    font-size: 12px;
+    margin-bottom: 3px;
   }
 }
 
@@ -833,11 +917,6 @@ body {
   flex-wrap: wrap;
   gap: 40px;
 }
-@media (max-width: 768px) {
-  .main-container .main-content .folders .folder-items {
-    gap: 10px;
-  }
-}
 .main-container .main-content .folders .folder-items .folder {
   width: 200px;
   height: 53px;
@@ -867,19 +946,6 @@ body {
   font-size: 10px;
   letter-spacing: 0.2px;
   color: #475362;
-}
-@media (max-width: 768px) {
-  .main-container .main-content .folders .folder-items {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-}
-@media (max-width: 768px) {
-  .main-container .main-content .folders {
-    justify-content: center;
-    height: 75%;
-  }
 }
 .main-container .main-content .RecentlyAccessed-container {
   margin-bottom: 20px;
@@ -1004,29 +1070,17 @@ body {
   color: #8392a5;
   margin-top: 9px;
 }
-@media (max-width: 768px) {
-  .main-container .main-content {
-    width: 100%;
-    padding: 0;
-  }
-}
-.main-container .main-content .folders-container {
+.main-container .folders-container {
   position: absolute;
   top: 20%;
   padding: 20px 25px;
   width: 100%;
   height: 500px;
 }
-.main-container .main-content .folders-container .folders-content {
+.main-container .folders-container .folders-content {
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(5, 170px);
-}
-@media (max-width: 768px) {
-  .main-container {
-    width: 67%;
-    left: 40%;
-  }
 }
 
 .modal-container {
@@ -1481,20 +1535,6 @@ body {
   color: var(--text-main);
   font-size: 13px;
 }
-.modal-container .menu-hidden .Rename .modal {
-  width: 399px;
-  height: 150px;
-  top: 2%;
-}
-.modal-container .menu-hidden .Rename .submit {
-  width: 349px;
-  height: 31px;
-  position: absolute;
-}
-.modal-container .menu-hidden .Rename input[type=text] {
-  width: 349px;
-  height: 41px;
-}
 .modal-container .menu-hidden .submit {
   position: relative;
   bottom: 12px;
@@ -1515,11 +1555,6 @@ body {
   width: 18px;
   height: 18px;
   cursor: pointer;
-}
-
-.Rename {
-  width: 399px;
-  height: 200px;
 }
 
 .star-button {

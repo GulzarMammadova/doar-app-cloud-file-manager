@@ -12,7 +12,7 @@ export function LanguageBar() {
 
   return (
     <div className="LanguageBar">
-      <select id="language-select" value={i18n.language} onChange={handleChange}>
+      <select id="language-select" title="language-bar" value={i18n.language} onChange={handleChange}>
         <option value="en">{t('languageBar.en')}</option>
         <option value="az">{t('languageBar.az')}</option>
       </select>

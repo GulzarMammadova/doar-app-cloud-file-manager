@@ -8,6 +8,8 @@ export default function ToggleDark(props) {
         <input
           type="checkbox"
           id="checkbox-toggle"
+          placeholder="darkmode"
+          title="darkmode"
           className="input"
           onChange={() => {
             props.toggleDark();

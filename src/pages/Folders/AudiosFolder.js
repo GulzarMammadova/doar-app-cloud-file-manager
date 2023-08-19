@@ -1,7 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { RecentlyAccessed } from '../../components/Main/RecentlyAccessed/RecentlyAccessed';
-
 
 export function AudiosFolder() {
   const { t } = useTranslation();
@@ -9,10 +7,10 @@ export function AudiosFolder() {
   return (
     <div className="main-container">
       <div className='main-content'>
-        <h1>{t('leftBar.audio')}</h1>
+        <h1>{t('leftBar.deletedFiles')}</h1>
         <div className="recently">
           <div className="menu-title"><span></span></div>
-          <RecentlyAccessed />
+          <p className="menu-notification-text">{t('messages.folderMsg')}</p>
         </div>
       </div>
     </div>
