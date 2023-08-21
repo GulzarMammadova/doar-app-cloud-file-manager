@@ -28,7 +28,6 @@ export const RecentlyAccessedPost = ({
 
     setIsStarred(!isStarred);
 
-    // Call the parent component's onStarClick function if provided
     if (onStarClick) {
       onStarClick(index);
     }

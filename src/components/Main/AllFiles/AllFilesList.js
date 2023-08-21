@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../../../App.css';
 import { AllFilesPost } from './AllFilesPost';
-import { RecentlyAccessedList } from '../RecentlyAccessed/RecentlyAccessedList'
+// import { RecentlyAccessedList } from '../RecentlyAccessed/RecentlyAccessedList'
 import pdfIcon from '../../../pictures/icons/pdf.png'
 import docxIcon from '../../../pictures/icons/word.png'
 import txtIcon from '../../../pictures/icons/txt.png'
@@ -104,7 +104,6 @@ export function AllFilesList() {
     }
   ])
 
-  const [lastOpenedUrl, setLastOpenedUrl] = useState('');
 
   const handleRenameFile = (fileId, newName) => {
     const updatedFilesList = allFilesList.map(file => {
@@ -119,20 +118,22 @@ export function AllFilesList() {
     setAllFilesList(updatedFilesList);
   };
 
+
+
   return (
     <div>
       <div className="AllFilesList-container">
         {allFilesList.map((post, index) => (
           <AllFilesPost
+          //  onClick={()=>handleFile(post["id"])}
             key={index}
             index={index}
             post={post}
-            setLastOpenedUrl={setLastOpenedUrl}
+            // setLastOpenedUrl={setLastOpenedUrl}
             handleRenameFile={handleRenameFile}
           />
         ))}
       </div>
-      <RecentlyAccessedList lastOpenedUrl={lastOpenedUrl} />
     </div>
   )
 }
