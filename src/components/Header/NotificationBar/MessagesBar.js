@@ -1,31 +1,22 @@
 import React, { Component } from 'react';
 import { Spring, config } from 'react-spring';
-import Media from './Media';
+import MediaMessages from './MediaMessages';
 
-class NotificationsBar extends Component {
+class MessagesBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
       media: [
         {
-          imgURL: 'https://randomuser.me/api/portraits/men/74.jpg',
-          name: 'Gerlald Thompson',
-          action: 'approved your request to',
-          content: 'become friends',
+          content: 'New file added',
           new: true,
         },
         {
-          imgURL: 'https://randomuser.me/api/portraits/men/74.jpg',
-          name: 'Gerlald Thompson',
-          action: 'approved your request to',
-          content: 'become friends',
+          content: 'Folder deleted',
           new: true,
         },
         {
-          imgURL: 'https://randomuser.me/api/portraits/men/74.jpg',
-          name: 'Gerlald Thompson',
-          action: 'approved your request to',
-          content: 'become friends',
+          content: 'New file added',
           new: true,
         },
       ],
@@ -47,9 +38,9 @@ class NotificationsBar extends Component {
                 transform: `translateY(${interpOuter.translateY}px)`,
                 transition: 'opacity 0.5s, transform 0.5s',
               }}
-              className="nav__notification_bar"
+              className="nav__message_bar"
             >
-              <h3>Notifications</h3>
+              <h3>Messages</h3>
               {media.map((item, i) => (
                 <Spring
                   key={i}
@@ -58,12 +49,9 @@ class NotificationsBar extends Component {
                   config={config.wobbly}
                 >
                   {style => (
-                    <Media
+                    <MediaMessages
                       key={i}
                       style={{ height: style.h }}
-                      imageURL={item.imgURL}
-                      name={item.name}
-                      action={item.action}
                       content={item.content}
                       open={this.props.open}
                       new={item.new}
@@ -78,4 +66,4 @@ class NotificationsBar extends Component {
     }
   }
 
-export default NotificationsBar;
+export default MessagesBar;

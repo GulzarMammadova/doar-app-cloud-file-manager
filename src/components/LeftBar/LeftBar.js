@@ -31,7 +31,7 @@ export function LeftBar() {
         <CreateFolderContent
           optionsNew={optionsNew}
           onFolderCreate={handleFolderCreate}
-          setShowCreateFolder={setShowCreateFolder} // Pass the state setter
+          setShowCreateFolder={setShowCreateFolder} 
         />
       )}
     </div>

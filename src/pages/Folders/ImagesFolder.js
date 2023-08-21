@@ -109,14 +109,14 @@ export function ImagesFolder() {
     <div className="main-container">
       <div className='main-content'>
         <h1>{t('leftBar.docs')}</h1>
-        <div className="folder-content">
+        <div className="Files-container">
           <div className="menu-title"><span></span></div>
-          <div>
+          <div className='folder-content'>
             {allFiles
               .filter(file => allowedTypes.includes(file.type))
               .map((filteredFile, index) => (
                 <ul key={index}>
-                  <li>
+                  <li className='AllFilesPost-container'>
                     <AllFilesPost
                       index={index}
                       post={filteredFile}

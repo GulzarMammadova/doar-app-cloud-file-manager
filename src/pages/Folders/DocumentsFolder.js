@@ -103,19 +103,19 @@ export function DocumentsFolder() {
     }
   ]
   const allowedTypes = ['PDF File', 'Word Document', 'Text Document', 'JSON File', 'CSS File', 'HTML Document'];
-
+ 
   return (
     <div className="main-container">
       <div className='main-content'>
         <h1>{t('leftBar.docs')}</h1>
-        <div className="folder-content">
+        <div className="Files-container">
           <div className="menu-title"><span></span></div>
-          <div>
-            {allFiles
+          <div className='folder-content'>
+            {allFiles 
               .filter(file => allowedTypes.includes(file.type))
               .map((filteredFile, index) => (
-                <ul key={index}>
-                  <li>
+                <ul key={index} >
+                  <li className='AllFilesPost-container'>
                     <AllFilesPost
                       index={index}
                       post={filteredFile}

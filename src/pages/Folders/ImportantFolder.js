@@ -102,18 +102,23 @@ export function ImportantFolder() {
       "url": "https://drive.google.com/file/d/13FXmQzcR9rLBGTrCp52llIbf39P0rCzQ/view?usp=drive_link"
     }
   ]
-  const starredFilesOfType = allFilesList.filter(file => file.isStarred === true);
+
+  const starredFilesIndex = JSON.parse(localStorage.getItem('starredFiles'))
+  const starredFilesOfType = starredFilesIndex.map((a)=>{
+    return allFilesList[a]
+  })
+
 
   return (
     <div className="main-container">
       <div className='main-content'>
         <h1>{t('leftBar.important')}</h1>
-        <div className="recently">
+        <div className="Files-container">
           <div className="menu-title"><span></span></div>
-          <div>
+          <div  style={{display:'flex',gap:'30px'}}>
             {starredFilesOfType.map((filteredFile, index) => (
               <ul key={index}>
-                <li>
+                <li className="AllFilesList-container">
                   <AllFilesPost
                     index={index}
                     post={filteredFile}
