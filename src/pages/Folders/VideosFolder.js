@@ -107,15 +107,15 @@ export function VideosFolder() {
     <div className="main-container">
       <div className='main-content'>
         <h1>{t('leftBar.video')}</h1>
-        <div className="folder-content">
+        <div className="Files-container">
           <div className="menu-title"><span></span></div>
-          <div>
+          <div className='folder-content'>
           {allFiles
               .filter(file => file.type === 'Mp4 File')
               .map((filteredFile, index) => (
                 <ul key={index}>
                   <li>
-                    <AllFilesPost
+                    <AllFilesPost 
                       index={index}
                       post={filteredFile}
                     />

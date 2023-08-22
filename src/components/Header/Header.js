@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import '../../App.css';
 import { SearchBar } from './SearchBar';
-import { Settings } from "./Settings";
 import Notifications from './NotificationBar/Notifications';
 import Messages from './NotificationBar/Messages';
+import Profile from "./Profile"
 
 export function Header() {
   const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
@@ -23,12 +23,9 @@ export function Header() {
       <div className="notification-bar">
       <Notifications toggleNotificationsBar={toggleNotificationsBar} open={isNotificationsOpen} />
       <Messages toggleNotificationsBar={toggleNotificationsBar} open={isNotificationsOpen} />
-        <div className="nav__notification">
-          <span className="avatar">gm</span>
-        </div>
+      <Profile toggleNotificationsBar={toggleNotificationsBar} open={isNotificationsOpen}/>
       </div>
       <div className="div">
-        <Settings />
       </div>
     </div>
   );

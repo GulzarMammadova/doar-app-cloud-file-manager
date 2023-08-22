@@ -115,7 +115,7 @@ export function DocumentsFolder() {
               .filter(file => allowedTypes.includes(file.type))
               .map((filteredFile, index) => (
                 <ul key={index} >
-                  <li className='AllFilesPost-container'>
+                  <li>
                     <AllFilesPost
                       index={index}
                       post={filteredFile}

@@ -44,9 +44,11 @@ export const AllFilesPost = ({
           <img className="icon" src={icon} alt="post"/>
         </div>
       </div>
-      <h4 className="name">{name}</h4>
+    <div className="text-container">
+    <h4 className="name">{name}</h4>
       <p className="type">{type}</p>
       <p className="size">{size}</p>
+    </div>
       <StarButton isStarred={isStarred} onClick={handleStarClick}/>
     </div>
   );

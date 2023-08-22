@@ -1,15 +1,27 @@
 import React from 'react';
+import '../../App.css';
 
-export function Settings() {
-
+export function Settings({toggleLayout, isGrid}) {
+  const openPage = () => {
+    window.open('_blank');
+    };
   return (
-    <div className="main-container">
+    <div>
       <div className="settings">
-        <ul>
-          <li><i className="fa-solid fa-list-ul fa-lg"></i></li>
-          <li><i className="fa-solid fa-circle-exclamation fa-lg"></i></li>
-          <li><i className="fa-solid fa-gear fa-lg"></i></li>
-        </ul>
+      <div className="settings-list">
+      <button onClick={toggleLayout}>
+      {isGrid ? (
+              <i className="fa-solid fa-th-large fa-lg"></i>
+            ) : (
+              <i className="fa-solid fa-list-ul fa-lg"></i>
+            )}
+      </button>
+        <button>
+          <i className="fa-solid fa-circle-exclamation fa-lg"></i>
+        </button>
+        <button  onClick={openPage}><i className="fa-solid fa-gear fa-lg"></i>
+        </button>
+      </div>
       </div>
     </div>
   );

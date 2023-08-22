@@ -12,7 +12,8 @@ export function CreatedFoldersList () {
             "id": 1,
             "icon": folders,
             "name": "Downloads",
-            "count": "0 files"
+            "count": "0 files",
+            "content":""
         },
         {
             "id": 2,
@@ -42,7 +43,7 @@ export function CreatedFoldersList () {
     return (
         <div className="folder-items">
             {FoldersList.map((post, index) => (
-                <Link key={index} to={`/folder/${post.id}`}>
+                <Link key={index} to={`/folder/${post.name}`}>
                     <CreatedFolderItem index={index} post={post} />
                 </Link>
             ))}

@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes} from 'react-router-dom';
 import { ThemeContext, themes } from './contexts/ThemeContext';
 import ToggleDark from './contexts/ToggleDark';
 import { Header } from './components/Header/Header';
@@ -15,8 +15,10 @@ import { DocumentsFolder } from "./pages/Folders/DocumentsFolder"
 import { ImagesFolder } from "./pages/Folders/ImagesFolder"
 import { ZipFolder } from "./pages/Folders/ZipFolder"
 import { VideosFolder } from "./pages/Folders/VideosFolder"
-
+import {Login} from './components/Authorization/Login'
+import { ManageAcc } from './components/Header/ManageAcc';
 export default function App() {
+
   return (
     <div className="App">
       <ThemeContext.Consumer>
@@ -45,8 +47,17 @@ export default function App() {
                 <Route path="/videos" element={<VideosFolder />} />
                 <Route path="/audios" element={<AudiosFolder />} />
                 <Route path="/zip" element={<ZipFolder />} />
+                <Route path="/login" element={<Login/>} />
+                <Route path="/manage-account" element={<ManageAcc />} />
+                <Route path="/home" element={<ManageAcc />} />
+                <Route path="/personal-info" element={<ManageAcc />} />
+                <Route path="/data-privacy" element={<ManageAcc />} />
+                <Route path="/security" element={<ManageAcc />} />
+                <Route path="/people-sharing" element={<ManageAcc />} />
+                <Route path="/payment-subscription" element={<ManageAcc />} />
               </Routes>
             </BrowserRouter>
+
           </>
         )}
       </ThemeContext.Consumer>
