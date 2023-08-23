@@ -35,12 +35,12 @@ export function ManageAcc() {
           <div className="scroll-bar">
         <div className="my-drive">
           <ul>
-          <li><Link to="/home"><i className="fa-regular fa-file"></i>Home</Link></li>
-            <li><Link to="/personal-info"><i className="fa-regular fa-file-image"></i>Personal info</Link></li>
-            <li><Link to="/data-privacy"><i className="fa-regular fa-file-video"></i>Data & privacy</Link></li>
-            <li><Link to="/security"><i className="fa-regular fa-file-audio"></i>Security</Link></li>
-            <li><Link to="/people-sharing"><i className="fa-regular fa-file-zipper"></i>People &sharing</Link></li>
-            <li><Link to="/payment-subscription"><i className="fa-regular fa-file-zipper"></i>Payment & subscription</Link></li>
+          <li><Link to="/home">Home</Link></li>
+            <li><Link to="/personal-info">Personal info</Link></li>
+            <li><Link to="/data-privacy">Data & privacy</Link></li>
+            <li><Link to="/security">Security</Link></li>
+            <li><Link to="/people-sharing">People &sharing</Link></li>
+            <li><Link to="/payment-subscription">Payment & subscription</Link></li>
 
           </ul>
         </div>

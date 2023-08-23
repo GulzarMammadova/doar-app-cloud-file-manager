@@ -15,7 +15,7 @@ export default function ProfileContent() {
                     <div className="profile-menu">
                         <Link className='manage-acc-btn' to="/manage-account">Manage your Account</Link>
                         <Link className='sign-out' to="/login">
-                            <i className="fa-solid fa-arrow-right-from-bracket"></i>
+                            <i className="fa-solid fa-arrow-right-from-bracket"></i> 
                             Sign out</Link>
                     </div>
                 </div>

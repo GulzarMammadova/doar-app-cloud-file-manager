@@ -398,7 +398,7 @@ body {
   top: 71%;
   right: 78%;
   width: 35vw;
-  background: #ecf0f1;
+  background-color: var(--text-white);
   transform: translate(1rem, 0.5rem);
   border-radius: 0.5rem;
   padding: 0.5rem 0.75rem;
@@ -433,7 +433,7 @@ body {
   top: 71%;
   right: 78%;
   width: 21vw;
-  background: #ecf0f1;
+  background-color: var(--text-white);
   transform: translate(1rem, 0.5rem);
   border-radius: 0.5rem;
   padding: 0.5rem 0.75rem;
@@ -485,7 +485,7 @@ body {
   margin-bottom: 0.5rem;
 }
 .header .notification-bar .nav__message_bar .nav__notifications__list__item.nav__notifications__list__item--new {
-  background: #e2e8e9;
+  background-color: var(--bg-files);
   opacity: 1;
 }
 .header .notification-bar .nav__notifications__list {
@@ -517,7 +517,7 @@ body {
   margin-bottom: 0.5rem;
 }
 .header .notification-bar .nav__notifications__list__item.nav__notifications__list__item--new {
-  background: #e2e8e9;
+  background-color: var(--bg-files);
   opacity: 1;
 }
 .header .notification-bar .nav__notifications__list__item__photo {
@@ -553,7 +553,7 @@ body {
   right: 78%;
   width: 20vw;
   height: 212px;
-  background: #ecf0f1;
+  background-color: var(--bg-files);
   transform: translate(1rem, 1rem);
   border-radius: 0.5rem;
   padding: 1rem 2rem;
@@ -610,6 +610,9 @@ body {
 .header .profile-container .profile-content .profile-menu .sign-out {
   margin-left: 54%;
   color: #1b2e4b;
+}
+.header .profile-container .profile-content .profile-menu .sign-out .fa-solid {
+  margin-right: 5px;
 }
 
 @media (max-width: 768px) {
@@ -1359,6 +1362,73 @@ body {
   flex-shrink: 1;
   margin: 0;
   padding: 8px 0 0;
+}
+.main-container .main-content .settings-menu {
+  display: block;
+}
+.main-container .main-content .settings-menu .settings-content {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 1%;
+  background-color: var(--bg-files);
+  border-radius: 7px;
+  padding: 10px 40px;
+}
+.main-container .main-content .settings-menu .settings-content .settings-content-list {
+  width: 94%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.main-container .main-content .settings-menu .settings-content .settings-content-list .settings-content-item {
+  width: 94%;
+  height: auto;
+  border-bottom: 3px solid #adadad;
+  overflow: hidden;
+  padding: 15px 25px;
+  align-items: center;
+  cursor: pointer;
+}
+.main-container .main-content .settings-menu .settings-content .settings-content-list .settings-content-item h1 {
+  margin-bottom: 17px;
+}
+.main-container .main-content .settings-menu .settings-content .settings-content-list .settings-content-item label {
+  padding-left: 17px;
+}
+.main-container .main-content .settings-menu .settings-content .settings-content-list .settings-content-item input [type=checkbox] {
+  width: 40px;
+  height: 40px;
+}
+.main-container .main-content .settings-menu .settings-content .settings-content-list .settings-content-item input [type=checkbox]:checked::before {
+  border-color: blue;
+  background-color: blue;
+}
+.main-container .main-content .settings-menu .settings-content .settings-content-list .settings-content-item input [type=radio] {
+  width: 40px;
+  height: 40px;
+}
+.main-container .main-content .settings-menu .settings-content .settings-content-list .settings-content-item input [type=radio]:checked::before {
+  border-color: blue;
+  background-color: blue;
+}
+.main-container .main-content .settings-menu .settings-content .settings-content-list .settings-content-item .buy-storage {
+  background: none;
+  padding: 10px 20px;
+  border-radius: 10em;
+  color: #1b2e4b;
+  margin-top: 1.5%;
+  border: 1px solid #7a7b7c;
+  cursor: pointer;
+}
+.main-container .main-content .settings-menu .settings-content .settings-content-list .settings-content-item .buy-storage a {
+  color: #0168fa;
+}
+.main-container .main-content .settings-menu .settings-content .settings-content-list .settings-content-item .buy-storage:hover {
+  background-color: rgba(2, 84, 198, 0.2196078431);
+  border: 1px solid #034cb4;
+  transition: color 0.15s ease-in-out 0s, background-color 0.15s ease-in-out 0s, border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
 }
 @media (max-width: 768px) {
   .main-container {

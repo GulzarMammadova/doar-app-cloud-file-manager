@@ -17,6 +17,7 @@ import { ZipFolder } from "./pages/Folders/ZipFolder"
 import { VideosFolder } from "./pages/Folders/VideosFolder"
 import {Login} from './components/Authorization/Login'
 import { ManageAcc } from './components/Header/ManageAcc';
+import {SettingsContent} from "./components/Header/SettingsContent"
 export default function App() {
 
   return (
@@ -55,6 +56,7 @@ export default function App() {
                 <Route path="/security" element={<ManageAcc />} />
                 <Route path="/people-sharing" element={<ManageAcc />} />
                 <Route path="/payment-subscription" element={<ManageAcc />} />
+                <Route path="/settings" element={<SettingsContent/>} />
               </Routes>
             </BrowserRouter>
 
