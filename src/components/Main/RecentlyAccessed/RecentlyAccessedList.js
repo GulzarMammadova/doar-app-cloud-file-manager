@@ -1,5 +1,5 @@
 import '../../../App.css';
-import React from 'react';
+import React, { useState } from 'react';
 import pdfIcon from '../../../pictures/icons/pdf.png'
 import docxIcon from '../../../pictures/icons/word.png'
 import txtIcon from '../../../pictures/icons/txt.png'
@@ -11,7 +11,7 @@ import jpegIcon from '../../../pictures/icons/img.png'
 // import RecentlyAccessed from "./RecentlyAccessed"
 
 export function RecentlyAccessedList() {
-  const allFilesList=[
+  const allFilesList = [
     {
       "id": 1,
       "name": "For kid development.pdf",
@@ -101,36 +101,30 @@ export function RecentlyAccessedList() {
       "url": "https://drive.google.com/file/d/13FXmQzcR9rLBGTrCp52llIbf39P0rCzQ/view?usp=drive_link"
     }
   ]
-  // const [lastOpenedUrl, setLastOpenedUrl] = useState('');
+  const [recentlyDatas, setRecentlyDatas] = useState([])
 
 
-  // const handleFile=(id)=>{
-  //   console.log("funksiya isleyir")
-  //   console.log(lastOpenedUrl)
-  // }
-  // console.log(lastOpenedUrl)
+  const handleClick = (id) => {
+    if (recentlyDatas.length >= 3) {
+      setRecentlyDatas([...recentlyDatas.slice(1), id]);
+    } else {
+      setRecentlyDatas([...recentlyDatas, id]);
+    }
+  };
 
   return (
     <div className="RecentlyAccessedList-container">
-      {/* {lastOpenedUrl ? (
-
-          {lastOpenedUrl}
-      ) : (
-        <p>No files accessed recently.</p>
-      )} */} 
-
-      {allFilesList.map((post, index) => (
-          {/* <RecentlyAccessed 
-           onClick={()=>handleFile(post.id)}
-            key={index}
-            index={index}
-            post={post}
-            setLastOpenedUrl={setLastOpenedUrl}
-          /> */}
-        ))}
-        <div>
-
-        </div>
+      {recentlyDatas.map((id) => {
+        const file = allFilesList.find((x) => x.id === id);
+        return (
+          <div key={file.id} className="recent-file" onClick={() => handleClick(file.id)}>
+            <img src={file.icon} alt={file.name} className="file-icon" />
+            <span>{file.name}</span>
+          </div>
+        );
+      })}
+      <div>
+      </div>
     </div>
   );
 }

@@ -104,6 +104,15 @@ export function AllFilesList() {
     }
   ])
 
+  const [recentlyDatas, setRecentlyDatas] = useState([]);
+
+  const handleClick = (id) => {
+    if (recentlyDatas.length >= 3) {
+      setRecentlyDatas([...recentlyDatas.slice(1), id]);
+    } else {
+      setRecentlyDatas([...recentlyDatas, id]);
+    }
+  };
 
   const handleRenameFile = (fileId, newName) => {
     const updatedFilesList = allFilesList.map(file => {
@@ -117,24 +126,39 @@ export function AllFilesList() {
     });
     setAllFilesList(updatedFilesList);
   };
-
+  const handleDeleteFile = (fileId) => {
+    const updatedAllFilesList = allFilesList.filter((file) => file.id !== fileId);
+    setAllFilesList(updatedAllFilesList);
+  };
 
 
   return (
     <div>
+        <div className="recently">
+      <div className="menu-title"></div>
+      {recentlyDatas.map((id) => {
+        const file = allFilesList.find((x) => x.id === id);
+        return (
+          <div key={file.id} className="recent-file" onClick={() => handleClick(file.id)}>
+            <img src={file.icon} alt={file.name} className="file-icon" />
+            <span>{file.name}</span>
+          </div>
+        );
+      })}
+    </div>
       <div className="AllFilesList-container">
         {allFilesList.map((post, index) => (
           <AllFilesPost
-          //  onClick={()=>handleFile(post["id"])}
             key={index}
             index={index}
             post={post}
-            // setLastOpenedUrl={setLastOpenedUrl}
             handleRenameFile={handleRenameFile}
+            handleDeleteFile={handleDeleteFile}
+            allFilesList={allFilesList}
+            setAllFilesList={setAllFilesList}
           />
         ))}
       </div>
     </div>
   )
 }
-

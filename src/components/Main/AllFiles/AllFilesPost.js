@@ -3,12 +3,14 @@ import { MenuModal } from '../ModalButton/ModalButtonContent';
 import StarButton from './StarButton';
 import '../../../App.css';
 import './AllFilesList';
+// import { Delete } from '../ModalButton/Delete';
 
 export const AllFilesPost = ({
   post: { url, icon, name, type, size, id},
   index,
-  setLastOpenedUrl,
-  handleRenameFile
+  handleRenameFile,
+  handleDeleteFile,
+  post
 }) => {
 
   const [isStarred, setIsStarred] = useState(false);
@@ -33,12 +35,11 @@ export const AllFilesPost = ({
   };
   const openUrl = () => {
     window.open(url, '_blank');
-    setLastOpenedUrl(url);
     };
 
   return (
     <div className="AllFilesPost-container">
-      <MenuModal />
+      <MenuModal post={post} handleDeleteFile={handleDeleteFile} />
       <div className="icon-preview" onClick={openUrl}>
         <div>
           <img className="icon" src={icon} alt="post"/>

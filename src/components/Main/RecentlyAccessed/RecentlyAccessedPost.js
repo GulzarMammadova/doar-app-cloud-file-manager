@@ -13,7 +13,7 @@ export const RecentlyAccessedPost = ({
   useEffect(() => {
     const starredFiles = JSON.parse(localStorage.getItem('starredFiles')) || [];
     setIsStarred(starredFiles.includes(index));
-  }, [index]);
+  }, [index]); 
 
   const handleStarClick = () => {
     const starredFiles = JSON.parse(localStorage.getItem('starredFiles')) || [];

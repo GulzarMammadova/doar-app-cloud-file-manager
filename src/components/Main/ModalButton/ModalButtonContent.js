@@ -2,6 +2,7 @@ import '../../../App.css';
 import React, { useState } from 'react';
 import menu from '../../../pictures/icons/icons8-menu-32.png';
 import {ModalViewDetailsButton} from './ModalViewDetailsButton'
+import "../AllFiles/AllFilesList"
 import {ModalShareButton} from './ModalShareButton'
 import {Move} from './Move'
 import {Rename} from './Rename'
@@ -55,7 +56,7 @@ const Button = ({ onClick, children }) => {
   );
 };
 
-export const MenuModal = () => {
+export const MenuModal = ({ post, handleDeleteFile }) => {
   const [show, setShow] = useState(false);
 
   const openModal = () => {
@@ -79,6 +80,7 @@ export const MenuModal = () => {
       openModal(); 
     }
   };
+
   return (
     <>
       <Modal show={show}>
@@ -93,7 +95,9 @@ export const MenuModal = () => {
             <div className="menu-list" onClick={handleMenuItemClick}><Copy /></div>
             <div className="menu-list" onClick={handleMenuItemClick}><Move /></div>
             <div className="menu-list" onClick={handleMenuItemClick}><Rename/></div>
-            <div className="menu-list" onClick={handleMenuItemClick}><Delete/></div>
+            <div className="menu-list" onClick={handleMenuItemClick}>
+            <Delete post={post} handleDeleteFile={handleDeleteFile} />
+            </div>
           </div>
         </ModalBody>
       </Modal>
