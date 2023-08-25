@@ -56,7 +56,7 @@ const Button = ({ onClick, children }) => {
   );
 };
 
-export const MenuModal = ({ post, handleDeleteFile }) => {
+export const MenuModal = ({ isDeleted, handleDeleteClick }) => {
   const [show, setShow] = useState(false);
 
   const openModal = () => {
@@ -96,7 +96,7 @@ export const MenuModal = ({ post, handleDeleteFile }) => {
             <div className="menu-list" onClick={handleMenuItemClick}><Move /></div>
             <div className="menu-list" onClick={handleMenuItemClick}><Rename/></div>
             <div className="menu-list" onClick={handleMenuItemClick}>
-            <Delete post={post} handleDeleteFile={handleDeleteFile} />
+            <Delete isDeleted={isDeleted} onClick={handleDeleteClick} />
             </div>
           </div>
         </ModalBody>

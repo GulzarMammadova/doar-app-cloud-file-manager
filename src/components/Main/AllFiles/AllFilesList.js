@@ -103,7 +103,9 @@ export function AllFilesList() {
       "url": "https://drive.google.com/file/d/13FXmQzcR9rLBGTrCp52llIbf39P0rCzQ/view?usp=drive_link"
     }
   ])
-
+  const [deletedFiles, setDeletedFiles] = useState(
+    JSON.parse(localStorage.getItem('deletedFiles')) || []
+  );
   const [recentlyDatas, setRecentlyDatas] = useState([]);
 
   const handleClick = (id) => {
@@ -127,8 +129,18 @@ export function AllFilesList() {
     setAllFilesList(updatedFilesList);
   };
   const handleDeleteFile = (fileId) => {
-    const updatedAllFilesList = allFilesList.filter((file) => file.id !== fileId);
-    setAllFilesList(updatedAllFilesList);
+    const deletedFile = allFilesList.find((file) => file.id === fileId);
+    if (deletedFile) {
+      const updatedAllFilesList = allFilesList.filter((file) => file.id !== fileId);
+      setAllFilesList(updatedAllFilesList);
+      
+      const updatedDeletedFiles = [...deletedFiles, deletedFile];
+      setDeletedFiles(updatedDeletedFiles);
+
+      // Update localStorage
+      localStorage.setItem('allFilesList', JSON.stringify(updatedAllFilesList));
+      localStorage.setItem('deletedFiles', JSON.stringify(updatedDeletedFiles));
+    }
   };
 
 
@@ -155,6 +167,7 @@ export function AllFilesList() {
             handleRenameFile={handleRenameFile}
             handleDeleteFile={handleDeleteFile}
             allFilesList={allFilesList}
+            deletedFiles={deletedFiles}
             setAllFilesList={setAllFilesList}
           />
         ))}

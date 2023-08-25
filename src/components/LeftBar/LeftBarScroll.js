@@ -1,11 +1,13 @@
+import React from 'react';
 import '../../App.css';
 import { Link } from "react-router-dom";
 import { LanguageBar } from "../Header/LanguageBar"
 import { useTranslation } from 'react-i18next';
 
 
-export function LeftBarScroll() {
+export function LeftBarScroll({deletedFiles}) {
   const { t } = useTranslation();
+
   return (
     <>
       <div className="scroll-bar">
@@ -14,9 +16,9 @@ export function LeftBarScroll() {
           <ul>
             <li><Link to="/allfiles"><i className="fa-regular fa-file"></i> {t('leftBar.allFiles')}</Link></li>
             <li><Link to="/my-devices"><i className="fa-solid fa-desktop"></i>{t('leftBar.myDevices')}</Link></li>
-            <li><Link to="/recents"><i className="fa-regular fa-clock"></i>{t('leftBar.recently')}</Link></li>
+            {/* <li><Link to="/recents"><i className="fa-regular fa-clock"></i>{t('leftBar.recently')}</Link></li> */}
             <li><Link to="/important"><i className="fa-regular fa-star"></i>{t('leftBar.important')}</Link></li>
-            <li><Link to="/deleted"><i className="fa-regular fa-trash-can"></i>{t('leftBar.deletedFiles')}</Link></li>
+            <li><Link to="/deleted" ><i className="fa-regular fa-trash-can"></i>{t('leftBar.deletedFiles')}</Link></li>
           </ul>
         </div>
         <div className="file-lib">

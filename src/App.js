@@ -18,6 +18,7 @@ import { VideosFolder } from "./pages/Folders/VideosFolder"
 import {Login} from './components/Authorization/Login'
 import { ManageAcc } from './components/Header/ManageAcc';
 import {SettingsContent} from "./components/Header/SettingsContent"
+
 export default function App() {
 
   return (
